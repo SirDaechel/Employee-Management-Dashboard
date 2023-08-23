@@ -1,0 +1,907 @@
+{
+
+    "users": [
+
+      {
+        "id": 1,
+        "name": "Chinedu Okoro",
+        "firstname": "Chinedu",
+        "lastname": "Okoro",
+        "username": "NaijaCoder",
+        "email": "chinedu.okoro@example.com",
+        "role": "Software Engineer",
+        "phone": "0802-123-4567",
+        "wage": "15000",
+        "workinghours": "40",
+        "age": "28",
+        "checked": false
+      },
+
+      {
+        "id": 2,
+        "name": "Amina Adekunle",
+        "firstname": "Amina",
+        "lastname": "Adekunle",
+        "username": "TechSavvyAmina",
+        "email": "amina.adekunle@example.com",
+        "role": "UI/UX Designer",
+        "phone": "0803-234-5678",
+        "wage": "12000",
+        "workinghours": "35",
+        "age": "25",
+        "checked": false
+      },
+
+      {
+        "id": 3,
+        "name": "Oluwatobi Afolabi",
+        "firstname": "Oluwatobi",
+        "lastname": "Afolabi",
+        "username": "CodeNinja",
+        "email": "oluwatobi.afolabi@example.com",
+        "role": "Full Stack Developer",
+        "phone": "0804-345-6789",
+        "wage": "17000",
+        "workinghours": "42",
+        "age": "31",
+        "checked": false
+      },
+
+      {
+        "id": 4,
+        "name": "Ngozi Nwosu",
+        "firstname": "Ngozi",
+        "lastname": "Nwosu",
+        "username": "TechExplorer",
+        "email": "ngozi.nwosu@example.com",
+        "role": "Data Scientist",
+        "phone": "0805-456-7890",
+        "wage": "18000",
+        "workinghours": "38",
+        "age": "29",
+        "checked": false
+      },
+
+      {
+        "id": 5,
+        "name": "Emeka Uzoma",
+        "firstname": "Emeka",
+        "lastname": "Uzoma",
+        "username": "InnovationGeek",
+        "email": "emeka.uzoma@example.com",
+        "role": "Product Manager",
+        "phone": "0806-567-8901",
+        "wage": "16000",
+        "workinghours": "40",
+        "age": "32",
+        "checked": false
+      },
+
+      {
+        "id": 6,
+        "name": "Chidinma Eze",
+        "firstname": "Chidinma",
+        "lastname": "Eze",
+        "username": "CodeEnthusiast",
+        "email": "chidinma.eze@example.com",
+        "role": "Frontend Developer",
+        "phone": "0807-678-9012",
+        "wage": "14000",
+        "workinghours": "35",
+        "age": "26",
+        "checked": false
+      },
+
+      {
+        "id": 7,
+        "name": "Obinna Okafor",
+        "firstname": "Obinna",
+        "lastname": "Okafor",
+        "username": "TechScribe",
+        "email": "obinna.okafor@example.com",
+        "role": "Technical Writer",
+        "phone": "0808-789-0123",
+        "wage": "13000",
+        "workinghours": "30",
+        "age": "27",
+        "checked": false
+      },
+
+      {
+        "id": 8,
+        "name": "Adaku Onwuka",
+        "firstname": "Adaku",
+        "lastname": "Onwuka",
+        "username": "DataDiva",
+        "email": "adaku.onwuka@example.com",
+        "role": "Data Analyst",
+        "phone": "0809-890-1234",
+        "wage": "12500",
+        "workinghours": "35",
+        "age": "24",
+        "checked": false
+      },
+
+      {
+        "id": 9,
+        "name": "Olamide Balogun",
+        "firstname": "Olamide",
+        "lastname": "Balogun",
+        "username": "CodeWarrior",
+        "email": "olamide.balogun@example.com",
+        "role": "Software Developer",
+        "phone": "0810-901-2345",
+        "wage": "15500",
+        "workinghours": "40",
+        "age": "30",
+        "checked": false
+      },
+
+      {
+        "id": 10,
+        "name": "Chinonso Okeke",
+        "firstname": "Chinonso",
+        "lastname": "Okeke",
+        "username": "TechInnovator",
+        "email": "chinonso.okeke@example.com",
+        "role": "Innovation Specialist",
+        "phone": "0811-012-3456",
+        "wage": "17000",
+        "workinghours": "37",
+        "age": "29",
+        "checked": false
+      },
+
+      {
+        "id": 11,
+        "name": "Rajesh Patel",
+        "firstname": "Rajesh",
+        "lastname": "Patel",
+        "username": "CodeMaestro",
+        "email": "rajesh.patel@example.com",
+        "role": "Software Engineer",
+        "phone": "+91-9876543210",
+        "wage": "18000",
+        "workinghours": "40",
+        "age": "28",
+        "checked": false
+      },
+
+      {
+        "id": 12,
+        "name": "Maria Silva",
+        "firstname": "Maria",
+        "lastname": "Silva",
+        "username": "TechExplorer",
+        "email": "maria.silva@example.com",
+        "role": "UI/UX Designer",
+        "phone": "+55-11-9876-5432",
+        "wage": "16000",
+        "workinghours": "35",
+        "age": "25",
+        "checked": false
+      },
+
+      {
+        "id": 13,
+        "name": "Matteo Rossi",
+        "firstname": "Matteo",
+        "lastname": "Rossi",
+        "username": "CodeArtisan",
+        "email": "matteo.rossi@example.com",
+        "role": "Full Stack Developer",
+        "phone": "+39-02-1234-5678",
+        "wage": "20000",
+        "workinghours": "42",
+        "age": "31",
+        "checked": false
+      },
+
+      {
+        "id": 14,
+        "name": "Lina Chen",
+        "firstname": "Lina",
+        "lastname": "Chen",
+        "username": "TechGenius",
+        "email": "lina.chen@example.com",
+        "role": "Data Scientist",
+        "phone": "+86-10-1234-5678",
+        "wage": "22000",
+        "workinghours": "38",
+        "age": "29",
+        "checked": false
+      },
+
+      {
+        "id": 15,
+        "name": "Diego Morales",
+        "firstname": "Diego",
+        "lastname": "Morales",
+        "username": "InnovationWizard",
+        "email": "diego.morales@example.com",
+        "role": "Product Manager",
+        "phone": "+54-11-9876-5432",
+        "wage": "19000",
+        "workinghours": "40",
+        "age": "32",
+        "checked": false
+      },
+
+      {
+        "id": 16,
+        "name": "Ji-hyun Kim",
+        "firstname": "Ji-hyun",
+        "lastname": "Kim",
+        "username": "CodeEnthusiast",
+        "email": "ji-hyun.kim@example.com",
+        "role": "Frontend Developer",
+        "phone": "+82-2-9876-5432",
+        "wage": "17000",
+        "workinghours": "35",
+        "age": "26",
+        "checked": false
+      },
+
+      {
+        "id": 17,
+        "name": "Gabriel Rodrigues",
+        "firstname": "Gabriel",
+        "lastname": "Rodrigues",
+        "username": "TechScribe",
+        "email": "gabriel.rodrigues@example.com",
+        "role": "Technical Writer",
+        "phone": "+55-21-9876-5432",
+        "wage": "15000",
+        "workinghours": "30",
+        "age": "27",
+        "checked": false
+      },
+
+      {
+        "id": 18,
+        "name": "Elena Petrov",
+        "firstname": "Elena",
+        "lastname": "Petrov",
+        "username": "DataDiva",
+        "email": "elena.petrov@example.com",
+        "role": "Data Analyst",
+        "phone": "+7-495-123-4567",
+        "wage": "14000",
+        "workinghours": "35",
+        "age": "24",
+        "checked": false
+      },
+
+      {
+        "id": 19,
+        "name": "Shinji Tanaka",
+        "firstname": "Shinji",
+        "lastname": "Tanaka",
+        "username": "CodeWarrior",
+        "email": "shinji.tanaka@example.com",
+        "role": "Software Developer",
+        "phone": "+81-3-1234-5678",
+        "wage": "18000",
+        "workinghours": "40",
+        "age": "30",
+        "checked": false
+      },
+
+      {
+        "id": 20,
+        "name": "Isabella Costa",
+        "firstname": "Isabella",
+        "lastname": "Costa",
+        "username": "TechInnovator",
+        "email": "isabella.costa@example.com",
+        "role": "Innovation Specialist",
+        "phone": "+55-31-9876-5432",
+        "wage": "17000",
+        "workinghours": "37",
+        "age": "29",
+        "checked": false
+      },
+
+      {
+        "id": 21,
+        "name": "Kofi Amponsah",
+        "firstname": "Kofi",
+        "lastname": "Amponsah",
+        "username": "MoonlitDreamer",
+        "email": "moonlit.dreamer@example.com",
+        "role": "Auditor",
+        "phone": "1-770-736-8031",
+        "wage": "12000",
+        "workinghours": "38.25",
+        "age" : "30",
+        "checked" : false
+      },
+
+      {
+        "id": 22,
+        "name": "Jelani Soweto",
+        "firstname": "Jelani",
+        "lastname": "Soweto",
+        "username": "TechNinja77",
+        "email": "tech.ninja77@example.com",
+        "role": "Analytics/User Data Analyst",
+        "phone": "1-770-736-8031",
+        "wage": "8500",
+        "workinghours": "38",
+        "age" : "39",
+        "checked" : false
+      },
+
+      {
+        "id": 23,
+        "name": "Akira Tanaka",
+        "firstname": "Akira",
+        "lastname": "Tanaka",
+        "username": "CyberSleuth99",
+        "email": "cyber.sleuth99@example.com",
+        "role": "Design/UX Specialist",
+        "phone": "1-770-736-8031",
+        "wage": "12300",
+        "workinghours": "40.25",
+        "age" : "31",
+        "checked" : false
+      },
+
+      {
+        "id": 24,
+        "name": "Dija Vaine",
+        "firstname": "Dija",
+        "lastname": "Vaine",
+        "username": "StarryEyes42",
+        "email": "starry.eyes42@example.com",
+        "role": "Technical Support",
+        "phone": "1-770-736-8031",
+        "wage": "10800",
+        "workinghours": "37.75",
+        "age" : "52",
+        "checked" : false
+      },
+
+      {
+        "id": 25,
+        "name": "Li Wei",
+        "firstname": "Li",
+        "lastname": "Wei",
+        "username": "AquaMarine56",
+        "email": "aqua.marine56@example.com",
+        "role": "Quality Assurance (QA) Tester",
+        "phone": "1-770-736-8031",
+        "wage": "10800",
+        "workinghours": "39.75",
+        "age" : "40",
+        "checked" : false
+      },
+
+      {
+        "id": 26,
+        "name": "Ji-hoon Park",
+        "firstname": "Ji-hoon",
+        "lastname": "Park",
+        "username": "ThunderStorm12",
+        "email": "ThunderStorm12",
+        "role": "Billing/Invoicing Specialist",
+        "phone": "1-770-736-8031",
+        "wage": "7800",
+        "workinghours": "40.5",
+        "age" : "55",
+        "checked" : false
+      },
+
+      {
+        "id": 27,
+        "name": "Indra Gupta",
+        "firstname": "Indra",
+        "lastname": "Gupta",
+        "username": "NightWanderer",
+        "email": "night.wanderer@example.com",
+        "role": "Product Manager",
+        "phone": "1-770-736-8031",
+        "wage": "12000",
+        "workinghours": "38.5",
+        "age" : "61",
+        "checked" : false
+      },
+
+      {
+        "id": 28,
+        "name": " Isabella Price",
+        "firstname": "Isabella",
+        "lastname": "Price",
+        "username": "DigitalMage21",
+        "email": "digital.mage21@example.com",
+        "role": "Web Developer",
+        "phone": "1-770-736-8031",
+        "wage": "10900",
+        "workinghours": "41.25",
+        "age" : "39",
+        "checked" : false
+      },
+
+      {
+        "id": 29,
+        "name": "Annabelle Juka",
+        "firstname": "Annabelle",
+        "lastname": "Juka",
+        "username": "CrystalEclipse",
+        "email": "crystal.eclipse@example.com",
+        "role": "Moderator",
+        "phone": "1-770-736-8031",
+        "wage": "9300",
+        "workinghours": "37.25",
+        "age" : "63",
+        "checked" : false
+      },
+
+      {
+        "id": 30,
+        "name": " Ethan Baker",
+        "firstname": "Ethan",
+        "lastname": "Baker",
+        "username": "QuantumLeap88",
+        "email": "quantum.leap88@example.com",
+        "role": "System Analyst",
+        "phone": "1-770-736-8031",
+        "wage": "8600",
+        "workinghours": "40.75",
+        "age" : "48",
+        "checked" : false
+      },
+
+      {
+        "id": 31,
+        "name": "John Smith",
+        "firstname": "John",
+        "lastname": "Smith",
+        "username": "TechMaster123",
+        "email": "john.smith@example.com",
+        "role": "Administrator",
+        "phone": "1-800-123-4567",
+        "wage": "15000",
+        "workinghours": "40",
+        "age": "35",
+        "checked": false
+      },
+
+      {
+        "id": 32,
+        "name": "Alice Johnson",
+        "firstname": "Alice",
+        "lastname": "Johnson",
+        "username": "CodeNinja",
+        "email": "alice.johnson@example.com",
+        "role": "Developer",
+        "phone": "1-888-555-7890",
+        "wage": "12500",
+        "workinghours": "35",
+        "age": "28",
+        "checked": false
+      },
+
+      {
+        "id": 33,
+        "name": "Michael Williams",
+        "firstname": "Michael",
+        "lastname": "Williams",
+        "username": "GeekMaster",
+        "email": "michael.williams@example.com",
+        "role": "Designer",
+        "phone": "1-777-444-1212",
+        "wage": "14800",
+        "workinghours": "38",
+        "age": "42",
+        "checked": false
+      },
+
+      {
+        "id": 34,
+        "name": "Emily Anderson",
+        "firstname": "Emily",
+        "lastname": "Anderson",
+        "username": "PixelGuru",
+        "email": "emily.anderson@example.com",
+        "role": "Designer",
+        "phone": "1-800-999-5678",
+        "wage": "13200",
+        "workinghours": "37",
+        "age": "31",
+        "checked": false
+      },
+
+      {
+        "id": 35,
+        "name": "Daniel Ramirez",
+        "firstname": "Daniel",
+        "lastname": "Ramirez",
+        "username": "TechWhiz",
+        "email": "daniel.ramirez@example.com",
+        "role": "Developer",
+        "phone": "1-777-123-4567",
+        "wage": "14500",
+        "workinghours": "40",
+        "age": "29",
+        "checked": false
+      },
+
+      {
+        "id": 36,
+        "name": "Sophia Lee",
+        "firstname": "Sophia",
+        "lastname": "Lee",
+        "username": "CodeQueen",
+        "email": "sophia.lee@example.com",
+        "role": "Administrator",
+        "phone": "1-888-555-4321",
+        "wage": "16000",
+        "workinghours": "40",
+        "age": "37",
+        "checked": false
+      },
+
+      {
+        "id": 37,
+        "name": "William Clark",
+        "firstname": "William",
+        "lastname": "Clark",
+        "username": "CyberWiz",
+        "email": "william.clark@example.com",
+        "role": "Developer",
+        "phone": "1-800-987-6543",
+        "wage": "12800",
+        "workinghours": "35",
+        "age": "26",
+        "checked": false
+      },
+
+      {
+        "id": 38,
+        "name": "Olivia Baker",
+        "firstname": "Olivia",
+        "lastname": "Baker",
+        "username": "DataDiva",
+        "email": "olivia.baker@example.com",
+        "role": "Analyst",
+        "phone": "1-777-666-5555",
+        "wage": "13500",
+        "workinghours": "38",
+        "age": "34",
+        "checked": false
+      },
+
+      {
+        "id": 39,
+        "name": "Alexander Turner",
+        "firstname": "Alexander",
+        "lastname": "Turner",
+        "username": "TechGenius",
+        "email": "alexander.turner@example.com",
+        "role": "Administrator",
+        "phone": "1-888-123-7890",
+        "wage": "15200",
+        "workinghours": "40",
+        "age": "39",
+        "checked": false
+      },
+
+      {
+        "id": 40,
+        "name": "Mia Rodriguez",
+        "firstname": "Mia",
+        "lastname": "Rodriguez",
+        "username": "CodeGoddess",
+        "email": "mia.rodriguez@example.com",
+        "role": "Developer",
+        "phone": "1-800-567-8901",
+        "wage": "14000",
+        "workinghours": "37",
+        "age": "30",
+        "checked": false
+      },
+
+      {
+        "id": 41,
+        "name": "James Mitchell",
+        "firstname": "James",
+        "lastname": "Mitchell",
+        "username": "TechWarrior",
+        "email": "james.mitchell@example.com",
+        "role": "Designer",
+        "phone": "1-777-333-9999",
+        "wage": "13800",
+        "workinghours": "38",
+        "age": "33",
+        "checked": false
+      },
+
+      {
+        "id": 42,
+        "name": "Isabella Scott",
+        "firstname": "Isabella",
+        "lastname": "Scott",
+        "username": "CodeGuru",
+        "email": "isabella.scott@example.com",
+        "role": "Developer",
+        "phone": "1-888-999-4444",
+        "wage": "14800",
+        "workinghours": "40",
+        "age": "27",
+        "checked": false
+      },
+
+      {
+        "id": 43,
+        "name": "Ethan Cooper",
+        "firstname": "Ethan",
+        "lastname": "Cooper",
+        "username": "TechSavvy",
+        "email": "ethan.cooper@example.com",
+        "role": "Administrator",
+        "phone": "1-800-777-2222",
+        "wage": "15500",
+        "workinghours": "40",
+        "age": "36",
+        "checked": false
+      },
+
+      {
+        "id": 44,
+        "name": "Ava Morgan",
+        "firstname": "Ava",
+        "lastname": "Morgan",
+        "username": "TechPro",
+        "email": "ava.morgan@example.com",
+        "role": "Developer",
+        "phone": "1-888-444-7777",
+        "wage": "13700",
+        "workinghours": "35",
+        "age": "29",
+        "checked": false
+      },
+
+      {
+        "id": 45,
+        "name": "Liam Turner",
+        "firstname": "Liam",
+        "lastname": "Turner",
+        "username": "CodeWizard",
+        "email": "liam.turner@example.com",
+        "role": "Developer",
+        "phone": "1-800-333-8888",
+        "wage": "14200",
+        "workinghours": "40",
+        "age": "32",
+        "checked": false
+      },
+
+      {
+        "id": 46,
+        "name": "Emma Parker",
+        "firstname": "Emma",
+        "lastname": "Parker",
+        "username": "DataGeek",
+        "email": "emma.parker@example.com",
+        "role": "Analyst",
+        "phone": "1-777-123-4567",
+        "wage": "13000",
+        "workinghours": "37",
+        "age": "28",
+        "checked": false
+      },
+
+      {
+        "id": 47,
+        "name": "Noah Foster",
+        "firstname": "Noah",
+        "lastname": "Foster",
+        "username": "TechEnthusiast",
+        "email": "noah.foster@example.com",
+        "role": "Administrator",
+        "phone": "1-888-555-9999",
+        "wage": "15300",
+        "workinghours": "38",
+        "age": "33",
+        "checked": false
+      },
+
+      {
+        "id": 48,
+        "name": "Sophia Evans",
+        "firstname": "Sophia",
+        "lastname": "Evans",
+        "username": "CodeSensei",
+        "email": "sophia.evans@example.com",
+        "role": "Developer",
+        "phone": "1-800-987-6543",
+        "wage": "14600",
+        "workinghours": "40",
+        "age": "30",
+        "checked": false
+      },
+
+      {
+        "id": 49,
+        "name": "Jackson Cook",
+        "firstname": "Jackson",
+        "lastname": "Cook",
+        "username": "TechProdigy",
+        "email": "jackson.cook@example.com",
+        "role": "Developer",
+        "phone": "1-777-555-4444",
+        "wage": "13900",
+        "workinghours": "37",
+        "age": "29",
+        "checked": false
+      },
+
+      {
+        "id": 50,
+        "name": "Olivia Morris",
+        "firstname": "Olivia",
+        "lastname": "Morris",
+        "username": "CodeExpert",
+        "email": "olivia.morris@example.com",
+        "role": "Designer",
+        "phone": "1-888-999-5555",
+        "wage": "12800",
+        "workinghours": "35",
+        "age": "26",
+        "checked": false
+      },
+
+      {
+        "id": 51,
+        "name": "Aiden Hill",
+        "firstname": "Aiden",
+        "lastname": "Hill",
+        "username": "TechGuru",
+        "email": "aiden.hill@example.com",
+        "role": "Administrator",
+        "phone": "1-800-777-4444",
+        "wage": "15800",
+        "workinghours": "40",
+        "age": "34",
+        "checked": false
+      },
+
+      {
+        "id": 52,
+        "name": "Abigail Turner",
+        "firstname": "Abigail",
+        "lastname": "Turner",
+        "username": "CodeNerd",
+        "email": "abigail.turner@example.com",
+        "role": "Developer",
+        "phone": "1-777-333-2222",
+        "wage": "14300",
+        "workinghours": "38",
+        "age": "31",
+        "checked": false
+      },
+
+      {
+        "id": 53,
+        "name": "Elijah Martinez",
+        "firstname": "Elijah",
+        "lastname": "Martinez",
+        "username": "TechSlinger",
+        "email": "elijah.martinez@example.com",
+        "role": "Developer",
+        "phone": "1-888-123-4567",
+        "wage": "15500",
+        "workinghours": "40",
+        "age": "33",
+        "checked": false
+      },
+
+      {
+        "id": 54,
+        "name": "Charlotte Hughes",
+        "firstname": "Charlotte",
+        "lastname": "Hughes",
+        "username": "CodeQueen",
+        "email": "charlotte.hughes@example.com",
+        "role": "Designer",
+        "phone": "1-800-777-9999",
+        "wage": "12500",
+        "workinghours": "35",
+        "age": "27",
+        "checked": false
+      },
+
+      {
+        "id": 55,
+        "name": "Grayson Ward",
+        "firstname": "Grayson",
+        "lastname": "Ward",
+        "username": "TechSage",
+        "email": "grayson.ward@example.com",
+        "role": "Developer",
+        "phone": "1-777-999-5555",
+        "wage": "13700",
+        "workinghours": "37",
+        "age": "29",
+        "checked": false
+      },
+
+      {
+        "id": 56,
+        "name": "Amelia Brooks",
+        "firstname": "Amelia",
+        "lastname": "Brooks",
+        "username": "CodePro",
+        "email": "amelia.brooks@example.com",
+        "role": "Developer",
+        "phone": "1-888-666-5555",
+        "wage": "14200",
+        "workinghours": "40",
+        "age": "31",
+        "checked": false
+      },
+
+      {
+        "id": 57,
+        "name": "Mason Allen",
+        "firstname": "Mason",
+        "lastname": "Allen",
+        "username": "TechMaster",
+        "email": "mason.allen@example.com",
+        "role": "Administrator",
+        "phone": "1-800-444-8888",
+        "wage": "15100",
+        "workinghours": "38",
+        "age": "32",
+        "checked": false
+      },
+
+      {
+        "id": 58,
+        "name": "Harper Bell",
+        "firstname": "Harper",
+        "lastname": "Bell",
+        "username": "CodeGoddess",
+        "email": "harper.bell@example.com",
+        "role": "Developer",
+        "phone": "1-777-888-3333",
+        "wage": "14900",
+        "workinghours": "37",
+        "age": "30",
+        "checked": false
+      },
+
+      {
+        "id": 59,
+        "name": "Logan Phillips",
+        "firstname": "Logan",
+        "lastname": "Phillips",
+        "username": "CodeSensei",
+        "email": "logan.phillips@example.com",
+        "role": "Developer",
+        "phone": "1-888-777-2222",
+        "wage": "14300",
+        "workinghours": "35",
+        "age": "28",
+        "checked": false
+      },
+      
+      {
+        "id": 60,
+        "name": "Luna Foster",
+        "firstname": "Luna",
+        "lastname": "Foster",
+        "username": "TechGuru",
+        "email": "luna.foster@example.com",
+        "role": "Administrator",
+        "phone": "1-800-333-5555",
+        "wage": "15500",
+        "workinghours": "40",
+        "age": "33",
+        "checked": false
+      }
+
+    ]
+
+}
