@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import TableTitle from "./TableTitle"
 import TableList from "./TableList"
 
-const UsersTable = ({ users, setUsers, currentUsers, handleSelectAll, handleIndividualUser, isSelectAllChecked, editUser, clickedOnDeleteUser, archiveAUser, activeUserTab, currentArchivedUsers, currentDeletedUsers, showUserOptions, setShowUserOptions, handleSelectAllArchived, handleIndividualArchivedUser, isSelectAllCheckedForArchivedAllUsers, archivedUsers, setArchivedUsers, handleSelectAllDeleted, handleIndividualDeletedUser, isSelectAllCheckedForDeletedAllUsers, deletedUsers, setDeletedUsers }) => {
+const UsersTable = ({ users, setUsers, currentUsers, handleSelectAll, handleIndividualUser, isSelectAllChecked, editUser, clickedOnDeleteUser, archiveAUser, restoreAUser, activeUserTab, currentArchivedUsers, currentDeletedUsers, showUserOptions, setShowUserOptions, handleSelectAllArchived, handleIndividualArchivedUser, isSelectAllCheckedForArchivedAllUsers, archivedUsers, setArchivedUsers, handleSelectAllDeleted, handleIndividualDeletedUser, isSelectAllCheckedForDeletedAllUsers, deletedUsers, setDeletedUsers }) => {
 
   const [theUserID, setTheUserID] = useState(null);
 
@@ -82,6 +82,8 @@ const UsersTable = ({ users, setUsers, currentUsers, handleSelectAll, handleIndi
               editUser={() => editUser(user.id)}
               clickedOnDeleteUser={() => clickedOnDeleteUser(user)}
               archiveAUser={() => archiveAUser(user)}
+              restoreAUser={() => restoreAUser(user)}
+              activeUserTab={activeUserTab}
             />
   
           ))
@@ -103,6 +105,8 @@ const UsersTable = ({ users, setUsers, currentUsers, handleSelectAll, handleIndi
               editUser={() => editUser(user.id)}
               clickedOnDeleteUser={() => clickedOnDeleteUser(user)}
               archiveAUser={() => archiveAUser(user)}
+              restoreAUser={() => restoreAUser(user)}
+              activeUserTab={activeUserTab}
             />
 
           ))
@@ -124,6 +128,8 @@ const UsersTable = ({ users, setUsers, currentUsers, handleSelectAll, handleIndi
               editUser={() => editUser(user.id)}
               clickedOnDeleteUser={() => clickedOnDeleteUser(user)}
               archiveAUser={() => archiveAUser(user)}
+              restoreAUser={() => restoreAUser(user)}
+              activeUserTab={activeUserTab}
             />
 
           ))

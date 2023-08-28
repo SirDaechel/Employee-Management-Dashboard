@@ -8,9 +8,10 @@ import AddNewUser from "./AddNewUser"
 
 const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, paginate, archivedUsers, setArchivedUsers, setUsersPerPage, deletedUsers, setDeletedUsers, currentArchivedUsers, currentDeletedUsers, totalArchivedUsers, totalDeletedUsers, currentPage, setCurrentPage, paginateNumRef }) => {
 
-  const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/;
+  const USER_REGEX = /^[a-zA-Z][a-zA-Z-_]{2,23}$/;
+  const USERNAME_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{2,23}$/;
   const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const AGE_WAGE__PHONE_WAGE_REGEX = /^[0-9]{3,23}$/;
+  const AGE_WAGE__PHONE_WAGE_REGEX = /^[0-9]{2,23}$/;
   //   const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
 
@@ -33,8 +34,9 @@ const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, pa
   const [validEmail, setValidEmail] = useState(false);
   const [eMailFocus, setEmailFocus] = useState(false);
   
-  const [userRole, setUserRole] = useState("Assign user role");
+  const [userRole, setUserRole] = useState("");
   const [showRoleDropdown, setShowRoleDropdown] = useState(false);
+  const [validRole, setValidRole] = useState(false);
 
   const [wage, setWage] = useState("");
   const [validWage, setValidWage] = useState(false);
@@ -67,6 +69,7 @@ const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, pa
   const [showUserOptions, setShowUserOptions] = useState(false);
   const [usersAfterFilteringArchived, setUsersAfterFilteringArchived] = useState([]);
   const [usersAfterFilteringDeleted, setUsersAfterFilteringDeleted] = useState([]);
+  const [isSubmitDisabled, setIsSubmitDisabled] = useState(false);
 
   const firstNameRef = useRef();
   const errRef = useRef();
@@ -81,6 +84,8 @@ const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, pa
   useEffect(() => {
     firstNameRef.current.focus();
   }, []);
+
+  
 
   //validate input fields
 
@@ -104,9 +109,15 @@ const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, pa
 
   //validate username
   useEffect(() => {
-    const resultUserName = USER_REGEX.test(userName);
+    const resultUserName = USERNAME_REGEX.test(userName);
     setValidUserName(resultUserName);
   }, [userName]);
+
+  //validate role
+  useEffect(() => {
+    const resultUserRole = userRole ? true : false;
+    setValidRole(resultUserRole);
+  }, [userRole]);
 
   //validate wage
   useEffect(() => {
@@ -136,6 +147,11 @@ const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, pa
   useEffect(() => {
     setErrMsg("");
   }, [firstName, lastName, eMail, userName, wage, age, phoneNo, workingHours]);
+
+  //validate if the add user or edit user submit button should be disabled or not
+  useEffect(() => {
+    setIsSubmitDisabled(!validFirstName || !validLastName || !validUserName || !validEmail || !validWage || !validAge || !validPhoneNo || !validWorkingHours || !validRole ? true : false);
+  }, [validFirstName, validLastName, validUserName, validEmail, validWage, validAge, validPhoneNo, validWorkingHours, validRole]);
 
 
   //--------------------- SETTING CHECK USERS STATE DEPENDING ON THE ACTIVE USER TAB ----------------//
@@ -289,15 +305,46 @@ const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, pa
   //if confirm delete user button is clicked
   const confirmDeleteUser = () => {
 
-    if(pendingDeleteUser) {
-      setUsers(users.filter((user) => user.id !== pendingDeleteUser.id));
-      setDeletedUsers([...deletedUsers, pendingDeleteUser]);
+    if(activeUserTab === 0) {
+
+      if(pendingDeleteUser) {
+        setUsers(users.filter((user) => user.id !== pendingDeleteUser.id));
+        setDeletedUsers([...deletedUsers, pendingDeleteUser]);
+      }
+
+      if(currentPage === pageNumbers.length && currentUsers.length <= 1) {
+
+        pageNumbers.pop();
+        setCurrentPage(currentPage - 1);
+
+      }
+      
+      setPendingDeleteUser(null);
+      setShowOverlay(false);
+      setClickedDeleteUser(false);
+      setShowUserOptions(false);
+
+    } else if(activeUserTab === 2) {
+
+      if(pendingDeleteUser) {
+        setArchivedUsers(archivedUsers.filter((user) => user.id !== pendingDeleteUser.id));
+        setDeletedUsers([...deletedUsers, pendingDeleteUser]);
+      }
+
+      if(currentPage === pageNumbers.length && currentArchivedUsers.length <= 1) {
+
+        pageNumbers.pop();
+        setCurrentPage(currentPage - 1);
+
+      }
+      
+      setPendingDeleteUser(null);
+      setShowOverlay(false);
+      setClickedDeleteUser(false);
+      setShowUserOptions(false);
+
     }
-    
-    setPendingDeleteUser(null);
-    setShowOverlay(false);
-    setClickedDeleteUser(false);
-    setShowUserOptions(false);
+
     
   };
   
@@ -312,12 +359,78 @@ const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, pa
 
   //archive a user
   const archiveAUser = (theUser) => {
-    setUsers(users.filter((user) => user.id !== theUser.id));
-    setArchivedUsers([...archivedUsers, theUser])
+
+    if(activeUserTab === 0) {
+
+      setUsers(users.filter((user) => user.id !== theUser.id));
+      setArchivedUsers([...archivedUsers, theUser]);
+
+      if(currentPage === pageNumbers.length && currentUsers.length <= 1) {
+
+        pageNumbers.pop();
+        setCurrentPage(currentPage - 1);
+
+      }
+
+      setShowUserOptions(false);
+
+    } else if(activeUserTab === 3) {
+
+      setDeletedUsers(deletedUsers.filter((user) => user.id !== theUser.id));
+      setArchivedUsers([...archivedUsers, theUser]);
+
+      if(currentPage === pageNumbers.length && currentDeletedUsers.length <= 1) {
+
+        pageNumbers.pop();
+        setCurrentPage(currentPage - 1);
+
+      }
+
+      setShowUserOptions(false);
+
+    }
+
+  };
+
+  //restore a user
+  const restoreAUser = (theUser) => {
+
+    if(activeUserTab === 2) {
+
+      setArchivedUsers(archivedUsers.filter((user) => user.id !== theUser.id));
+      setUsers([...users, theUser]);
+
+      if(currentPage === pageNumbers.length && currentArchivedUsers.length <= 1) {
+
+        pageNumbers.pop();
+        setCurrentPage(currentPage - 1);
+
+      }
+
+      setShowUserOptions(false);
+
+    } else if(activeUserTab === 3) {
+
+      setDeletedUsers(deletedUsers.filter((user) => user.id !== theUser.id));
+      setUsers([...users, theUser]);
+
+      if(currentPage === pageNumbers.length && currentDeletedUsers.length <= 1) {
+
+        pageNumbers.pop();
+        setCurrentPage(currentPage - 1);
+
+      }
+
+      setShowUserOptions(false);
+
+    }
+
   };
 
   //change active class tab
   const handleUserTabChange = (tabIndex) => {
+
+    setCurrentPage(1);
 
     setActiveUserTab(tabIndex);
 
@@ -365,6 +478,33 @@ const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, pa
     }
 
   }
+
+
+  //----------------------------- SET PAGINATION ACCORDING TO THE OPENED TAB -----------------------------//
+
+  const pageNumbers = [];
+
+  if(activeUserTab === 0) {
+    
+    for(let i = 1; i <= Math.ceil(totalUsers / usersPerPage); i++) {
+      pageNumbers.push(i);
+    }
+    
+  } else if(activeUserTab === 2) {
+
+    for(let i = 1; i <= Math.ceil(totalArchivedUsers / usersPerPage); i++) {
+      pageNumbers.push(i);
+    }
+    
+  } else if(activeUserTab === 3) {
+
+    for(let i = 1; i <= Math.ceil(totalDeletedUsers / usersPerPage); i++) {
+      pageNumbers.push(i);
+    }
+    
+  }
+
+
 
   return (
 
@@ -432,7 +572,10 @@ const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, pa
           validAge={validAge}
           validPhoneNo={validPhoneNo}
           validWorkingHours={validWorkingHours}
+          validRole={validRole}
           closeUserModal={closeUserModal}
+          isSubmitDisabled={isSubmitDisabled}
+          setIsSubmitDisabled={setIsSubmitDisabled}
         />
 
         <UsersUtilities 
@@ -491,6 +634,9 @@ const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, pa
           setUsersAfterFilteringDeleted={setUsersAfterFilteringDeleted}
           currentArchivedUsers={currentArchivedUsers}
           currentDeletedUsers={currentDeletedUsers}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          pageNumbers={pageNumbers}
         />
 
         <UsersTable 
@@ -507,6 +653,7 @@ const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, pa
           editUser={editUser}
           clickedOnDeleteUser={clickedOnDeleteUser}
           archiveAUser={archiveAUser}
+          restoreAUser={restoreAUser}
           activeUserTab={activeUserTab}
           currentArchivedUsers={currentArchivedUsers}
           currentDeletedUsers={currentDeletedUsers}
@@ -520,7 +667,7 @@ const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, pa
           isSelectAllCheckedForDeletedAllUsers={isSelectAllCheckedForDeletedAllUsers}
         />
 
-        {activeUserTab === 0 && currentUsers.length ? (
+        {activeUserTab === 0 && users.length ? (
 
           <UsersPagination 
             usersPerPage={usersPerPage}
@@ -532,11 +679,12 @@ const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, pa
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
             paginateNumRef={paginateNumRef}
+            pageNumbers={pageNumbers}
           />
 
         ) : null}
 
-        {activeUserTab === 2 && currentArchivedUsers.length ? (
+        {activeUserTab === 2 && archivedUsers.length ? (
 
           <UsersPagination 
             usersPerPage={usersPerPage}
@@ -548,11 +696,12 @@ const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, pa
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
             paginateNumRef={paginateNumRef}
+            pageNumbers={pageNumbers}
           />
 
         ) : null}
 
-        {activeUserTab === 3 && currentDeletedUsers.length ? (
+        {activeUserTab === 3 && deletedUsers.length ? (
 
           <UsersPagination 
             usersPerPage={usersPerPage}
@@ -564,6 +713,7 @@ const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, pa
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
             paginateNumRef={paginateNumRef}
+            pageNumbers={pageNumbers}
           />
 
         ) : null}

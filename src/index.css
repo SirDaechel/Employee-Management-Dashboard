@@ -1002,3 +1002,21 @@ th {
   font-weight: 600;
   color: #7e7e7e;
 }
+
+.input_error_txt {
+  display: flex;
+  justify-content: center;
+  gap: .4rem;
+}
+
+.email_input_error_txt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .4rem;
+}
+
+.error_icon {
+  font-size: 1.2rem;
+}
+

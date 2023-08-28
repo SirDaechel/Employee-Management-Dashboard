@@ -3,8 +3,9 @@ import AddUserInput from "./AddUserInput"
 import thecloseicon from "../../public/images/thecloseicon"
 import arrowdown from "../../public/images/arrowdown"
 import RoleDropdown from "./RoleDropdown"
+import errorIcon from "../../public/images/errorIcon"
 
-const AddNewUser = ({ users, setUsers, openAddUserModal, setShowOverlay, editAUser, userRole, setUserRole, firstName, lastName, userName, eMail, wage, age, phoneNo, workingHours,  setFirstName, setLastName, setUserName, seteMail, setWage, setAge, setPhoneNo, setWorkingHours, firstNameRef, errRef, errMsg, setFirstNameFocus, setLastNameFocus, setUserNameFocus, setEmailFocus, setWageFocus, setAgeFocus, setPhoneNoFocus, setWorkingHoursFocus, validFirstName, validLastName, validUserName, validEmail, validWage, validAge, validPhoneNo, validWorkingHours, closeUserModal, showRoleDropdown, setShowRoleDropdown }) => {
+const AddNewUser = ({ users, setUsers, openAddUserModal, setShowOverlay, editAUser, userRole, setUserRole, firstName, lastName, userName, eMail, wage, age, phoneNo, workingHours,  setFirstName, setLastName, setUserName, seteMail, setWage, setAge, setPhoneNo, setWorkingHours, firstNameRef, errRef, errMsg, setFirstNameFocus, setLastNameFocus, setUserNameFocus, setEmailFocus, setWageFocus, setAgeFocus, setPhoneNoFocus, setWorkingHoursFocus, validFirstName, validLastName, validUserName, validEmail, validWage, validAge, validPhoneNo, validWorkingHours, validRole, closeUserModal, showRoleDropdown, setShowRoleDropdown, isSubmitDisabled, setIsSubmitDisabled }) => {
 
   //toggle assign role dropdown menu
   const roleDropdown = (e) => {
@@ -42,7 +43,7 @@ const AddNewUser = ({ users, setUsers, openAddUserModal, setShowOverlay, editAUs
   }
 
   //submit added user
-  const submitUser = (e) => {
+  const submitUser = () => {
 
     addUser();
     setFirstName("");
@@ -83,8 +84,8 @@ const AddNewUser = ({ users, setUsers, openAddUserModal, setShowOverlay, editAUs
                     setFocus={() => setFirstNameFocus(true)}
                     setBlur={() => setFirstNameFocus(false)}
                     isValid={validFirstName}
-                    instructionMsg={<p>4 to 24 characters.<br />
-                    Numbers, underscores, hyphens are NOT allowed.</p>}
+                    instructionMsg={<div className="input_error_txt"><span className="error_icon">{errorIcon}</span><p>3 to 24 characters.<br />
+                    Only letters are allowed.</p></div>}
                 />
 
                 <AddUserInput 
@@ -96,8 +97,8 @@ const AddNewUser = ({ users, setUsers, openAddUserModal, setShowOverlay, editAUs
                     setFocus={() => setLastNameFocus(true)}
                     setBlur={() => setFirstNameFocus(false)}
                     isValid={validLastName}
-                    instructionMsg={<p>4 to 24 characters.<br />
-                    Numbers, underscores, hyphens are NOT allowed.</p>}
+                    instructionMsg={<div className="input_error_txt"><span className="error_icon">{errorIcon}</span><p>3 to 24 characters.<br />
+                    Only letters are allowed.</p></div>}
                 />
 
                 </div>
@@ -112,8 +113,7 @@ const AddNewUser = ({ users, setUsers, openAddUserModal, setShowOverlay, editAUs
                     setFocus={() => setUserNameFocus(true)}
                     setBlur={() => setUserNameFocus(false)}
                     isValid={validUserName}
-                    instructionMsg={<p>4 to 24 characters.<br />
-                    Letters, numbers, underscores, hyphens are allowed.</p>}
+                    instructionMsg={<div className="input_error_txt"><span className="error_icon">{errorIcon}</span><p>3 to 24 characters. Only letters, numbers, underscores, hyphens are allowed.</p></div>}
                 />
 
                 <AddUserInput 
@@ -126,7 +126,7 @@ const AddNewUser = ({ users, setUsers, openAddUserModal, setShowOverlay, editAUs
                     setFocus={() => setEmailFocus(true)}
                     setBlur={() => setEmailFocus(false)}
                     isValid={validEmail}
-                    instructionMsg={<p>Must include "@example.com".</p>}
+                    instructionMsg={<div className="email_input_error_txt"><span className="error_icon">{errorIcon}</span><p>Email must include "@example.com".</p></div>}
                 />
 
                 <div className="user_role_dropdown">
@@ -135,7 +135,7 @@ const AddNewUser = ({ users, setUsers, openAddUserModal, setShowOverlay, editAUs
                     <p className={"label_txt"}>Assign Role <span className="required">*</span></p>
 
                     <button className="user_role" onClick={(e) => roleDropdown(e)}> 
-                        <p>{userRole}</p>
+                        <p>{userRole ? userRole : "Assign user Role"}</p>
                         {arrowdown}
                     </button>
                 </div>
@@ -184,9 +184,10 @@ const AddNewUser = ({ users, setUsers, openAddUserModal, setShowOverlay, editAUs
                         w100={"w100"}
                         inputState={phoneNo}
                         setInputState={setPhoneNo}
-                        // setFocus={() => setPhoneNoFocus(true)}
-                        // setBlur={() => setPhoneNoFocus(false)}
+                        setFocus={() => setPhoneNoFocus(true)}
+                        setBlur={() => setPhoneNoFocus(false)}
                         isValid={validPhoneNo}
+                        instructionMsg={<div className="input_error_txt"><span className="error_icon">{errorIcon}</span><p>Only numbers are allowed.</p></div>}
                     />
 
                     <AddUserInput 
@@ -203,8 +204,10 @@ const AddNewUser = ({ users, setUsers, openAddUserModal, setShowOverlay, editAUs
 
                 </div>
 
+                {/* <button disabled={isSubmitDisabled} className="add_user_submit" style={{background: isSubmitDisabled ? "#ABABAB" : "#6C63FF"}} onSubmit={(e) => e.preventDefault()} onClick={() => submitUser()}>{editAUser ? "Edit user" : "Add User"}</button> */}
 
-                <button disabled={!validFirstName || !validLastName || !validUserName || !validEmail || !validWage || !validAge || !validPhoneNo || !validWorkingHours ? true : false} className="add_user_submit" onSubmit={(e) => e.preventDefault()} onClick={(e) => submitUser(e)}>{editAUser ? "Edit user" : "Add User"}</button>
+
+                <button disabled={isSubmitDisabled} className="add_user_submit" style={{background: isSubmitDisabled ? "#ABABAB" : "#6C63FF", cursor: isSubmitDisabled ? "default" : "pointer"}} onSubmit={(e) => e.preventDefault()} onClick={() => submitUser()}>{editAUser ? "Edit user" : "Add User"}</button>
 
                 <p className="requird_note">"<span className="required">*</span>" indicates the input field must be filled</p>
 

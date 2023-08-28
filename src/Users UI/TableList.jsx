@@ -1,11 +1,12 @@
 import { useEffect, useRef } from "react"
-import moreoptionsIcon from "../../public/images/moreoptionsIcon"
-import edituserIcon from "../../public/images/edituserIcon"
-import timeIcon from "../../public/images/timeIcon"
-import trashIcon from "../../public/images/trashIcon"
+import moreoptionsIcon from "../../public/images/moreoptionsIcon";
+import edituserIcon from "../../public/images/edituserIcon";
+import timeIcon from "../../public/images/timeIcon";
+import trashIcon from "../../public/images/trashIcon";
+import restoreIcon from "../../public/images/restoreIcon";
 
 
-const TableList = ({ user, handleIndividualUser, clickedOptionsIcon, showUserOptions, setShowUserOptions, theUserID, editUser, clickedOnDeleteUser, archiveAUser }) => {
+const TableList = ({ user, handleIndividualUser, clickedOptionsIcon, showUserOptions, setShowUserOptions, theUserID, editUser, clickedOnDeleteUser, archiveAUser, restoreAUser, activeUserTab }) => {
 
   const moreOptionsBtnRef = useRef(null);
 
@@ -76,17 +77,22 @@ const TableList = ({ user, handleIndividualUser, clickedOptionsIcon, showUserOpt
 
                 <div className="edit_delete_user_options">
 
-                  <div className="edit_user" onClick={editUser}>
+                  <div className="edit_user" style={{display: activeUserTab === 2 || activeUserTab === 3 ? "none" : "flex"}} onClick={editUser}>
                     {edituserIcon}
                     <p className="edit_user_txt">Edit</p>
                   </div>
 
-                  <div className="edit_user" onClick={archiveAUser}>
+                  <div className="edit_user" style={{display: activeUserTab === 0 ? "none" : "flex"}} onClick={restoreAUser}>
+                    <div className="actions_icon restore_icon">{restoreIcon}</div>
+                    <p className="edit_user_txt">Restore</p>
+                  </div>
+
+                  <div className="edit_user" style={{display: activeUserTab === 2 ? "none" : "flex"}} onClick={archiveAUser}>
                     {timeIcon}
                     <p className="edit_user_txt">Archive</p>
                   </div>
 
-                  <div className="delete_user" onClick={clickedOnDeleteUser}>
+                  <div className="delete_user" style={{display: activeUserTab === 3 ? "none" : "flex"}} onClick={clickedOnDeleteUser}>
                     {trashIcon}
                     <p className="delete_user_txt">Delete</p>
                   </div>

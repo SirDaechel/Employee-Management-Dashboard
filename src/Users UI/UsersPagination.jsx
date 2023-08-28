@@ -1,32 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import doubleftarrow from "../../public/images/doubleleftarrow"
 import doublerightarrow from "../../public/images/doublerightarrow"
 
-const UsersPagination = ({ totalUsers, totalArchivedUsers, totalDeletedUsers, usersPerPage, paginate, activeUserTab, currentPage, setCurrentPage, paginateNumRef }) => {
-
-  //----------------------------- SET PAGINATION ACCORDING TO THE OPENED TAB -----------------------------//
-
-  const pageNumbers = [];
-
-  if(activeUserTab === 0) {
-    
-    for(let i = 1; i <= Math.ceil(totalUsers / usersPerPage); i++) {
-      pageNumbers.push(i);
-    }
-    
-  } else if(activeUserTab === 2) {
-
-    for(let i = 1; i <= Math.ceil(totalArchivedUsers / usersPerPage); i++) {
-      pageNumbers.push(i);
-    }
-    
-  } else if(activeUserTab === 3) {
-
-    for(let i = 1; i <= Math.ceil(totalDeletedUsers / usersPerPage); i++) {
-      pageNumbers.push(i);
-    }
-    
-  }
+const UsersPagination = ({ totalUsers, totalArchivedUsers, totalDeletedUsers, usersPerPage, paginate, activeUserTab, currentPage, setCurrentPage, paginateNumRef, pageNumbers }) => {
+  
 
   //----------------------------------- WHILE IN THE MAIN USERS TAB ------------------------------//
 

@@ -6,7 +6,7 @@ import trashIcon from "../../public/images/trashIcon";
 import mailIcon from "../../public/images/mailIcon";
 import restoreIcon from "../../public/images/restoreIcon";
 
-const UserShowResult = ({ users, setUsers, archivedUsers, setArchivedUsers, currentUsers, usersPerPage, setUsersPerPage, showUsersPerPageDropdown, setShowUserPerPageDropdown, dropdownRef, actionsDropdownRef, deletedUsers, setDeletedUsers, checkedUsers, setCheckedUsers, activeUserTab, setActiveUserTab, setUsersAfterFilteringArchived, usersAfterFilteringDeleted, setUsersAfterFilteringDeleted, currentArchivedUsers, currentDeletedUsers }) => {
+const UserShowResult = ({ users, setUsers, archivedUsers, setArchivedUsers, currentUsers, usersPerPage, setUsersPerPage, showUsersPerPageDropdown, setShowUserPerPageDropdown, dropdownRef, actionsDropdownRef, deletedUsers, setDeletedUsers, checkedUsers, setCheckedUsers, activeUserTab, setActiveUserTab, setUsersAfterFilteringArchived, usersAfterFilteringDeleted, setUsersAfterFilteringDeleted, currentArchivedUsers, currentDeletedUsers, currentPage, setCurrentPage, pageNumbers }) => {
 
     const [showActions, setShowActions] = useState(false);
     const [showActionsError, setShowActionsError] = useState(false);
@@ -26,6 +26,15 @@ const UserShowResult = ({ users, setUsers, archivedUsers, setArchivedUsers, curr
             const setCheckedToFalse = filteredFromArchivedUsers.map((user) => ({...user, checked: false}));
             setArchivedUsers(setCheckedToFalse);
 
+            if(currentPage === pageNumbers.length) {
+
+              pageNumbers.pop();
+              setCurrentPage(currentPage - 1);
+  
+            }
+
+            setShowActions(false);
+
         } else if(activeUserTab === 3) {
 
             const checkedDeletedUsers = currentDeletedUsers.filter((user) => user.checked);
@@ -35,6 +44,15 @@ const UserShowResult = ({ users, setUsers, archivedUsers, setArchivedUsers, curr
             const filteredFromArchivedUsers = deletedUsers.filter(user => !checkedDeletedUsers.includes(user));
             const setCheckedToFalse = filteredFromArchivedUsers.map((user) => ({...user, checked: false}));
             setDeletedUsers(setCheckedToFalse);
+
+            if(currentPage === pageNumbers.length) {
+
+              pageNumbers.pop();
+              setCurrentPage(currentPage - 1);
+  
+            }
+
+            setShowActions(false);
             
         };
 
@@ -42,37 +60,106 @@ const UserShowResult = ({ users, setUsers, archivedUsers, setArchivedUsers, curr
 
     const archiveSelectedUsers = () => {
 
-        //archive checked users
-        const archived = currentUsers.filter((user) => user.checked);
-        setArchivedUsers([...archivedUsers, ...archived.map((user) => ({...user, checked: false}))]);
+        if(activeUserTab === 0) {
+            
+            //archive checked users
+            const archived = currentUsers.filter((user) => user.checked);
+            setArchivedUsers([...archivedUsers, ...archived.map((user) => ({...user, checked: false}))]);
+    
+            //remove archived users from users array
+            const filterArchivedUsersFromUsers = users.filter(user => !archived.includes(user));
+            setUsersAfterFilteringArchived(filterArchivedUsersFromUsers);
+            const setCheckedToFalse = filterArchivedUsersFromUsers.map((user) => ({...user, checked: false}));
+            setUsers(setCheckedToFalse);
 
-        //remove archived users from users array
-        const filterArchivedUsersFromUsers = users.filter(user => !archived.includes(user));
-        setUsersAfterFilteringArchived(filterArchivedUsersFromUsers);
-        const setCheckedToFalse = filterArchivedUsersFromUsers.map((user) => ({...user, checked: false}));
-        setUsers(setCheckedToFalse);
+            if(currentPage === pageNumbers.length) {
 
-        // setUsers(users.filter(user => !archived.includes(user)));
+              pageNumbers.pop();
+              setCurrentPage(currentPage - 1);
 
-        setShowActions(false);
+            }
+    
+            // setUsers(users.filter(user => !archived.includes(user)));
+    
+            setShowActions(false);
+
+        } else if(activeUserTab === 3) {
+
+            //archive checked users
+            const archived = currentDeletedUsers.filter((user) => user.checked);
+            setArchivedUsers([...archivedUsers, ...archived.map((user) => ({...user, checked: false}))]);
+    
+            //remove archived users from users array
+            const filterArchivedUsersFromUsers = deletedUsers.filter(user => !archived.includes(user));
+            setUsersAfterFilteringArchived(filterArchivedUsersFromUsers);
+            const setCheckedToFalse = filterArchivedUsersFromUsers.map((user) => ({...user, checked: false}));
+            setDeletedUsers(setCheckedToFalse);
+
+            if(currentPage === pageNumbers.length) {
+
+              pageNumbers.pop();
+              setCurrentPage(currentPage - 1);
+  
+            }
+    
+            // setUsers(users.filter(user => !archived.includes(user)));
+    
+            setShowActions(false);
+            
+        }
 
     };
 
     const deleteSelectedUsers = () => {
 
-        //archive checked users
-        const deleted = currentUsers.filter((user) => user.checked);
-        setDeletedUsers([...deletedUsers, ...deleted.map((user) => ({...user, checked: false}))]);
+        if(activeUserTab === 0) {
 
-        // remove archived users from users array
-        const filterDeletedUsersFromUsers = users.filter(user => !deleted.includes(user));
-        setUsersAfterFilteringDeleted(filterDeletedUsersFromUsers);
-        const setCheckedToFalse = filterDeletedUsersFromUsers.map((user) => ({...user, checked: false}));
-        setUsers(setCheckedToFalse);
+            //delete checked users
+            const deleted = currentUsers.filter((user) => user.checked);
+            setDeletedUsers([...deletedUsers, ...deleted.map((user) => ({...user, checked: false}))]);
 
-        // setUsers(users.filter(user => !deleted.includes(user)));
+            // remove deleted users from users array
+            const filterDeletedUsersFromUsers = users.filter(user => !deleted.includes(user));
+            setUsersAfterFilteringDeleted(filterDeletedUsersFromUsers);
+            const setCheckedToFalse = filterDeletedUsersFromUsers.map((user) => ({...user, checked: false}));
+            setUsers(setCheckedToFalse);
 
-        setShowActions(false);
+            if(currentPage === pageNumbers.length) {
+
+              pageNumbers.pop();
+              setCurrentPage(currentPage - 1);
+    
+            }
+
+            // setUsers(users.filter(user => !deleted.includes(user)));
+
+            setShowActions(false);
+
+
+        } else if(activeUserTab === 2) {
+
+            //delete checked users
+            const deleted = currentArchivedUsers.filter((user) => user.checked);
+            setDeletedUsers([...deletedUsers, ...deleted.map((user) => ({...user, checked: false}))]);
+
+            // remove deleted users from users array
+            const filterDeletedUsersFromUsers = archivedUsers.filter(user => !deleted.includes(user));
+            setUsersAfterFilteringDeleted(filterDeletedUsersFromUsers);
+            const setCheckedToFalse = filterDeletedUsersFromUsers.map((user) => ({...user, checked: false}));
+            setArchivedUsers(setCheckedToFalse);
+
+            if(currentPage === pageNumbers.length) {
+
+              pageNumbers.pop();
+              setCurrentPage(currentPage - 1);
+    
+            }
+
+            // setUsers(users.filter(user => !deleted.includes(user)));
+
+            setShowActions(false);
+
+        }
 
     };
 
@@ -179,14 +266,14 @@ const UserShowResult = ({ users, setUsers, archivedUsers, setArchivedUsers, curr
                             <p>Restore all</p>
                           </li>
 
-                          <li className="actions_dropdown_item" onClick={archiveSelectedUsers}>
+                          <li className="actions_dropdown_item" style={{display: activeUserTab === 2 ? "none" : "flex"}} onClick={archiveSelectedUsers}>
                             <div className="actions_icon">{timeIcon}</div>
                             <p>Archive all</p>
                           </li>
 
                           {/* <i class='bx bx-refresh'></i> */}
 
-                          <li className="actions_dropdown_item" onClick={deleteSelectedUsers}>
+                          <li className="actions_dropdown_item" style={{display: activeUserTab === 3 ? "none" : "flex"}} onClick={deleteSelectedUsers}>
                             <div className="actions_icon">{trashIcon}</div>
                             <p>Delete all</p>
                           </li>
