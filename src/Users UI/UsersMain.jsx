@@ -4,6 +4,8 @@ import UsersTable from "./UsersTable";
 import UserShowResult from "./UsersShowResult";
 import UsersPagination from "./UsersPagination";
 import AddNewUser from "./AddNewUser"
+import AdminProfilePic from "../adminProfilePic";
+import { Route, Routes } from 'react-router-dom';
 
 
 const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, paginate, archivedUsers, setArchivedUsers, setUsersPerPage, deletedUsers, setDeletedUsers, currentArchivedUsers, currentDeletedUsers, totalArchivedUsers, totalDeletedUsers, currentPage, setCurrentPage, paginateNumRef }) => {
@@ -524,7 +526,11 @@ const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, pa
 
         <div className="add_user_modal_overlay" style={{display: showOverlay ? "block" : "none"}}></div>
 
-        <p className="breadcrumb">Home / <span className='order_breadcrumb_text'>Users</span></p>
+        {/* <p className="breadcrumb">Home / <span className='order_breadcrumb_text'>Users</span></p> */}
+
+        <AdminProfilePic 
+          topmargin={"1.1rem"}
+        />
 
         <AddNewUser
           users={users}
@@ -590,7 +596,7 @@ const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, pa
 
         <div className="tabs">
             <div className={`all_users tabchange ${activeUserTab === 0 ? "active_user_tab" : ""}`} onClick={() => handleUserTabChange(0)}>
-                <p className="tabchange_txt">All Users</p>
+                <p className="tabchange_txt">All Staffs</p>
                 <span className={`tab_number ${activeUserTab === 0 ? "active_tabNo" : ""}`}>{users.length}</span>
             </div>
 

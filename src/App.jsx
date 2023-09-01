@@ -1,7 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 import api from './api/users'
-import Sidebar from './Users UI/SideBar';
+import Sidebar from './MainSideBar/SideBar';
 import UsersMain from './Users UI/UsersMain';
+import OverviewMain from './Overview UI/OverviewMain'
+import NotificationsMain from './Notifications UI/NotificationMain'
+import ProjectsMain from './Projects UI/ProjectsMain'
+import SettingsMain from './SettingsUI/SettingsMain'
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
 
@@ -59,32 +64,45 @@ function App() {
 
   return (
 
-    <main>
+    <Routes>
 
-      <Sidebar />
+      <Route path='/' element={<Sidebar />}>
 
-      <UsersMain 
-        users={users}
-        currentUsers={currentUsers}
-        setUsers={setUsers}
-        usersPerPage={usersPerPage}
-        setUsersPerPage={setUsersPerPage}
-        totalUsers={users.length}
-        totalArchivedUsers={archivedUsers.length}
-        totalDeletedUsers={deletedUsers.length}
-        paginate={paginate}
-        archivedUsers={archivedUsers}
-        setArchivedUsers={setArchivedUsers}
-        deletedUsers={deletedUsers}
-        setDeletedUsers={setDeletedUsers}
-        currentArchivedUsers={currentArchivedUsers}
-        currentDeletedUsers={currentDeletedUsers}
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-        paginateNumRef={paginateNumRef}
-      />
-      
-    </main>
+        <Route index element={<OverviewMain 
+          users={users}
+          setUsers={setUsers}
+        />} />
+
+        <Route path='staffs' element={<UsersMain 
+          users={users}
+          currentUsers={currentUsers}
+          setUsers={setUsers}
+          usersPerPage={usersPerPage}
+          setUsersPerPage={setUsersPerPage}
+          totalUsers={users.length}
+          totalArchivedUsers={archivedUsers.length}
+          totalDeletedUsers={deletedUsers.length}
+          paginate={paginate}
+          archivedUsers={archivedUsers}
+          setArchivedUsers={setArchivedUsers}
+          deletedUsers={deletedUsers}
+          setDeletedUsers={setDeletedUsers}
+          currentArchivedUsers={currentArchivedUsers}
+          currentDeletedUsers={currentDeletedUsers}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          paginateNumRef={paginateNumRef}
+        />} />
+
+        <Route path='notifications' element={<NotificationsMain />} />
+
+        <Route path='projects' element={<ProjectsMain />} />
+
+        <Route path='settings' element={<SettingsMain />} />
+        
+      </Route>
+
+    </Routes>
 
   )
 }

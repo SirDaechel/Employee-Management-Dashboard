@@ -141,6 +141,7 @@ const AddNewUser = ({ users, setUsers, openAddUserModal, setShowOverlay, editAUs
                 </div>
 
                 {showRoleDropdown ? <RoleDropdown 
+                    users={users}
                     userRole={userRole}
                     setUserRole={setUserRole}
                     setShowRoleDropdown={setShowRoleDropdown}

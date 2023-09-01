@@ -1,0 +1,1 @@
+export default <i className='bx bx-left-arrow-circle'></i>
