@@ -4,7 +4,7 @@ import UsersTable from "./UsersTable";
 import UserShowResult from "./UsersShowResult";
 import UsersPagination from "./UsersPagination";
 import AddNewUser from "./AddNewUser"
-import AdminProfilePic from "../adminProfilePic";
+import TopNav from "../TopNav";
 import { Route, Routes } from 'react-router-dom';
 
 
@@ -510,7 +510,7 @@ const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, pa
 
   return (
 
-    <div className="content">
+    <section className="content">
 
       {/* confirm delete */}
 
@@ -528,9 +528,7 @@ const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, pa
 
         {/* <p className="breadcrumb">Home / <span className='order_breadcrumb_text'>Users</span></p> */}
 
-        <AdminProfilePic 
-          topmargin={"1.1rem"}
-        />
+        <TopNav />
 
         <AddNewUser
           users={users}
@@ -724,7 +722,7 @@ const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, pa
 
         ) : null}
 
-    </div>
+    </section>
   )
 }
 

@@ -20,7 +20,7 @@ html {
 }
 
 body {
-  background-color: #F7F8FA;
+  background-color: #f5f5f5;
   font-family: 'Open Sans', sans-serif;
   margin: 0;
 }
@@ -56,6 +56,12 @@ main {
   background: #FFF;
   overflow: hidden;
   position: relative;
+}
+
+.content {
+  padding: 0 1rem 2.1rem 0.125rem;
+  width: 87%;
+  overflow-x: hidden;
 }
 
 .sidebartabs {
@@ -99,18 +105,6 @@ main {
   border-radius: 6px;
   color: #FFFFFF;
   background-color: #6C63FF;
-}
-
-.content {
-  padding: 0 1rem 2.1rem 0.125rem;
-  width: 87%;
-  overflow: hidden;
-}
-
-.content2 {
-  padding: 0 1rem 2.1rem .7rem;
-  width: 87%;
-  overflow: hidden;
 }
 
 .breadcrumb {
@@ -1039,11 +1033,53 @@ th {
 
 /*************************************** DASHBOARD UI ***************************************/
 
-.usermain {
+.top_nav {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
+}
+
+.top_nav_utilities {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.user_profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: .7rem;
+}
+
+.notifications {
+  position: relative;
+  cursor: pointer;
+}
+
+.notification_icon,
+.dark_light_mode {
+  font-size: 1.4rem;
+  color: #555;
+  cursor: pointer;
+}
+
+.number_of_notifications {
+  position: absolute;
+  width: .5rem;
+  height: .5rem;
+  background-color: #ff3535;
+  padding: .6rem;
+  border-radius: 50%;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: .7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: -35%;
+  top: -35%;
 }
 
 .user_photo {
@@ -1081,29 +1117,240 @@ th {
 .dashboard_greeting {
   font-family: 'Poppins', sans-serif;
   color: #272727;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
 }
 
 .dashboard_date {
   font-family: 'Poppins', sans-serif;
-  font-size: .78rem;
+  font-size: .68rem;
   color: #888888;
   font-weight: 600;
 }
 
-.staffs_by_number {
+.main_overview_content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+
+.project_metrics {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.metric_cont {
+  background-color: #FFF;
+  padding: 1rem;
+  width: 16rem;
+  border-radius: 3px;
+}
+
+.metric_cont:hover {
+  scale: 1.02;
+  transition: .3s;
+}
+
+
+.metric_cont_top_txt {
+  font-size: .85rem;
+}
+
+.metric_cont_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.3rem;
+}
+
+.metric_cont_spend {
+  font-size: 1.56rem;
+  font-weight: 500;
+  margin-bottom: .6rem;
+}
+
+.metric_cont_percentage {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: .3rem;
+}
+
+.percentage_txt_arrow {
+  display: flex;
+  border-radius: 3px;
+  padding: .3rem .3rem .3rem 0;
+}
+
+.percentage_txt,
+.percentage_arrow {
+  font-size: .8rem;
+  color: #272727;
+  font-weight: 600;
+}
+
+.percentage_txt_month {
+  font-size: .8rem;
+  font-weight: 500;
+}
+
+/****************************** SECOND LEVEL OF THE DASHBOARD/OVERVIEW CONTENT ************************/
+
+.second_lvl_overview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chart_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.chart_title {
+  font-size: .9rem;
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.time_frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+}
+
+.time_frame_txt {
+  font-size: .8rem;
+  font-weight: 600;
+  background-color: #EAEDF7;
+  padding: .3rem;
+  color: #7091D8;
+  cursor: pointer;
+}
+
+.time_frame_txt:hover {
+  background-color: #6C63FF;
+  color: #fff;
+  transition: .3s;
+}
+
+.profit_colour_main,
+.expense_colour_main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+}
+
+.profit_label_colour {
+  width: 1rem;
+  height: 1rem;
+  background-color: #6C63FF;
+}
+
+.profit_label_txt,
+.expense_label_txt {
+  color: #7e7e7e;
+}
+
+.expense_label_colour {
+  width: 1rem;
+  height: 1rem;
+  background-color: #F7B84B;
+}
+
+.chart_colour_labels {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.doughnut_chart {
+  position: relative;
+  width: 25rem;
+  height: 33rem; 
+  background: #FFF; 
+  border-radius: 3px; 
+  padding: 1rem; 
+  overflow-y: scroll;
+}
+
+.doughnut_chart::-webkit-scrollbar {
+  width: 10px;
+}
+
+.doughnut_chart::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 8px;
+}
+
+.doughnut_chart::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.total_staff {
+  position: absolute;
+  top: 46%;
+  left: 53%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.roles_for_pie {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: .8rem;
+}
+
+.role_for_pie_data {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .2rem;
+}
+
+.roles_for_pie_colour {
+  width: 1rem;
+  height: 1rem;
+}
+
+.roles_for_pie_txt {
+  font-size: .71rem;
+  border-radius: 2px;
+  color: #7e7e7e;
+}
+
+/* .second_lvl_overview_first_half {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} */
+
+/* .staffs_by_number {
   background-color: #fff;
   padding: 1.2rem 1rem;
-  width: 16rem;
-  height: 18rem;
-  margin-top: 3rem;
-  border-radius: 12px;
+  width: 15.5rem;
+  height: 16rem;
+  /* margin-top: 3rem; */
+  /* border-radius: 12px;
   overflow: hidden;
-  position: relative;
-  margin-left: .7rem;
-  scale: 1.1;
-}
+  position: relative; */
+  /* scale: 1.1; */
+/* }
 
 .staffs_by_number_title {
   font-family: 'Poppins', sans-serif;
@@ -1117,53 +1364,53 @@ th {
   flex-direction: column;
   justify-content: center;
   gap: .6rem;
-  margin-top: 1.4rem;
-}
+  margin-top: 1rem;
+} */ */
 
-.staff_row_total_users_data {
+/* .staff_row_total_users_data {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: .9rem;
+  margin-top: .7rem;
 }
 
 .staff_row_total_users_txt,
 .staff_row_total_users_no {
-  font-size: .85rem;
+  font-size: .82rem;
   color: #272727;
   font-weight: 600;
 }
 
 .staff_row_total_users_no {
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 1.35rem;
+  height: 1.35rem;
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
 /* .staff_row_total_users_data {
   color: #272727;
 } */
 
-.staff_row_sn {
-  width: 1.6rem;
-  height: 1.6rem;
+/* .staff_row_sn {
+  width: 1.35rem;
+  height: 1.35rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 600;
   color: #272727;
-  font-size: .8rem;
-}
+  font-size: .79rem;
+} */
 
-.staff_row {
+/* .staff_row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   /* cursor: pointer; */
-}
+/* }
 
 .staff_row_data {
   display: flex;
@@ -1174,36 +1421,36 @@ th {
 
 .staff_row_txt {
   color: #272727;
-  font-size: .77rem;
-}
+  font-size: .79rem;
+} */
 
 .dept_summary_icon {
   color: #272727;
-  font-size: .96rem;
+  font-size: .85rem;
   cursor: pointer;
 }
 
 .next_prev_dept_summary {
   display: flex;
   align-items: center;
-  gap: 10.6rem;
+  gap: 10rem;
   position: absolute;
-  bottom: 3%;
-  left: 6%;
+  bottom: 4%;
+  left: 5.7%;
 }
 
-.staff_row_view_more_btn {
+/* .staff_row_view_more_btn {
   background: transparent;
   display: flex;
   justify-content: center;
   color: #57575a;
   font-weight: 600;
-  font-size: 1.7rem;
+  font-size: 1.9rem;
 }
 
 .staff_row_view_more_btn:hover {
   transition: .3s;
-}
+} */
 
 
 .total_row_txt_icon {
@@ -1225,24 +1472,14 @@ th {
 }
 
 
-.main_overview_content {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 4rem;
-}
-
 .project_summary {
   background-color: #FFF;
   padding: 1.2rem 1rem;
-  width: 23rem;
-  height: 18rem;
-  margin-top: 3rem;
+  width: 18rem;
+  height: 16rem;
+  /* margin-top: 3rem; */
   border-radius: 12px;
   overflow: hidden;
-  position: relative;
-  margin-left: .7rem;
-  scale: 1.1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1251,33 +1488,33 @@ th {
 .project_summary_title {
   font-family: 'Poppins', sans-serif;
   color: #272727;
-  font-size: .85rem;
+  font-size: .8rem;
   font-weight: 600;
 }
 
 .project_numbers {
   display: flex;
   justify-content: flex-start;
-  gap: .3rem;
+  gap: .2rem;
   align-items: center;
 }
 
 .all_projects_completed,
 .all_projects {
   font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 1.9rem;
+  font-weight: 600;
+  font-size: 1.55rem;
   color: #272727;
 }
 
 .all_projects_txt {
-  font-size: .7rem;
+  font-size: .58rem;
   font-weight: 600;
 }
 
 .all_projects_line {
   color: #272727;
-  font-size: 1.8rem;
+  font-size: 2.3rem;
 }
 
 .projects_columns {
@@ -1287,10 +1524,10 @@ th {
 }
 
 .project_col {
-  width: 4.6rem;
-  height: 7rem;
+  width: 3.5rem;
+  height: 5.5rem;
   background-color: #FAE392;
-  border-radius: 8px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1311,7 +1548,7 @@ th {
 }
 
 .project_col_no {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: #272727;
   font-weight: 700;
   font-family: 'Open Sans', sans-serif;
@@ -1324,6 +1561,100 @@ th {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
+
+.activity_cont {
+  background-color: #fff;
+  width: 18rem;
+  height: 21rem;
+  /* margin-top: 3rem; */
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.activity_feed {
+  font-size: .8rem;
+  padding: .2rem 1rem 1.2rem 1rem;
+  overflow: hidden;
+  height: 17rem;
+}
+
+.activity_feed:hover {
+  overflow-y: scroll;
+}
+
+.activity_feed::-webkit-scrollbar {
+  width: 7px;
+}
+
+.activity_feed::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 8px;
+}
+
+.activity_feed::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.activity_title {
+  font-family: 'Poppins', sans-serif;
+  color: #272727;
+  font-size: .8rem;
+  font-weight: 600;
+  width: 100%;
+  background-color: #FFF;
+  padding: 1.2rem 1rem .7rem 1rem;
+}
+
+.activity_data {
+  display: flex;
+  flex-direction: column;
+  gap: .9rem;
+  margin-bottom: 1rem;
+}
+
+.activity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .9rem;
+}
+
+.activity_avatar {
+  min-width: 2rem;
+  height:2rem;
+  border-radius: 50%;
+  border: 1px solid #6C63FF;
+  /* border: 1px solid #6b63ffc2; */
+}
+
+.activity_txt {
+  font-size: .658rem;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  color: #272727;
+}
+
+.acivity_time {
+  font-size: .75rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.feed_day {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  margin-bottom: .5rem;
+  font-size: .795rem;
+}
+
+.third_lvl_overview {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+
 
 /* font-family: 'Roboto', sans-serif; */
 /* font-family: 'Open Sans', sans-serif; */

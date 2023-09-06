@@ -14,7 +14,8 @@
         "wage": "15000",
         "workinghours": "40",
         "age": "28",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#6b63ffc2"
       },
 
       {
@@ -29,7 +30,8 @@
         "wage": "12000",
         "workinghours": "35",
         "age": "25",
-        "checked": false
+        "checked": false,
+        "chartcolour": "red"
       },
 
       {
@@ -44,7 +46,8 @@
         "wage": "17000",
         "workinghours": "42",
         "age": "31",
-        "checked": false
+        "checked": false,
+        "chartcolour": "aqua"
       },
 
       {
@@ -59,7 +62,8 @@
         "wage": "18000",
         "workinghours": "38",
         "age": "29",
-        "checked": false
+        "checked": false,
+        "chartcolour": "orange"
       },
 
       {
@@ -74,7 +78,8 @@
         "wage": "16000",
         "workinghours": "40",
         "age": "32",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#FFA1F5"
       },
 
       {
@@ -89,7 +94,8 @@
         "wage": "14000",
         "workinghours": "35",
         "age": "26",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#016A70"
       },
 
       {
@@ -104,7 +110,8 @@
         "wage": "13000",
         "workinghours": "30",
         "age": "27",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#D2DE32"
       },
 
       {
@@ -119,7 +126,8 @@
         "wage": "12500",
         "workinghours": "35",
         "age": "24",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#6b63ffc2"
       },
 
       {
@@ -134,7 +142,8 @@
         "wage": "15500",
         "workinghours": "40",
         "age": "30",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#D2DE32"
       },
 
       {
@@ -149,7 +158,8 @@
         "wage": "17000",
         "workinghours": "37",
         "age": "29",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#A73121"
       },
 
       {
@@ -164,7 +174,8 @@
         "wage": "18000",
         "workinghours": "40",
         "age": "28",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#96C291"
       },
 
       {
@@ -179,7 +190,8 @@
         "wage": "16000",
         "workinghours": "35",
         "age": "25",
-        "checked": false
+        "checked": false,
+        "chartcolour": "red"
       },
 
       {
@@ -194,7 +206,8 @@
         "wage": "20000",
         "workinghours": "42",
         "age": "31",
-        "checked": false
+        "checked": false,
+        "chartcolour": "aqua"
       },
 
       {
@@ -209,7 +222,8 @@
         "wage": "22000",
         "workinghours": "38",
         "age": "29",
-        "checked": false
+        "checked": false,
+        "chartcolour": "orange"
       },
 
       {
@@ -224,7 +238,8 @@
         "wage": "19000",
         "workinghours": "40",
         "age": "32",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#FFA1F5"
       },
 
       {
@@ -239,7 +254,8 @@
         "wage": "17000",
         "workinghours": "35",
         "age": "26",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#016A70"
       },
 
       {
@@ -254,7 +270,8 @@
         "wage": "15000",
         "workinghours": "30",
         "age": "27",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#D2DE32"
       },
 
       {
@@ -269,7 +286,8 @@
         "wage": "14000",
         "workinghours": "35",
         "age": "24",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#6b63ffc2"
       },
 
       {
@@ -284,7 +302,8 @@
         "wage": "18000",
         "workinghours": "40",
         "age": "30",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#5C5470"
       },
 
       {
@@ -299,7 +318,8 @@
         "wage": "17000",
         "workinghours": "37",
         "age": "29",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#A73121"
       },
 
       {
@@ -314,7 +334,8 @@
         "wage": "12000",
         "workinghours": "38.25",
         "age" : "30",
-        "checked" : false
+        "checked" : false,
+        "chartcolour": "#504099"
       },
 
       {
@@ -329,7 +350,8 @@
         "wage": "8500",
         "workinghours": "38",
         "age" : "39",
-        "checked" : false
+        "checked" : false,
+        "chartcolour": "#6b63ffc2"
       },
 
       {
@@ -344,7 +366,8 @@
         "wage": "12300",
         "workinghours": "40.25",
         "age" : "31",
-        "checked" : false
+        "checked" : false,
+        "chartcolour": "#900C3F"
       },
 
       {
@@ -359,7 +382,8 @@
         "wage": "10800",
         "workinghours": "37.75",
         "age" : "52",
-        "checked" : false
+        "checked" : false,
+        "chartcolour": "#DFCCFB"
       },
 
       {
@@ -374,7 +398,8 @@
         "wage": "10800",
         "workinghours": "39.75",
         "age" : "40",
-        "checked" : false
+        "checked" : false,
+        "chartcolour": "#96C291"
       },
 
       {
@@ -389,7 +414,8 @@
         "wage": "7800",
         "workinghours": "40.5",
         "age" : "55",
-        "checked" : false
+        "checked" : false,
+        "chartcolour": "#5C5470"
       },
 
       {
@@ -404,7 +430,8 @@
         "wage": "12000",
         "workinghours": "38.5",
         "age" : "61",
-        "checked" : false
+        "checked" : false,
+        "chartcolour": "#FFA1F5"
       },
 
       {
@@ -419,7 +446,8 @@
         "wage": "10900",
         "workinghours": "41.25",
         "age" : "39",
-        "checked" : false
+        "checked" : false,
+        "chartcolour": "#C8AE7D"
       },
 
       {
@@ -434,7 +462,8 @@
         "wage": "9300",
         "workinghours": "37.25",
         "age" : "63",
-        "checked" : false
+        "checked" : false,
+        "chartcolour": "#DFA878"
       },
 
       {
@@ -449,7 +478,8 @@
         "wage": "8600",
         "workinghours": "40.75",
         "age" : "48",
-        "checked" : false
+        "checked" : false,
+        "chartcolour": "#900C3F"
       },
 
       {
@@ -464,7 +494,8 @@
         "wage": "15000",
         "workinghours": "40",
         "age": "35",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#FFCACC"
       },
 
       {
@@ -479,7 +510,8 @@
         "wage": "12500",
         "workinghours": "35",
         "age": "28",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#9BCDD2"
       },
 
       {
@@ -494,7 +526,8 @@
         "wage": "14800",
         "workinghours": "38",
         "age": "42",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#C8AE7D"
       },
 
       {
@@ -509,7 +542,8 @@
         "wage": "13200",
         "workinghours": "37",
         "age": "31",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#EF6262"
       },
 
       {
@@ -524,7 +558,8 @@
         "wage": "14500",
         "workinghours": "40",
         "age": "29",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#9BCDD2"
       },
 
       {
@@ -539,7 +574,8 @@
         "wage": "16000",
         "workinghours": "40",
         "age": "37",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#016A70"
       },
 
       {
@@ -554,7 +590,8 @@
         "wage": "12800",
         "workinghours": "35",
         "age": "26",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#F1C93B"
       },
 
       {
@@ -569,7 +606,8 @@
         "wage": "13500",
         "workinghours": "38",
         "age": "34",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#EF6262"
       },
 
       {
@@ -584,7 +622,8 @@
         "wage": "15200",
         "workinghours": "40",
         "age": "39",
-        "checked": false
+        "checked": false,
+        "chartcolour": "orange"
       },
 
       {
@@ -599,7 +638,8 @@
         "wage": "14000",
         "workinghours": "37",
         "age": "30",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#C8AE7D"
       },
 
       {
@@ -614,7 +654,8 @@
         "wage": "13800",
         "workinghours": "38",
         "age": "33",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#C8AE7D"
       },
 
       {
@@ -629,7 +670,8 @@
         "wage": "14800",
         "workinghours": "40",
         "age": "27",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#4A55A2"
       },
 
       {
@@ -644,7 +686,8 @@
         "wage": "15500",
         "workinghours": "40",
         "age": "36",
-        "checked": false
+        "checked": false,
+        "chartcolour": "red"
       },
 
       {
@@ -659,7 +702,8 @@
         "wage": "13700",
         "workinghours": "35",
         "age": "29",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#EF6262"
       },
 
       {
@@ -674,7 +718,8 @@
         "wage": "14200",
         "workinghours": "40",
         "age": "32",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#F1C93B"
       },
 
       {
@@ -689,7 +734,8 @@
         "wage": "13000",
         "workinghours": "37",
         "age": "28",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#A2FF86"
       },
 
       {
@@ -704,7 +750,8 @@
         "wage": "15300",
         "workinghours": "38",
         "age": "33",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#898121"
       },
 
       {
@@ -719,7 +766,8 @@
         "wage": "14600",
         "workinghours": "40",
         "age": "30",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#F1C93B"
       },
 
       {
@@ -734,7 +782,8 @@
         "wage": "13900",
         "workinghours": "37",
         "age": "29",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#A2FF86"
       },
 
       {
@@ -749,7 +798,8 @@
         "wage": "12800",
         "workinghours": "35",
         "age": "26",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#FFCACC"
       },
 
       {
@@ -764,7 +814,8 @@
         "wage": "15800",
         "workinghours": "40",
         "age": "34",
-        "checked": false
+        "checked": false,
+        "chartcolour": "red"
       },
 
       {
@@ -779,7 +830,8 @@
         "wage": "14300",
         "workinghours": "38",
         "age": "31",
-        "checked": false
+        "checked": false,
+        "chartcolour": "aqua"
       },
 
       {
@@ -794,7 +846,8 @@
         "wage": "15500",
         "workinghours": "40",
         "age": "33",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#4A55A2"
       },
 
       {
@@ -809,7 +862,8 @@
         "wage": "12500",
         "workinghours": "35",
         "age": "27",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#900C3F"
       },
 
       {
@@ -824,7 +878,8 @@
         "wage": "13700",
         "workinghours": "37",
         "age": "29",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#DFA878"
       },
 
       {
@@ -839,7 +894,8 @@
         "wage": "14200",
         "workinghours": "40",
         "age": "31",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#504099"
       },
 
       {
@@ -854,7 +910,8 @@
         "wage": "15100",
         "workinghours": "38",
         "age": "32",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#898121"
       },
 
       {
@@ -869,7 +926,8 @@
         "wage": "14900",
         "workinghours": "37",
         "age": "30",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#DFCCFB"
       },
 
       {
@@ -884,7 +942,8 @@
         "wage": "14300",
         "workinghours": "35",
         "age": "28",
-        "checked": false
+        "checked": false,
+        "chartcolour": "#DFCCFB"
       },
       
       {

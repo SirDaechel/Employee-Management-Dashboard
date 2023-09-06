@@ -1,0 +1,1 @@
+export default <i className='bx bx-up-arrow-alt'></i>

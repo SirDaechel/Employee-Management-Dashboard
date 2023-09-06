@@ -1,6 +1,13 @@
+import TopNav from "../TopNav"
+
 const NotificationMain = () => {
+
   return (
-    <div>NotificationMain</div>
+
+    <section className="content">
+        <TopNav />
+    </section>
+
   )
 }
 

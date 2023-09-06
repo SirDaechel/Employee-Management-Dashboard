@@ -1,59 +1,89 @@
 import { useState } from "react";
-import AdminProfilePic from "../adminProfilePic";
+import TopNav from "../TopNav";
 import DeptSummary from "./DeptSummary";
 import ProjectSummary from "./ProjectSummary";
+import RecentActivity from "./RecentActivity";
+import ProjectsMetricNo from "./ProjectsMetricNo";
+import arrowup2 from "../../public/images/arrowup2"
+import arrowdown2 from "../../public/images/arrowdown2"
+import LineChart from "./LineChart";
+import BarChart from "./BarChart";
+import HeadCountPieChart from "./HeadCountPieChart";
 
 const OverviewMain = ({ users }) => {
 
-  //greeting with respect to time of the day
-  const getGreeting = () => {
-
-    const currentTime = new Date().getHours();
-
-    if(currentTime >= 0 && currentTime < 12) {
-      return "Good morning, David!";
-    } else if(currentTime >= 12 && currentTime < 18) {
-      return "Good afternoon, David!"
-    } else{
-      return "Good evening, David!"
-    };
-
-  }
-
-  const greeting = getGreeting();
-
-  //get day and date
-  const formatDate = (date) => {
-
-    const options = { weekday: "long", day: "numeric", month: "long", year: "numeric" };
-    return new Date(date).toLocaleDateString("en-US", options);
-
-  };
-
-  const formattedDate = formatDate(Date.now());
-
   return (
     
-    <section className="content2">
+    <section className="content">
     
-      <div className="dashboard_header">
-
-        <div className="welcome_user">
-          <p className="dashboard_greeting">{greeting}</p>
-          <div className="dashboard_date">{formattedDate}</div>
-        </div>
-
-        <AdminProfilePic />
-
-      </div>
+      <TopNav />
 
       <div className="main_overview_content">
 
-        <DeptSummary 
-          users={users}
-        />
+        <div className="project_metrics">
 
-        <ProjectSummary />
+          <ProjectsMetricNo
+            topText={"Net spend per project"}
+            spend={"₦465.5k"}
+            percentage={"16.24%"}
+            arrow={arrowdown2}
+            percent={"red"}
+          />
+
+          <ProjectsMetricNo
+            topText={"Avg. income per project"}
+            spend={"₦924k"}
+            percentage={"4.76%"}
+            arrow={arrowup2}
+            percent={"green"}
+          />
+
+          <ProjectsMetricNo
+            topText={"Avg. spend per project"}
+            spend={"₦101.2k"}
+            percentage={"10.45%"}
+            arrow={arrowdown2}
+            percent={"red"}
+          />
+
+          <ProjectsMetricNo
+            topText={"Total stipend payments"}
+            spend={"₦189.67M"}
+            percentage={"6.91%"}
+            arrow={arrowup2}
+            percent={"green"}
+          />
+
+          
+
+        </div>
+
+
+        <div className="second_lvl_overview">
+
+            <BarChart />
+
+            <HeadCountPieChart 
+              users={users}
+            />
+
+            
+
+            {/* <ProjectSummary /> */}
+
+        </div>
+
+        <div className="third_lvl_overview">
+
+          {/* <DeptSummary 
+              users={users}
+            /> */}
+
+          {/* <RecentActivity /> */}
+
+          {/* <LineChart /> */}
+
+        </div>
 
       </div>
 
