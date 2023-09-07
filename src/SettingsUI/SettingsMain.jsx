@@ -1,7 +1,13 @@
 const SettingsMain = () => {
+
   return (
-    <div>SettingsMain</div>
+
+    <div>
+      
+    </div>
+
   )
+
 }
 
 export default SettingsMain

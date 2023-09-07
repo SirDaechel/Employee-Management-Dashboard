@@ -78,7 +78,7 @@ const TableTitle = ({ users, setUsers, handleSelectAll, isSelectAllChecked }) =>
     
       <>
 
-        <thead>
+        <thead className="users_table_title">
 
           <tr>
 

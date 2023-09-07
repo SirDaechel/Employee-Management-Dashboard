@@ -1,23 +1,27 @@
 import { useEffect, useRef, useState } from 'react'
 import api from './api/users'
-import Sidebar from './MainSideBar/SideBar';
+import projectapi from './api/projects'
+import notificationsapi from './api/notifications'
 import UsersMain from './Users UI/UsersMain';
 import OverviewMain from './Overview UI/OverviewMain'
-import NotificationsMain from './Notifications UI/NotificationMain'
 import ProjectsMain from './Projects UI/ProjectsMain'
 import SettingsMain from './SettingsUI/SettingsMain'
+import Messages from './Messages/Messages'
+import Layout from './Layout';
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
 
   const [users, setUsers] = useState([]);
+  const [projects, setProjects] = useState([]);
+  const [notifications, setNotifications] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [usersPerPage, setUsersPerPage] = useState(10);
   const [archivedUsers, setArchivedUsers] = useState([]);
   const [pendingUsers, setPendingUsers] = useState([]);
   const [deletedUsers, setDeletedUsers] = useState([]);
-  const paginateNumRef = useRef(null)
+  const paginateNumRef = useRef(null);
   
   //Get current users
   const endIndex = currentPage * usersPerPage;
@@ -29,6 +33,7 @@ function App() {
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
+
 
   useEffect(() => {
 
@@ -60,17 +65,86 @@ function App() {
 
     fetchUsers();
 
-  }, [])
+
+    //fetch projects
+
+    const fetchProjects = async () => {
+
+      try {
+        setLoading(true);
+        const response = await projectapi.get("/projects");
+        setProjects(response.data);
+        setLoading(false);
+      } catch (err) {
+
+        if(err.response) {
+
+          //Not in the 200 response range
+          console.log(err.response.data);
+          console.log(err.response.status);
+          console.log(err.response.header);
+
+        } else {
+
+          console.log(`Error: ${err.message}`);
+
+        }
+
+      };
+
+    }
+
+    fetchProjects();
+
+
+
+    //fetch notifications
+
+    const fetchNotifications = async () => {
+
+      try {
+        setLoading(true);
+        const response = await notificationsapi.get("/notifications");
+        setNotifications(response.data);
+        setLoading(false);
+      } catch (err) {
+
+        if(err.response) {
+
+          //Not in the 200 response range
+          console.log(err.response.data);
+          console.log(err.response.status);
+          console.log(err.response.header);
+
+        } else {
+
+          console.log(`Error: ${err.message}`);
+
+        }
+
+      };
+
+    }
+
+    fetchNotifications();
+    
+  }, []);
+
 
   return (
 
     <Routes>
 
-      <Route path='/' element={<Sidebar />}>
+      <Route path='/' element={<Layout 
+        notifications={notifications}
+        setNotifications={setNotifications}
+      />}>
 
         <Route index element={<OverviewMain 
           users={users}
-          setUsers={setUsers}
+          projects={projects}
+          notifications={notifications}
+          setNotifications={setNotifications}
         />} />
 
         <Route path='staffs' element={<UsersMain 
@@ -94,7 +168,7 @@ function App() {
           paginateNumRef={paginateNumRef}
         />} />
 
-        <Route path='notifications' element={<NotificationsMain />} />
+        <Route path='messages' element={<Messages />} />
 
         <Route path='projects' element={<ProjectsMain />} />
 

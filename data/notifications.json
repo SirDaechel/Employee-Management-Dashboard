@@ -1,0 +1,44 @@
+{
+
+    "notifications": [
+
+        {
+            "id": 1,
+            "image": "../../public/images/avatar (1).png",
+            "subject": "Chinedu Okoro",
+            "notification": "Deployed the latest software updates and patches to all employee workstations.",
+            "department": "Development Team",
+            "time": "Today"
+        },
+
+        {
+            "id": 2,
+            "image": "../../public/images/avatar (4).png",
+            "subject": "Chidinma Eze",
+            "notification": "Conducted a performance analysis of the company's website and recommended optimizations.",
+            "department": "Development Team",
+            "time": "Today"
+        },
+
+        {
+            "id": 3,
+            "image": "../../public/images/avatar (2).png",
+            "subject": "Elena Petrov",
+            "notification": "is requesting access to the Data Analytics Dashboard project",
+            "department": "Analytics Team",
+            "time": "Today",
+            "request": true
+        },
+
+        {
+            "id": 4,
+            "image": "../../public/images/avatar (7).png",
+            "subject": "Michael Williams",
+            "notification": "Upgraded CryptoFin Ltd. firewall and intrusion detection system to enhance security.",
+            "department": "Security Team",
+            "time": "Yesterday"
+        }
+
+    ]
+
+}

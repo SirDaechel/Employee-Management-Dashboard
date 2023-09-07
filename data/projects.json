@@ -1,0 +1,245 @@
+{
+
+    "projects": [
+
+       {
+        "id": 1,
+        "projectName": "CloudSprint",
+        "description": "Develop a cloud-based project management tool",
+        "deadline": "15-10-2023",
+        "status": "In Progress",
+        "assignedTo": "Development Team",
+        "priority": "High",
+        "technologyStack": ["React", "Node.js", "MongoDB"],
+        "client": "TechCorp Inc."
+       },
+       
+       {
+        "id": 2,
+        "projectName": "IoT Smart Home",
+        "description": "Create an IoT solution for home automation",
+        "deadline": "19-10-2023",
+        "status": "Completed",
+        "assignedTo": "IoT Team",
+        "priority": "Medium",
+        "technologyStack": ["Raspberry Pi", "Python", "MQTT"],
+        "client": "HomeTech Solutions"
+       },
+       
+       {
+        "id": 3,
+        "projectName": "E-commerce Platform",
+        "description": "Build a scalable e-commerce platform",
+        "deadline": "26-10-2023",
+        "status": "In Progress",
+        "assignedTo": "Product Team",
+        "priority": "High",
+        "technologyStack": ["Java", "Spring Boot", "MySQL"],
+        "client": "ShopSmart Inc."
+       },
+       
+       {
+        "id": 4,
+        "projectName": "AI Chatbot",
+        "description": "Develop a conversational AI chatbot",
+        "deadline": "1-11-2023",
+        "status": "In Progress",
+        "assignedTo": "AI Team",
+        "priority": "High",
+        "technologyStack": ["Python", "TensorFlow", "NLP"],
+        "client": "ChatGenius Ltd."
+       },
+       
+       {
+        "id": 5,
+        "projectName": "Mobile Payment App",
+        "description": "Create a secure mobile payment application",
+        "deadline": "10-11-2023",
+        "status": "Testing",
+        "assignedTo": "Mobile Team",
+        "priority": "High",
+        "technologyStack": ["Flutter", "Firebase", "Stripe API"],
+        "client": "PayEasy Inc."
+       },
+       
+       {
+        "id": 6,
+        "projectName": "Data Analytics Dashboard",
+        "description": "Build a data analytics dashboard for business insights",
+        "deadline": "21-11-2023",
+        "status": "Completed",
+        "assignedTo": "Analytics Team",
+        "priority": "Medium",
+        "technologyStack": ["D3.js", "Python", "Power BI"],
+        "client": "DataInsight Solutions"
+       },
+       
+       {
+        "id": 7,
+        "projectName": "Cybersecurity Audit",
+        "description": "Conduct a comprehensive cybersecurity audit",
+        "deadline": "31-11-2023",
+        "status": "Pending",
+        "assignedTo": "Security Team",
+        "priority": "High",
+        "technologyStack": ["Cybersecurity Tools"],
+        "client": "SecureTech Corp."
+       },
+       
+       {
+        "id": 8,
+        "projectName": "Blockchain Integration",
+        "description": "Integrate blockchain technology into existing systems",
+        "deadline": "2-12-2023",
+        "status": "Completed",
+        "assignedTo": "Blockchain Team",
+        "priority": "Medium",
+        "technologyStack": ["Ethereum", "Smart Contracts"],
+        "client": "CryptoFin Ltd."
+       },
+       
+       {
+        "id": 9,
+        "projectName": "Healthcare App",
+        "description": "Develop a healthcare app for patients and doctors",
+        "deadline": "7-12-2023",
+        "status": "Testing",
+        "assignedTo": "Healthcare Team",
+        "priority": "High",
+        "technologyStack": ["React Native", "Node.js", "MongoDB"],
+        "client": "MediCare Health"
+       },
+       
+       {
+        "id": 10,
+        "projectName": "AI-driven Marketing Campaign",
+        "description": "Create an AI-driven marketing campaign platform",
+        "deadline": "16-12-2023",
+        "status": "Pending",
+        "assignedTo": "Marketing Team",
+        "priority": "Medium",
+        "technologyStack": ["Python", "Machine Learning", "Google Ads API"],
+        "client": "AdGenius Marketing"
+       },
+       
+       {
+        "id": 11,
+        "projectName": "Video Streaming Service",
+        "description": "Develop a video streaming service",
+        "deadline": "24-12-2023",
+        "status": "Completed",
+        "assignedTo": "Streaming Team",
+        "priority": "High",
+        "technologyStack": ["Node.js", "React", "AWS"],
+        "client": "StreamIt Now"
+       },
+       
+       {
+        "id": 12,
+        "projectName": "Smart Transportation System",
+        "description": "Build a smart transportation system for cities",
+        "deadline": "3-02-2024",
+        "status": "Testing",
+        "assignedTo": "Transportation Team",
+        "priority": "High",
+        "technologyStack": ["IoT", "Machine Learning", "GPS"],
+        "client": "CityTransit Innovations"
+       },
+       
+       {
+        "id": 13,
+        "projectName": "EduTech Platform",
+        "description": "Create an online education platform",
+        "deadline": "21-03-2024",
+        "status": "Testing",
+        "assignedTo": "EduTech Team",
+        "priority": "High",
+        "technologyStack": ["React", "Django", "PostgreSQL"],
+        "client": "EduLearn Online"
+       },
+       
+       {
+        "id": 14,
+        "projectName": "Augmented Reality Game",
+        "description": "Develop an AR game for mobile devices",
+        "deadline": "10-04-2024",
+        "status": "In Progress",
+        "assignedTo": "Game Development Team",
+        "priority": "Medium",
+        "technologyStack": ["Unity", "ARKit", "C#"],
+        "client": "AR Adventures Inc."
+       },
+       
+       {
+        "id": 15,
+        "projectName": "AI-powered Customer Support",
+        "description": "Implement AI in customer support operations",
+        "deadline": "18-04-2024",
+        "status": "Completed",
+        "assignedTo": "Customer Support Team",
+        "priority": "Medium",
+        "technologyStack": ["AI", "Natural Language Processing"],
+        "client": "SupportWise Solutions"
+       },
+       
+       {
+        "id": 16,
+        "projectName": "Autonomous Drone System",
+        "description": "Develop an autonomous drone system for surveillance",
+        "deadline": "22-05-2024",
+        "status": "Completed",
+        "assignedTo": "Drone Team",
+        "priority": "High",
+        "technologyStack": ["Drones", "Computer Vision", "IoT"],
+        "client": "SecureEye Surveillance"
+       },
+       
+       {
+        "id": 17,
+        "projectName": "Social Media Analytics",
+        "description": "Build a social media analytics tool",
+        "deadline": "7-05-2024",
+        "status": "Pending",
+        "assignedTo": "Analytics Team",
+        "priority": "Medium",
+        "technologyStack": ["Python", "Social Media APIs"],
+        "client": "SocialTrack Insights"
+       },
+       
+       {
+        "id": 18,
+        "projectName": "Fintech API Integration",
+        "description": "Integrate fintech APIs for payment processing",
+        "deadline": "17-05-2024",
+        "status": "Pending",
+        "assignedTo": "Integration Team",
+        "priority": "High",
+        "technologyStack": ["REST APIs", "Financial APIs"],
+        "client": "FinTech Innovations"
+       },
+       
+       {
+        "id": 19,
+        "projectName": "AI-driven Agriculture",
+        "description": "Implement AI in agriculture for crop optimization",
+        "deadline": "20-05-2024",
+        "status": "Testing",
+        "assignedTo": "Agriculture Team",
+        "priority": "Medium",
+        "technologyStack": ["Machine Learning", "IoT", "Crop Sensors"],
+        "client": "AgriTech Solutions"
+       },
+       
+       {
+        "id": 20,
+        "projectName": "Cybersecurity Training Platform",
+        "description": "Develop a platform for cybersecurity training",
+        "deadline": "25-05-2024",
+        "status": "Pending",
+        "assignedTo": "Security Team",
+        "priority": "Medium",
+        "technologyStack": ["React", "Node.js", "MongoDB"],
+        "client": "SecureLearn Inc."
+       }
+    ]
+}

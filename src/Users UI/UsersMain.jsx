@@ -510,7 +510,7 @@ const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, pa
 
   return (
 
-    <section className="content">
+    <section>
 
       {/* confirm delete */}
 
@@ -528,7 +528,7 @@ const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, pa
 
         {/* <p className="breadcrumb">Home / <span className='order_breadcrumb_text'>Users</span></p> */}
 
-        <TopNav />
+        {/* <TopNav /> */}
 
         <AddNewUser
           users={users}

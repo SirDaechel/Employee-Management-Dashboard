@@ -1,22 +1,16 @@
-import { useState } from "react";
-import TopNav from "../TopNav";
-import DeptSummary from "./DeptSummary";
-import ProjectSummary from "./ProjectSummary";
-import RecentActivity from "./RecentActivity";
 import ProjectsMetricNo from "./ProjectsMetricNo";
 import arrowup2 from "../../public/images/arrowup2"
 import arrowdown2 from "../../public/images/arrowdown2"
-import LineChart from "./LineChart";
 import BarChart from "./BarChart";
 import HeadCountPieChart from "./HeadCountPieChart";
+import ProjectCompletionChart from "./ProjectCompletionChart";
+import ProjectDeadlineTable from "./ProjectDeadlineTable";
 
-const OverviewMain = ({ users }) => {
+const OverviewMain = ({ users, projects }) => {
 
   return (
     
-    <section className="content">
-    
-      <TopNav />
+    <section>
 
       <div className="main_overview_content">
 
@@ -47,7 +41,7 @@ const OverviewMain = ({ users }) => {
           />
 
           <ProjectsMetricNo
-            topText={"Total stipend payments"}
+            topText={"Total stipend payout"}
             spend={"₦189.67M"}
             percentage={"6.91%"}
             arrow={arrowup2}
@@ -61,27 +55,21 @@ const OverviewMain = ({ users }) => {
 
         <div className="second_lvl_overview">
 
-            <BarChart />
+          <BarChart />
 
-            <HeadCountPieChart 
-              users={users}
-            />
-
-            
-
-            {/* <ProjectSummary /> */}
+          <HeadCountPieChart 
+            users={users}
+          />
 
         </div>
 
         <div className="third_lvl_overview">
 
-          {/* <DeptSummary 
-              users={users}
-            /> */}
+          <ProjectCompletionChart />
 
-          {/* <RecentActivity /> */}
-
-          {/* <LineChart /> */}
+          <ProjectDeadlineTable 
+            projects={projects}
+          />
 
         </div>
 

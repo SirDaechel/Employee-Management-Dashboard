@@ -1,7 +1,7 @@
 import notificationsicon from "../public/images/notificationsicon";
 import moonIcon from "../public/images/moonIcon";
 
-const TopNav = () => {
+const TopNav = ({ openNotificationsBar, notifications }) => {
 
   //greeting with respect to time of the day
   const getGreeting = () => {
@@ -30,6 +30,8 @@ const TopNav = () => {
 
   const formattedDate = formatDate(Date.now());
 
+  
+
   return (
 
     <div className="top_nav" style={{marginTop: "1.1rem"}}>
@@ -45,9 +47,9 @@ const TopNav = () => {
           {moonIcon}
         </div>
 
-        <div className="notifications">
+        <div className="notifications" onClick={() => openNotificationsBar()}>
 
-          <p className="number_of_notifications">3</p>
+          <p className="number_of_notifications">{notifications.length}</p>
 
           <div className="notification_icon">
             {notificationsicon}

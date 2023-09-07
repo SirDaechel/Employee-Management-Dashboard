@@ -9,7 +9,7 @@
         "lastname": "Okoro",
         "username": "NaijaCoder",
         "email": "chinedu.okoro@example.com",
-        "role": "Data Analyst",
+        "role": "Full Stack Developer",
         "phone": "0802-123-4567",
         "wage": "15000",
         "workinghours": "40",
@@ -436,7 +436,7 @@
 
       {
         "id": 28,
-        "name": " Isabella Price",
+        "name": "Isabella Price",
         "firstname": "Isabella",
         "lastname": "Price",
         "username": "DigitalMage21",

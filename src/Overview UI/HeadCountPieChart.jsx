@@ -107,16 +107,10 @@ const HeadCountPieChart = ({ users }) => {
   
           grid: {
             display: false,
-            tickLength: 17,
-            tickColor: "transparent",
           },
   
           ticks: {
             display: false,
-            stepSize: 5,
-            font: {
-                family: "'Poppins', sans-serif"
-            },
           },
   
       },
@@ -129,15 +123,10 @@ const HeadCountPieChart = ({ users }) => {
   
           ticks: {
             display: false,
-            font: {
-                family: "'Poppins', sans-serif"
-            },
           },
   
           grid: {
               display: false,
-              tickLength: 17,
-              tickColor: "transparent",
           },
   
       }

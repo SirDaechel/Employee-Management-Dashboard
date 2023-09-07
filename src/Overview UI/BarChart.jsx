@@ -2,6 +2,7 @@ import { Bar } from "react-chartjs-2"
 import {
     Chart as ChartJS,
     BarElement,
+    LineElement,
     CategoryScale,
     LinearScale,
     PointElement,
@@ -11,6 +12,7 @@ import {
 
 ChartJS.register(
     BarElement,
+    LineElement,
     CategoryScale,
     LinearScale,
     PointElement,
@@ -25,7 +27,7 @@ const BarChart = () => {
     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
     datasets: [
       {
-        label: "Profit",
+        label: "Revenue",
         data: [24, 19, 13, 18, 28, 21, 34, 17, 36, 9, 18, 11],
         backgroundColor: "#6b63ffc2",
         borderRadius: 5,
@@ -126,7 +128,7 @@ const BarChart = () => {
 
         <div className="chart_header">
 
-            <p className="chart_title">Profit against Expense</p>
+            <p className="chart_title">Revenue against Expense</p>
 
             <div className="time_frame">
                 <p className="time_frame_txt all_time">ALL</p>
@@ -143,7 +145,7 @@ const BarChart = () => {
 
             <div className="profit_colour_main">
                 <div className="profit_label_colour"></div>
-                <div className="profit_label_txt">Profit</div>
+                <div className="profit_label_txt">Revenue</div>
             </div>
 
             <div className="expense_colour_main">
