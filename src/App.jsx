@@ -170,7 +170,10 @@ function App() {
 
         <Route path='messages' element={<Messages />} />
 
-        <Route path='projects' element={<ProjectsMain />} />
+        <Route path='projects' element={<ProjectsMain 
+          projects={projects}
+          setProjects={setProjects}
+        />} />
 
         <Route path='settings' element={<SettingsMain />} />
         

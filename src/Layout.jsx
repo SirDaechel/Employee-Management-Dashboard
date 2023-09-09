@@ -38,6 +38,7 @@ const Layout = ({ notifications, setNotifications }) => {
 
             <NotificationMain 
                 notifications={notifications}
+                setNotifications={setNotifications}
             />
 
         : null}
