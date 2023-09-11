@@ -1,10 +1,9 @@
 import { useState } from "react";
 import Project from "./Project"
 
-const ProjectsBody = ({ filteredSearch, activeProjectTab, filteredPendingSearch, filteredInProgressSearch, filteredTestingSearch, filteredCompletedSearch }) => {
+const ProjectsBody = ({ filteredSearch, activeProjectTab, filteredPendingSearch, filteredInProgressSearch, filteredTestingSearch, filteredCompletedSearch, clickedOnDeleteProject, openProjectOptions, setOpenProjectOptions }) => {
 
   const [theProjectID, setTheProjectID] = useState(null);
-  const [openProjectOptions, setOpenProjectOptions] = useState(false);
 
   //toggle project options
   const clickedProjectIcon = (ID) => {
@@ -46,29 +45,10 @@ const ProjectsBody = ({ filteredSearch, activeProjectTab, filteredPendingSearch,
           theProjectID={theProjectID}
           openProjectOptions={openProjectOptions}
           clickedProjectIcon={clickedProjectIcon}
+          clickedOnDeleteProject={() => clickedOnDeleteProject(project)}
         />
 
       ))}
-
-      {/* {filteredSearch.map((project) => (
-
-        <Project
-          key={project.id}
-          id={project.id}
-          category={project.projectcategory}
-          title={(project.projectName).length > 15 ? (project.projectName).slice(0, 18) + '...' : project.projectName}
-          subtitle={(project.description).length > 40 ? (project.description).slice(0, 42) + '...' : project.description}
-          startdate={project.startdate}
-          enddate={project.enddate}
-          bgcolourcode={project.bgcolourcode}
-          txtcolourcode={project.txtcolourcode}
-          status={project.status}
-          theProjectID={theProjectID}
-          openProjectOptions={openProjectOptions}
-          clickedProjectIcon={clickedProjectIcon}
-        />
-
-      ))} */}
         
     </div>
 

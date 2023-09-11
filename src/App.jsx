@@ -8,6 +8,7 @@ import ProjectsMain from './Projects UI/ProjectsMain'
 import SettingsMain from './SettingsUI/SettingsMain'
 import Messages from './Messages/Messages'
 import Layout from './Layout';
+import AddProjects from './Projects UI/AddProjects';
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
   const [archivedUsers, setArchivedUsers] = useState([]);
   const [pendingUsers, setPendingUsers] = useState([]);
   const [deletedUsers, setDeletedUsers] = useState([]);
+  const [fullPageOverlay, setFullPageOverlay] = useState(false);
   const paginateNumRef = useRef(null);
   
   //Get current users
@@ -138,6 +140,8 @@ function App() {
       <Route path='/' element={<Layout 
         notifications={notifications}
         setNotifications={setNotifications}
+        fullPageOverlay={fullPageOverlay}
+        setFullPageOverlay={setFullPageOverlay}
       />}>
 
         <Route index element={<OverviewMain 
@@ -168,12 +172,20 @@ function App() {
           paginateNumRef={paginateNumRef}
         />} />
 
-        <Route path='messages' element={<Messages />} />
+        <Route path='projects'>
 
-        <Route path='projects' element={<ProjectsMain 
-          projects={projects}
-          setProjects={setProjects}
-        />} />
+          <Route index element={<ProjectsMain 
+            projects={projects}
+            setProjects={setProjects}
+            fullPageOverlay={fullPageOverlay}
+            setFullPageOverlay={setFullPageOverlay}
+          />} />
+
+          <Route path='addproject' element={<AddProjects />} />
+
+        </Route>
+
+        <Route path='messages' element={<Messages />} />
 
         <Route path='settings' element={<SettingsMain />} />
         

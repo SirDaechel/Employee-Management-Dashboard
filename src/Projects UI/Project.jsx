@@ -1,6 +1,7 @@
 import horizontalDots from '../../public/images/horizontalDots';
+import deleteIcon from "../../public/images/trashIcon";
 
-const Project = ({ id, category, title, subtitle, startdate, enddate, bgcolourcode, txtcolourcode, status, theProjectID, openProjectOptions, clickedProjectIcon }) => {
+const Project = ({ id, category, title, subtitle, startdate, enddate, bgcolourcode, txtcolourcode, status, theProjectID, openProjectOptions, clickedProjectIcon, clickedOnDeleteProject }) => {
 
   return (
 
@@ -38,11 +39,9 @@ const Project = ({ id, category, title, subtitle, startdate, enddate, bgcolourco
        </div>
 
 
-       <div className="project_options_cont" style={{display: theProjectID === id && openProjectOptions ? "flex" : "none"}}>
-            <p className="project_options pending_txt">Move to pending</p>
-            <p className="project_options in_progress_txt">Move to in progress</p>
-            <p className="project_options testing_txt">Move to Testing</p>
-            <p className="project_options completed_txt">Move to completed</p>
+       <div className="project_options_cont" style={{display: theProjectID === id && openProjectOptions ? "flex" : "none"}} onClick={() => clickedOnDeleteProject()}>
+            <span className="delete_project_icon">{deleteIcon}</span>
+            <p className="project_option" onClick={clickedOnDeleteProject}>Delete Project</p>
        </div>
 
     </div>

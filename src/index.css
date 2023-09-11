@@ -1763,8 +1763,8 @@ th {
 
 .project_options_cont {
   display: flex;
-  flex-direction: column;
-  gap: .7rem;
+  gap: .4rem;
+  align-items: center;
   justify-content: flex-start;
   position: absolute;
   background-color: #FFF;
@@ -1773,18 +1773,232 @@ th {
   top: 15%;
   right: -10%;
   padding: .5rem;
-  z-index: 50;
+  z-index: 1;
 }
 
-.project_options {
+.project_option {
   padding: .4rem .3rem;
   font-size: .8rem;
   cursor: pointer;
 }
 
-.project_options:hover {
+.project_options_cont:hover {
   background-color: #E9E9EA;
   transition: .3s;
+}
+
+
+/****************************************** ADD PROJECT SECTION *****************************************/
+
+.project_details {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 1.5rem 0;
+}
+
+.add_project_forms {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.add_project_input {
+  width: 100%;
+}
+
+.date_input {
+  width: 100%;
+}
+
+.project_label_txt,
+.date_input_title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: #7e7e7e;
+  font-size: .9rem;
+}
+
+.project_input {
+  padding: .7rem;
+  margin-top: .3rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: .8rem;
+  border: 1px solid #d6d6d6;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.date_input_txt {
+  color: #555;
+}
+
+.date_input_btn {
+  font-family: 'Open Sans', sans-serif;
+  padding: .7rem;
+  margin-top: .3rem;
+  border: 1px solid #d6d6d6;
+  border-radius: 4px;
+  width: 100%;
+  font-weight: 600;
+  font-size: .8rem;
+  background-color: #FCFCFC;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.calendar_icon {
+  color: #555;
+  font-size: 1rem;
+}
+
+.project_desc_input {
+  padding: .7rem;
+  margin-top: .3rem;
+  /* font-family: 'Roboto', sans-serif; */
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: .8rem;
+  border: 1px solid #d6d6d6;
+  width: 565.13px;
+  border-radius: 4px;
+  max-width: 565.13px;
+  min-width: 565.13px;
+  min-height: 60.38px;
+  max-height: 115px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  resize: both;
+  overflow: hidden;
+}
+
+.add_project_left,
+.add_project_right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.project_left_cont {
+  position: relative;
+}
+
+.submit_project {
+  background-color: #6C63FF;
+  padding: 1rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #FFF;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.submit_project:hover {
+  background-color: #817afd;
+  transition: .3s;
+}
+
+
+/*********************************************** CALENDER UI *******************************************/
+
+.calendar_container {
+  width: 25rem;
+  min-height: 33rem;
+  background-color: #FFF;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.411);
+  scale: .7;
+  position: absolute;
+  top: -5%;
+  left: -9%;
+}
+
+.calendar_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #d1d1d1;
+}
+
+.calendar_txt {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #555;
+  font-family: 'Poppins', sans-serif;
+}
+
+.calendar_close {
+  font-size: 2rem;
+  padding: .4rem;
+  background-color: transparent;
+  color: #555;
+}
+
+.calendar_nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.calendar_prev_month,
+.calendar_next_month {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  font-size: 1.5rem;
+  color: #555;
+}
+
+.calendar_body {
+  padding: 8rem;
+}
+
+.calendar_data {
+  padding: .7rem .3rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.calendar_data_txt {
+  padding: .3rem;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  text-align: center;
+  cursor: pointer;
+  color: #57575a;
+}
+
+.calendar_data_txt:hover {
+  background-color: #6C63FF;
+  color: #FFF;
+  transition: .3s;
+}
+
+.calendar_weekdays {
+  padding: .7rem .7rem;
+}
+
+.calendar_weekdays_txt {
+  /* font-size: .8rem; */
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  color: #57575a;
+  max-width: 23.5px;
 }
 
 

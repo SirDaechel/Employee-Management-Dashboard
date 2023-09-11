@@ -5,10 +5,9 @@ import Sidebar from "./MainSideBar/SideBar";
 import thecloseicon from "../public/images/thecloseicon"
 import NotificationMain from "./Notifications UI/NotificationMain";
 
-const Layout = ({ notifications, setNotifications }) => {
+const Layout = ({ notifications, setNotifications, fullPageOverlay, setFullPageOverlay }) => {
 
   const [showNotificationsBar, setShowNotificationsBar] = useState(false);
-  const [fullPageOverlay, setFullPageOverlay] = useState(false);
 
   //open the notification bar
   const openNotificationsBar = () => {

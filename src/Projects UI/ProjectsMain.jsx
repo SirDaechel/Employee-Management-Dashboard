@@ -4,10 +4,14 @@ import ProjectTabs from './ProjectTabs';
 import ProjectsBody from "./ProjectsBody";
 
 
-const ProjectsMain = ({ projects, setProjects }) => {
+
+const ProjectsMain = ({ projects, setProjects, fullPageOverlay, setFullPageOverlay }) => {
 
   const [searchBar, setSearchBar] = useState("");
   const [activeProjectTab, setActiveProjectTab] = useState(0);
+  const [pendingDeleteProject, setPendingDeleteProject] = useState(null);
+  const [clickedDeleteProject, setClickedDeleteProject] = useState(false);
+  const [openProjectOptions, setOpenProjectOptions] = useState(false);
 
   //get number of project with a status of pending
   const getPendingProjects = projects.filter((project) => project.status === "Pending");
@@ -43,9 +47,52 @@ const ProjectsMain = ({ projects, setProjects }) => {
 
   }
 
+  //if delete a project button is clicked
+  const clickedOnDeleteProject = (project) => {
+
+    setClickedDeleteProject(true);
+    setFullPageOverlay(true);
+    setPendingDeleteProject(project);
+    
+  };
+
+  //if confirm delete project button is clicked
+  const confirmDeleteProject = () => {
+
+      if(pendingDeleteProject) {
+        setProjects(projects.filter((project) => project.id !== pendingDeleteProject.id));
+      }
+
+      setPendingDeleteProject(null);
+      setFullPageOverlay(false);
+      setClickedDeleteProject(false);
+      setOpenProjectOptions(false);
+
+  }
+
+  //if cancel delete user button is clicked
+  const cancelDeleteProject = () => {
+
+    setPendingDeleteProject(null);
+    setFullPageOverlay(false);
+    setClickedDeleteProject(false);
+
+  };
+
+
   return (
 
     <section>
+
+      <div className="confirm_delete_modal" style={{display: clickedDeleteProject ? "block" : "none"}}>
+        <div className="confirm_delete_cont">
+            <p className="confirm_delete_txt">Delete project?</p>
+            <div className="yes_cancel_delete">
+                <button className="delete_btn cancel_delete" onClick={() => cancelDeleteProject()}>Cancel</button>
+                <button className="delete_btn yes_delete" onClick={() => confirmDeleteProject()}>Confirm</button>
+            </div>
+        </div>
+      </div>
 
       <ProjectUtility 
         projects={projects}
@@ -70,6 +117,9 @@ const ProjectsMain = ({ projects, setProjects }) => {
         filteredInProgressSearch={filteredInProgressSearch}
         filteredTestingSearch={filteredTestingSearch}
         filteredCompletedSearch={filteredCompletedSearch}
+        clickedOnDeleteProject={clickedOnDeleteProject}
+        openProjectOptions={openProjectOptions}
+        setOpenProjectOptions={setOpenProjectOptions}
       />
       
     </section>
