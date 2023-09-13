@@ -177,11 +177,12 @@ function App() {
           <Route index element={<ProjectsMain 
             projects={projects}
             setProjects={setProjects}
-            fullPageOverlay={fullPageOverlay}
             setFullPageOverlay={setFullPageOverlay}
           />} />
 
-          <Route path='addproject' element={<AddProjects />} />
+          <Route path='addproject' element={<AddProjects 
+            projects={projects}
+          />} />
 
         </Route>
 

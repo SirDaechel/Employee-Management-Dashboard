@@ -1,18 +1,21 @@
 import { useState } from "react"
 import InputBox from "./InputBox"
-import Calendar from "../Calendar UI/Calendar";
-import DateInput from "./DateInput";
+import Calendar from "../Calendar UI/Calendar"
+import DateInput from "./DateInput"
+import ProjectInputDropdownBtn from "./ProjectInputDropdownBtn"
+import TagsInput from "./TagsInput"
 
-const AddProjects = () => {
+const AddProjects = ({ projects }) => {
 
   const [projectName, setProjectName] = useState("");
   const [projectDesc, setProjectDesc] = useState("");
-  const [projectCate, setProjectCate] = useState("");
+  const [projectCate, setProjectCate] = useState("Select Project Category");
   const [projectStartDate, setProjectStartDate] = useState("Enter Start Date --");
   const [projectEndDate, setProjectEndDate] = useState("Enter End Date --");
-  const [projectPriority, setProjectPriority] = useState("");
-  const [projectClient, setProjectClient] = useState("");
+  const [projectPriority, setProjectPriority] = useState("Select Project Priority");
   const [projectTeam, setProjectTeam] = useState([]);
+  const [projectStack, setProjectStack] = useState([]);
+  const [projectClient, setProjectClient] = useState("");
   const [showStartDateCalendar, setShowStartDateCalendar] = useState(false);
   const [showEndDateCalendar, setShowEndDateCalendar] = useState(false);
   const [endDateCalendarMargin, setEndDateCalendarMargin] = useState(true);
@@ -40,6 +43,9 @@ const AddProjects = () => {
   const closeEndDateCalendar = () => {
     setShowEndDateCalendar(false)
   }
+
+  // Extract unique categories
+  const uniqueCategories = [...new Set(projects.map((project) => project.projectcategory))];
     
   return (
     
@@ -51,7 +57,7 @@ const AddProjects = () => {
 
         <div className="project_left_cont">
 
-          <form className="add_project_left">
+          <form className="add_project_left" onSubmit={(e) => e.preventDefault()}>
 
             <InputBox 
               label={"Project Name"}
@@ -69,12 +75,11 @@ const AddProjects = () => {
 
             </div>
 
-            <InputBox 
+            <ProjectInputDropdownBtn
               label={"Project Category"}
               addProjectInput={projectCate} 
-              setAddProjectInput={setProjectCate} 
-              type={"text"} 
-              placeholder={"Enter Project Category"}
+              setAddProjectInput={setProjectCate}
+              uniqueCategories={uniqueCategories}
             />
 
             <InputBox 
@@ -124,14 +129,20 @@ const AddProjects = () => {
 
         </div>
 
-        <form className="add_project_right">
+        <form className="add_project_right" onSubmit={(e) => e.preventDefault()}>
           
-          <InputBox 
+          <ProjectInputDropdownBtn
             label={"Project Priority"}
             addProjectInput={projectPriority} 
-            setAddProjectInput={setProjectPriority} 
+            setAddProjectInput={setProjectPriority}
+          />
+
+          <InputBox 
+            label={"Project Stack"}
+            addProjectInput={projectStack} 
+            setAddProjectInput={setProjectStack} 
             type={"text"} 
-            placeholder={"Enter Project Priority"}
+            placeholder={"Enter Project Stack"}
           />
 
           <InputBox 
@@ -141,6 +152,8 @@ const AddProjects = () => {
             type={"text"} 
             placeholder={"Enter Project Client"}
           />
+
+          <TagsInput />
 
           <button className="submit_project">
               Submit

@@ -1,10 +1,6 @@
 import moneyIcon from "../../public/images/moneyIcon";
-import moneyIcon2 from "../../public/images/moneyIcon2";
-import timeIcon from "../../public/images/timeIcon"
-import arrowup2 from "../../public/images/arrowup2"
-import arrowdown2 from "../../public/images/arrowdown2"
 
-const ProjectsMetricNo = ({ borderBottomColour, topText, spend, percentage, arrow, percent }) => {
+const ProjectsMetricNo = ({ topText, spend, percentage, arrow, percent }) => {
 
   return (
 

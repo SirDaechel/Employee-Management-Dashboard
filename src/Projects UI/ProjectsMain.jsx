@@ -5,7 +5,7 @@ import ProjectsBody from "./ProjectsBody";
 
 
 
-const ProjectsMain = ({ projects, setProjects, fullPageOverlay, setFullPageOverlay }) => {
+const ProjectsMain = ({ projects, setProjects, setFullPageOverlay }) => {
 
   const [searchBar, setSearchBar] = useState("");
   const [activeProjectTab, setActiveProjectTab] = useState(0);

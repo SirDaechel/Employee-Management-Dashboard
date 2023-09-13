@@ -1810,6 +1810,7 @@ th {
 
 .date_input {
   width: 100%;
+  position: relative;
 }
 
 .project_label_txt,
@@ -1889,6 +1890,122 @@ th {
 
 .project_left_cont {
   position: relative;
+}
+
+.input_dropdown {
+  position: absolute;
+  background-color: #FFF;
+  padding: .6rem 0 .6rem .7rem;
+  margin-top: .6rem;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.411);
+  border-radius: 4px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  max-height: 10rem;
+  z-index: 2;
+}
+
+.input_dropdown:hover {
+  overflow-y: scroll;
+}
+
+.input_dropdown::-webkit-scrollbar {
+  width: 10px;
+}
+
+.input_dropdown::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 8px;
+}
+
+.input_dropdown::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.input_dropdown_data {
+  display: flex;
+  flex-direction: column;
+  /* gap: .5rem; */
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.dropdown_txt {
+  cursor: pointer;
+  font-size: .85rem;
+  width: 100%;
+  padding: .5rem 0 .5rem .8rem;
+}
+
+.dropdown_txt:hover {
+  background-color: #EAEDF7;
+  transition: .3s;
+}
+
+.tags_section {
+  width: 100%;
+}
+
+.tags_cont {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: .5rem;
+  margin-top: .3rem;
+  padding: .7rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: .8rem;
+  border: 1px solid #d6d6d6;
+  border-radius: 4px;
+  width: 100%;
+  min-height: 3.7rem;
+  background-color: #FFF;
+}
+
+.tags_list_body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: .5rem;
+}
+
+.tag_list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+}
+
+.delete_tag_list {
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.tag_input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: .8rem;
+}
+
+.tag_input:focus{
+  outline: none;
+}
+
+.tag_list {
+  background-color: #6C63FF;
+  color: #FFF;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: .8rem;
+  border-radius: 4px;
+  padding: .3rem;
 }
 
 .submit_project {

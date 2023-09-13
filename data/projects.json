@@ -21,7 +21,7 @@
        
        {
         "id": 2,
-        "projectcategory": "IoT",
+        "projectcategory": "Internet of Things (IoT)",
         "projectName": "IoT Smart Home",
         "description": "Create an IoT solution for home automation",
         "startdate": "Start: 13th March 2023",
@@ -55,7 +55,7 @@
        
        {
         "id": 4,
-        "projectcategory": "AI",
+        "projectcategory": "Artificial Intelligence (AI)",
         "projectName": "AI Chatbot",
         "description": "Develop a conversational AI chatbot",
         "startdate": "Start: 10th Febuary 2023",
@@ -157,7 +157,7 @@
        
        {
         "id": 10,
-        "projectcategory": "AI",
+        "projectcategory": "Artificial Intelligence (AI)",
         "projectName": "AI-driven Marketing Campaign",
         "description": "Create an AI-driven marketing campaign platform",
         "startdate": "Start: 20th May 2023",
@@ -191,7 +191,7 @@
        
        {
         "id": 12,
-        "projectcategory": "IoT",
+        "projectcategory": "Internet of Things (IoT)",
         "projectName": "Smart Transportation System",
         "description": "Build a smart transportation system for cities",
         "startdate": "Start: 14th October 2023",
@@ -225,7 +225,7 @@
        
        {
         "id": 14,
-        "projectcategory": "AI",
+        "projectcategory": "Artificial Intelligence (AI)",
         "projectName": "Augmented Reality Game",
         "description": "Develop an AR game for mobile devices",
         "startdate": "Start: 9th November 2023",
@@ -242,7 +242,7 @@
        
        {
         "id": 15,
-        "projectcategory": "AI",
+        "projectcategory": "Artificial Intelligence (AI)",
         "projectName": "AI-powered Customer Support",
         "description": "Implement AI in customer support operations",
         "startdate": "Start: 29th November 2023",
@@ -259,7 +259,7 @@
        
        {
         "id": 16,
-        "projectcategory": "IoT",
+        "projectcategory": "Internet of Things (IoT)",
         "projectName": "Autonomous Drone System",
         "description": "Develop an autonomous drone system for surveillance",
         "startdate": "Start: 3rd December 2023",
@@ -310,7 +310,7 @@
        
        {
         "id": 19,
-        "projectcategory": "AI",
+        "projectcategory": "Artificial Intelligence (AI)",
         "projectName": "AI-driven Agriculture",
         "description": "Implement AI in agriculture for crop optimization",
         "startdate": "Start: 4th Febuary 2024",
