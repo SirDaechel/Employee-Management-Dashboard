@@ -6,7 +6,7 @@
     },
     {
       "source": "/(.*)",
-      "destination": "/"
+      "destination": "/Layout.jsx"
     }
   ]
 }
