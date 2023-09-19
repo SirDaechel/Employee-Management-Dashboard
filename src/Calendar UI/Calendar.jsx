@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import arrowLeft from '../../public/images/arrowLeft'
 import arrowRight from '../../public/images/arrowRight'
 import xIcon from '../../public/images/xIcon'
@@ -7,6 +7,7 @@ const Calendar = ({ setProjectDate, closeCalendar, showCalendar, setShowCalendar
 
     const [currentDate, setCurrentDate] = useState(new Date());
     const currentDayOfMonth = currentDate.getDate();
+    const calendarRef = useRef(null);
 
     const handleDayClick = (day) => {
 
@@ -112,11 +113,28 @@ const Calendar = ({ setProjectDate, closeCalendar, showCalendar, setShowCalendar
 
     }, [currentDate]);
 
+    // Event listener to close the calendar when clicking outside
+    useEffect(() => {
+
+      const handleClickOutside = (event) => {
+        if (calendarRef.current && !calendarRef.current.contains(event.target)) {
+          setShowCalendar(false);
+        }
+      };
+
+      document.addEventListener('mousedown', handleClickOutside);
+
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
+
+    }, []);
+
   return (
 
     <section>
         
-        <div className="calendar_container" style={{top: endDateCalendarMargin ? "12%" : ""}}>
+        <div ref={calendarRef} className="calendar_container" style={{top: endDateCalendarMargin ? "12%" : ""}}>
 
             <div className="calendar_header">
                 <p className="calendar_txt">Select Date</p>

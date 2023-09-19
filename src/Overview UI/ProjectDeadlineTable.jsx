@@ -45,7 +45,7 @@ const ProjectDeadlineTable = ({ projects }) => {
                         </td>
 
                         <td className="project_deadline_txt">
-                            {project.deadline}
+                            {project.enddate}
                         </td>
 
                         <td className="project_deadline_txt">

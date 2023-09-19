@@ -4,8 +4,6 @@ import UsersTable from "./UsersTable";
 import UserShowResult from "./UsersShowResult";
 import UsersPagination from "./UsersPagination";
 import AddNewUser from "./AddNewUser"
-import TopNav from "../TopNav";
-import { Route, Routes } from 'react-router-dom';
 
 
 const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, paginate, archivedUsers, setArchivedUsers, setUsersPerPage, deletedUsers, setDeletedUsers, currentArchivedUsers, currentDeletedUsers, totalArchivedUsers, totalDeletedUsers, currentPage, setCurrentPage, paginateNumRef }) => {

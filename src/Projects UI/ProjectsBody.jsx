@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Project from "./Project"
 
-const ProjectsBody = ({ filteredSearch, activeProjectTab, filteredPendingSearch, filteredInProgressSearch, filteredTestingSearch, filteredCompletedSearch, clickedOnDeleteProject, openProjectOptions, setOpenProjectOptions }) => {
+const ProjectsBody = ({ filteredSearch, activeProjectTab, filteredPendingSearch, filteredInProgressSearch, filteredTestingSearch, filteredCompletedSearch, clickedOnDeleteProject, openProjectOptions, setOpenProjectOptions, users }) => {
 
   const [theProjectID, setTheProjectID] = useState(null);
 
@@ -46,6 +46,7 @@ const ProjectsBody = ({ filteredSearch, activeProjectTab, filteredPendingSearch,
           openProjectOptions={openProjectOptions}
           clickedProjectIcon={clickedProjectIcon}
           clickedOnDeleteProject={() => clickedOnDeleteProject(project)}
+          users={users}
         />
 
       ))}

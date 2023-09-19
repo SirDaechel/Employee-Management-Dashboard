@@ -43,9 +43,9 @@ const TopNav = ({ openNotificationsBar, notifications }) => {
 
       <div className="top_nav_utilities">
 
-        <div className="dark_light_mode">
+        {/* <div className="dark_light_mode">
           {moonIcon}
-        </div>
+        </div> */}
 
         <div className="notifications" onClick={() => openNotificationsBar()}>
 

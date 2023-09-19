@@ -12,6 +12,7 @@ const ProjectUtility = ({ projects, searchBar, setSearchBar }) => {
         projects={projects}
         searchBar={searchBar}
         setSearchBar={setSearchBar}
+        placeholder={"search projects"}
       />
   
       <Button 

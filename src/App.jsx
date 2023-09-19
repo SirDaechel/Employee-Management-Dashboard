@@ -5,10 +5,11 @@ import notificationsapi from './api/notifications'
 import UsersMain from './Users UI/UsersMain';
 import OverviewMain from './Overview UI/OverviewMain'
 import ProjectsMain from './Projects UI/ProjectsMain'
-import SettingsMain from './SettingsUI/SettingsMain'
-import Messages from './Messages/Messages'
+import PayrollMain from './Payroll UI/PayrollMain';
+import HelpDeskMain from './HelpDesk UI/HelpDeskMain'
 import Layout from './Layout';
 import AddProjects from './Projects UI/AddProjects';
+import PageNotFound from './PageNotFound';
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -178,19 +179,26 @@ function App() {
             projects={projects}
             setProjects={setProjects}
             setFullPageOverlay={setFullPageOverlay}
+            users={users}
           />} />
 
           <Route path='addproject' element={<AddProjects 
             projects={projects}
+            setProjects={setProjects}
+            users={users}
           />} />
 
         </Route>
 
-        <Route path='messages' element={<Messages />} />
+        <Route path='payroll' element={<PayrollMain 
+          users={users}
+        />} />
 
-        <Route path='settings' element={<SettingsMain />} />
-        
+        <Route path='helpdesk' element={<HelpDeskMain />} />
+
       </Route>
+
+      <Route path="*" element={<PageNotFound />} />
 
     </Routes>
 

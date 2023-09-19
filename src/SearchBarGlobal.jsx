@@ -1,7 +1,7 @@
 import searchIcon from '../public/images/searchIcon'
 import thecloseicon from '../public/images/thecloseicon'
 
-const SearchBarGlobal = ({ searchBar, setSearchBar }) => {
+const SearchBarGlobal = ({ searchBar, setSearchBar, placeholder }) => {
 
   const handleOnSubmit = (e) => e.preventDefault();
 
@@ -13,15 +13,17 @@ const SearchBarGlobal = ({ searchBar, setSearchBar }) => {
 
       <div className="searchbarcont">
 
-        <div className="search_search">{searchIcon}</div>
 
-        <form onSubmit={handleOnSubmit}>
-          <input type="text" className="searchbar" value={searchBar} placeholder="Search" onChange={(e) => setSearchBar(e.target.value)} />
+        <form className='search_form' onSubmit={handleOnSubmit}>
+
+          <div className="search_search">{searchIcon}</div>
+
+          <input type="text" className="searchbar" value={searchBar} placeholder={placeholder} onChange={(e) => setSearchBar(e.target.value)} />
+          
+          <div className="search_close" style={{display: searchBar ? "block" : "none"}} onClick={clearSearch}>{thecloseicon}</div>
+
         </form>
 
-        <div className="search_close" style={{display: searchBar ? "block" : "none"}}>{thecloseicon}</div>
-
-        <div className="search_close" style={{display: searchBar ? "block" : "none"}} onClick={clearSearch}>{thecloseicon}</div>
 
       </div>
 

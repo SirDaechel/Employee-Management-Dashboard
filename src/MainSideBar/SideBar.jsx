@@ -1,9 +1,9 @@
 import SideTab from "./SideTab"
 import dashboardicon from "../../public/images/dashboardicon"
 import usersicon from "../../public/images/usersicon"
-import messageIcon from "../../public/images/messageIcon"
+import cashIcon from '../../public/images/cashIcon'
+import helpIcon from '../../public/images/helpIcon'
 import projecticon from "../../public/images/projecticon"
-import settingsicon from "../../public/images/settingsicon"
 
 const Sidebar = () => {
 
@@ -34,18 +34,18 @@ const Sidebar = () => {
             theLink={"/projects"}
         />
 
-        <SideTab 
-            icon={<div className="sidetab_icon_boxixon">{messageIcon}</div>}
-            label={"Messages"}
+        <SideTab
+            icon={<div className="sidetab_icon_boxixon">{cashIcon}</div>}
+            label={"Payroll"}
             theClass={({ isActive }) => isActive ? "active" : ""}
-            theLink={"/messages"}
+            theLink={"/payroll"}
         />
 
-        <SideTab 
-            icon={<div className="sidetab_icon_boxixon">{settingsicon}</div>}
-            label={"Settings"}
+        <SideTab
+            icon={<div className="sidetab_icon_boxixon">{helpIcon}</div>}
+            label={"Help Desk"}
             theClass={({ isActive }) => isActive ? "active" : ""}
-            theLink={"/settings"}
+            theLink={"/helpdesk"}
         />
 
       </div>

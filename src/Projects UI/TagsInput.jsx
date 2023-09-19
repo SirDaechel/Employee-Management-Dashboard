@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import closeIcon from '../../public/images/thecloseicon'
 
-const TagsInput = () => {
+const TagsInput = ({ projectStacks, setProjectStacks }) => {
 
   const [tags, setTags] = useState([]);
   const [inputValue, setInputValue] = useState('');
@@ -13,7 +13,7 @@ const TagsInput = () => {
 
         // Add the input value to the items array
         if (inputValue.trim() !== '') {
-            setTags([...tags, inputValue.trim()]);
+            setProjectStacks([...projectStacks, inputValue.trim()]);
             setInputValue("");
         }
         
@@ -22,7 +22,7 @@ const TagsInput = () => {
   }
 
   const removeTag = (indexToRemove) => {
-    setTags(tags.filter((tag, index) => index !== indexToRemove));
+    setProjectStacks(projectStacks.filter((stack, index) => index !== indexToRemove));
   }
 
   return (
@@ -33,19 +33,18 @@ const TagsInput = () => {
 
         <div className="tags_cont">
 
+          <ul className='tags_list_body'>
+            {projectStacks.map((stack, index) => (
 
-            <ul className='tags_list_body'>
-                {tags.map((tag, index) => (
+              <li className="tag_list" key={index}>
+                {stack}
+                <span className="delete_tag_list" onClick={() => removeTag(index)}>{closeIcon}</span>
+              </li>
 
-                    <li className="tag_list" key={index}>
-                        {tag}
-                        <span className="delete_tag_list" onClick={() => removeTag(index)}>{closeIcon}</span>
-                    </li>
+            ))}
+          </ul>
 
-                ))}
-            </ul>
-
-            <input type="text" className='tag_input' value={inputValue} onChange={(e) => setInputValue(e.target.value)} onKeyDown={addTag} placeholder='type something...'/>
+          <input type="text" className='tag_input' value={inputValue} onChange={(e) => setInputValue(e.target.value)} onKeyDown={addTag} placeholder='Type something...'/>
 
         </div>
         

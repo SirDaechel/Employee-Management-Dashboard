@@ -5,7 +5,7 @@ import ProjectsBody from "./ProjectsBody";
 
 
 
-const ProjectsMain = ({ projects, setProjects, setFullPageOverlay }) => {
+const ProjectsMain = ({ projects, setProjects, setFullPageOverlay, users }) => {
 
   const [searchBar, setSearchBar] = useState("");
   const [activeProjectTab, setActiveProjectTab] = useState(0);
@@ -120,6 +120,7 @@ const ProjectsMain = ({ projects, setProjects, setFullPageOverlay }) => {
         clickedOnDeleteProject={clickedOnDeleteProject}
         openProjectOptions={openProjectOptions}
         setOpenProjectOptions={setOpenProjectOptions}
+        users={users}
       />
       
     </section>
