@@ -30,116 +30,120 @@ const UsersTable = ({ users, setUsers, currentUsers, handleSelectAll, handleIndi
 
   return (
 
-    <table>
+    <div className="users_table_cont">
 
-      {activeUserTab === 0 ? (
-
-        <TableTitle 
-          users={users}
-          setUsers={setUsers}
-          handleSelectAll={handleSelectAll}
-          isSelectAllChecked={isSelectAllChecked}
-        />
-
-      ) : null}
-
-      {activeUserTab === 2 ? (
-
-        <TableTitle 
-          users={archivedUsers}
-          setUsers={setArchivedUsers}
-          handleSelectAll={handleSelectAllArchived}
-          isSelectAllChecked={isSelectAllCheckedForArchivedAllUsers}
-        />
-
-      ) : null}
-
-      {activeUserTab === 3 ? (
-
-        <TableTitle 
-          users={deletedUsers}
-          setUsers={setDeletedUsers}
-          handleSelectAll={handleSelectAllDeleted}
-          isSelectAllChecked={isSelectAllCheckedForDeletedAllUsers}
-        />
-
-      ) : null}
-
-      <tbody>
+      <table>
 
         {activeUserTab === 0 ? (
 
-          currentUsers.map((user) => (
-
-            <TableList 
-              key={user.id}
-              user={user}
-              handleIndividualUser={() => handleIndividualUser(user.id)}
-              clickedOptionsIcon={clickedOptionsIcon}
-              showUserOptions={showUserOptions}
-              setShowUserOptions={setShowUserOptions}
-              theUserID={theUserID}
-              editUser={() => editUser(user.id)}
-              clickedOnDeleteUser={() => clickedOnDeleteUser(user)}
-              archiveAUser={() => archiveAUser(user)}
-              restoreAUser={() => restoreAUser(user)}
-              activeUserTab={activeUserTab}
-            />
-  
-          ))
+          <TableTitle 
+            users={users}
+            setUsers={setUsers}
+            handleSelectAll={handleSelectAll}
+            isSelectAllChecked={isSelectAllChecked}
+          />
 
         ) : null}
 
         {activeUserTab === 2 ? (
 
-          currentArchivedUsers.map((user) => (
-
-            <TableList 
-              key={user.id}
-              user={user}
-              handleIndividualUser={() => handleIndividualArchivedUser(user.id)}
-              clickedOptionsIcon={clickedOptionsIcon}
-              showUserOptions={showUserOptions}
-              setShowUserOptions={setShowUserOptions}
-              theUserID={theUserID}
-              editUser={() => editUser(user.id)}
-              clickedOnDeleteUser={() => clickedOnDeleteUser(user)}
-              archiveAUser={() => archiveAUser(user)}
-              restoreAUser={() => restoreAUser(user)}
-              activeUserTab={activeUserTab}
-            />
-
-          ))
+          <TableTitle 
+            users={archivedUsers}
+            setUsers={setArchivedUsers}
+            handleSelectAll={handleSelectAllArchived}
+            isSelectAllChecked={isSelectAllCheckedForArchivedAllUsers}
+          />
 
         ) : null}
 
         {activeUserTab === 3 ? (
 
-          currentDeletedUsers.map((user) => (
-
-            <TableList 
-              key={user.id}
-              user={user}
-              handleIndividualUser={() => handleIndividualDeletedUser(user.id)}
-              clickedOptionsIcon={clickedOptionsIcon}
-              showUserOptions={showUserOptions}
-              setShowUserOptions={setShowUserOptions}
-              theUserID={theUserID}
-              editUser={() => editUser(user.id)}
-              clickedOnDeleteUser={() => clickedOnDeleteUser(user)}
-              archiveAUser={() => archiveAUser(user)}
-              restoreAUser={() => restoreAUser(user)}
-              activeUserTab={activeUserTab}
-            />
-
-          ))
+          <TableTitle 
+            users={deletedUsers}
+            setUsers={setDeletedUsers}
+            handleSelectAll={handleSelectAllDeleted}
+            isSelectAllChecked={isSelectAllCheckedForDeletedAllUsers}
+          />
 
         ) : null}
 
+        <tbody>
 
-      </tbody>
+          {activeUserTab === 0 ? (
 
-    </table>
+            currentUsers.map((user) => (
+
+              <TableList 
+                key={user.id}
+                user={user}
+                handleIndividualUser={() => handleIndividualUser(user.id)}
+                clickedOptionsIcon={clickedOptionsIcon}
+                showUserOptions={showUserOptions}
+                setShowUserOptions={setShowUserOptions}
+                theUserID={theUserID}
+                editUser={() => editUser(user.id)}
+                clickedOnDeleteUser={() => clickedOnDeleteUser(user)}
+                archiveAUser={() => archiveAUser(user)}
+                restoreAUser={() => restoreAUser(user)}
+                activeUserTab={activeUserTab}
+              />
+    
+            ))
+
+          ) : null}
+
+          {activeUserTab === 2 ? (
+
+            currentArchivedUsers.map((user) => (
+
+              <TableList 
+                key={user.id}
+                user={user}
+                handleIndividualUser={() => handleIndividualArchivedUser(user.id)}
+                clickedOptionsIcon={clickedOptionsIcon}
+                showUserOptions={showUserOptions}
+                setShowUserOptions={setShowUserOptions}
+                theUserID={theUserID}
+                editUser={() => editUser(user.id)}
+                clickedOnDeleteUser={() => clickedOnDeleteUser(user)}
+                archiveAUser={() => archiveAUser(user)}
+                restoreAUser={() => restoreAUser(user)}
+                activeUserTab={activeUserTab}
+              />
+
+            ))
+
+          ) : null}
+
+          {activeUserTab === 3 ? (
+
+            currentDeletedUsers.map((user) => (
+
+              <TableList 
+                key={user.id}
+                user={user}
+                handleIndividualUser={() => handleIndividualDeletedUser(user.id)}
+                clickedOptionsIcon={clickedOptionsIcon}
+                showUserOptions={showUserOptions}
+                setShowUserOptions={setShowUserOptions}
+                theUserID={theUserID}
+                editUser={() => editUser(user.id)}
+                clickedOnDeleteUser={() => clickedOnDeleteUser(user)}
+                archiveAUser={() => archiveAUser(user)}
+                restoreAUser={() => restoreAUser(user)}
+                activeUserTab={activeUserTab}
+              />
+
+            ))
+
+          ) : null}
+
+
+        </tbody>
+
+      </table>
+
+    </div>
 
   )
 

@@ -1,4 +1,4 @@
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import AddUserInput from "./AddUserInput"
 import thecloseicon from "../../public/images/thecloseicon"
 import arrowdown from "../../public/images/arrowdown"
@@ -15,6 +15,8 @@ const AddNewUser = ({ users, setUsers, openAddUserModal, setShowOverlay, editAUs
     setShowRoleDropdown(!showRoleDropdown);
 
   };
+
+  const addUserRef = useRef(null);
 
   //add user
   const addUser = () => {
@@ -66,7 +68,7 @@ const AddNewUser = ({ users, setUsers, openAddUserModal, setShowOverlay, editAUs
     
         <div className="close_add_user_modal" onClick={() => closeUserModal()}>{thecloseicon}</div>
 
-        <div className="addUser_cont" >
+        <div className="addUser_cont">
             
             <form className="adduser_form">
 

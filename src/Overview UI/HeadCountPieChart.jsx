@@ -19,6 +19,8 @@ ChartJS.register(
 )
 
 const HeadCountPieChart = ({ users }) => {
+
+  const isScreenWidth = window.innerWidth
   
   const roleCounts = {};
 
@@ -95,7 +97,9 @@ const HeadCountPieChart = ({ users }) => {
   
     maintainAspectRatio: true,
   
-    aspectRatio: .99,
+    aspectRatio: isScreenWidth <= 1023 && isScreenWidth >= 768 ? 1.5 : isScreenWidth <= 1279 && isScreenWidth >= 1024 ? 2 : 1,
+    // aspectRatio: isScreenWidth <= 767 ? 1 : 1,
+
   
     scales: {
   
@@ -143,7 +147,7 @@ const HeadCountPieChart = ({ users }) => {
 
         <p className="chart_title">Employee Summary</p>
 
-        <p className="total_staff">Total Staffs: {users.length}</p>
+        {/* <p className="total_staff">Total Staffs: {users.length}</p> */}
 
       </div>
 

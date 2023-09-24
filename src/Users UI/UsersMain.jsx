@@ -390,6 +390,8 @@ const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, pa
 
     }
 
+    console.log("Ought to be archived");
+
   };
 
   //restore a user

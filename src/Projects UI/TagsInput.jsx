@@ -44,7 +44,7 @@ const TagsInput = ({ projectStacks, setProjectStacks }) => {
             ))}
           </ul>
 
-          <input type="text" className='tag_input' value={inputValue} onChange={(e) => setInputValue(e.target.value)} onKeyDown={addTag} placeholder='Type something...'/>
+          <input type="text" className='tag_input' value={inputValue} onChange={(e) => setInputValue(e.target.value)} onKeyDown={addTag} placeholder='type and press enter...'/>
 
         </div>
         

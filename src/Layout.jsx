@@ -25,10 +25,6 @@ const Layout = ({ notifications, setNotifications, fullPageOverlay, setFullPageO
 
     <main>
 
-        <div className="close_notification_icon" style={{display: showNotificationsBar ? "block" : "none"}} onClick={() => closeNotificationBar()}>
-        {thecloseicon}
-        </div>
-
         <div className="add_user_modal_overlay" style={{display: fullPageOverlay ? "block" : "none"}}></div>
 
         <Sidebar />
@@ -38,6 +34,7 @@ const Layout = ({ notifications, setNotifications, fullPageOverlay, setFullPageO
             <NotificationMain 
                 notifications={notifications}
                 setNotifications={setNotifications}
+                closeNotificationBar={closeNotificationBar}
             />
 
         : null}

@@ -6,47 +6,51 @@ const PayrollTable = ({ currentStaffs, filteredSearch, searchPayroll }) => {
   
   return (
 
-    <table className="payroll_table">
+    <div className="payroll_table_main">
 
-        <thead className="payroll_table_head">
+        <table className="payroll_table">
 
-            <PayrollTableTitle />
+            <thead className="payroll_table_head">
 
-        </thead>
+                <PayrollTableTitle />
 
-        <tbody>
+            </thead>
 
-            {!searchPayroll ?
+            <tbody>
 
-                currentStaffs.map((user) => (
+                {!searchPayroll ?
 
-                    <PayrollTableList 
-                        key={user.id}
-                        user={user}
-                        filteredSearch={filteredSearch}
-                    />
+                    currentStaffs.map((user) => (
 
-                ))
+                        <PayrollTableList 
+                            key={user.id}
+                            user={user}
+                            filteredSearch={filteredSearch}
+                        />
 
-            : null}
+                    ))
 
-            {searchPayroll ?
+                : null}
 
-                filteredSearch.map((user) => (
+                {searchPayroll ?
 
-                    <PayrollTableList 
-                        key={user.id}
-                        user={user}
-                        filteredSearch={filteredSearch}
-                    />
+                    filteredSearch.map((user) => (
 
-                ))
+                        <PayrollTableList 
+                            key={user.id}
+                            user={user}
+                            filteredSearch={filteredSearch}
+                        />
 
-            : null}
+                    ))
 
-        </tbody>
+                : null}
 
-    </table>
+            </tbody>
+
+        </table>
+
+    </div>
 
   )
 

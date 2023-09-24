@@ -1,6 +1,6 @@
 import NotificationList from "./NotificationList";
 
-const NotificationMain = ({ notifications, setNotifications }) => {
+const NotificationMain = ({ notifications, setNotifications, closeNotificationBar }) => {
 
   const deleteAllNotifications = () => {
     setNotifications([]);
@@ -14,7 +14,7 @@ const NotificationMain = ({ notifications, setNotifications }) => {
 
         <div className="notification_header">
           <p className="notification_title">Notifications</p>
-          <div className="delete_all_notifications" onClick={() => deleteAllNotifications()}>Delete all</div>
+          <button className="close_notification_button" onClick={() => closeNotificationBar()}>Close</button>
         </div>
 
         <div className="notification_lists_block">
@@ -36,6 +36,8 @@ const NotificationMain = ({ notifications, setNotifications }) => {
             ))
 
           : <p className="no_notifications_txt">No data to display</p>}
+
+          <div style={{display: notifications.length === 0 ? "none" : "block"}}  className="delete_all_notifications" onClick={() => deleteAllNotifications()}>Delete all</div>
 
         </div>
 

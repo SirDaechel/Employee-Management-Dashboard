@@ -3,8 +3,6 @@ import ProjectUtility from "./ProjectUtility";
 import ProjectTabs from './ProjectTabs';
 import ProjectsBody from "./ProjectsBody";
 
-
-
 const ProjectsMain = ({ projects, setProjects, setFullPageOverlay, users }) => {
 
   const [searchBar, setSearchBar] = useState("");

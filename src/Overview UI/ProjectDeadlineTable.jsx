@@ -8,7 +8,6 @@ const ProjectDeadlineTable = ({ projects }) => {
 
     <div className="project_deadline">
 
-
         <table className="project_deadline_table">
 
             <caption className="deadline_title">
@@ -17,7 +16,7 @@ const ProjectDeadlineTable = ({ projects }) => {
 
             <thead className="deadline_table_head">
                 <tr>
-                    <th className="deadline_table_title">Project Name</th>
+                    <th className="deadline_table_title">Project</th>
                     <th className="deadline_table_title">Assigned To</th>
                     <th className="deadline_table_title">Status</th>
                     <th className="deadline_table_title">Due Date</th>

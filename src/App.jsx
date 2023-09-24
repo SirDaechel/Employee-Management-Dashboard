@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import api from './api/users'
 import projectapi from './api/projects'
 import notificationsapi from './api/notifications'
+import helpdeskapi from './api/helpdesk'
 import UsersMain from './Users UI/UsersMain';
 import OverviewMain from './Overview UI/OverviewMain'
 import ProjectsMain from './Projects UI/ProjectsMain'
@@ -17,6 +18,7 @@ function App() {
   const [users, setUsers] = useState([]);
   const [projects, setProjects] = useState([]);
   const [notifications, setNotifications] = useState([]);
+  const [helpDesk, setHelpDesk] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [usersPerPage, setUsersPerPage] = useState(10);
@@ -130,6 +132,38 @@ function App() {
     }
 
     fetchNotifications();
+
+
+
+    //fetch helpdesk tickets
+
+    const fetchHelpDesk = async () => {
+
+      try {
+        setLoading(true);
+        const response = await helpdeskapi.get("/helpdesk");
+        setHelpDesk(response.data);
+        setLoading(false);
+      } catch (err) {
+
+        if(err.response) {
+
+          //Not in the 200 response range
+          console.log(err.response.data);
+          console.log(err.response.status);
+          console.log(err.response.header);
+
+        } else {
+
+          console.log(`Error: ${err.message}`);
+
+        }
+
+      };
+
+    }
+
+    fetchHelpDesk();
     
   }, []);
 
@@ -194,7 +228,11 @@ function App() {
           users={users}
         />} />
 
-        <Route path='helpdesk' element={<HelpDeskMain />} />
+        <Route path='helpdesk' element={<HelpDeskMain 
+          tickets={helpDesk}
+          setTicket={setHelpDesk}
+          setFullPageOverlay={setFullPageOverlay}
+        />} />
 
       </Route>
 

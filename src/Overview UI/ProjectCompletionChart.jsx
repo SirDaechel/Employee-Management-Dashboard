@@ -20,6 +20,8 @@ ChartJS.register(
 
 const ProjectCompletionChart = () => {
 
+  const isScreenWidth = window.innerWidth
+
   const data = {
 
       labels: ["Completed", "In Progress", "Pending"],
@@ -50,7 +52,9 @@ const ProjectCompletionChart = () => {
     
       maintainAspectRatio: true,
     
-      aspectRatio: .99,
+      // aspectRatio: isScreenWidth <= 767 ? 1 : 1,
+      aspectRatio: isScreenWidth <= 1023 && isScreenWidth >= 768 ? 1.5 : isScreenWidth <= 1279 && isScreenWidth >= 1024 ? 2 : 1,
+
     
       scales: {
     
@@ -96,7 +100,7 @@ const ProjectCompletionChart = () => {
 
       <p className="project_completion_title">Project Completion Rate</p>
 
-      <Doughnut data={data} options={options}></Doughnut>
+      <Doughnut data={data} options={options} style={{display: "flex", alignItems: "center", justifyContent: "center"}}></Doughnut>
 
       <div className="project_completion_labels">
 

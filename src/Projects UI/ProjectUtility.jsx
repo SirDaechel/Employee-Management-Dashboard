@@ -12,11 +12,11 @@ const ProjectUtility = ({ projects, searchBar, setSearchBar }) => {
         projects={projects}
         searchBar={searchBar}
         setSearchBar={setSearchBar}
-        placeholder={"search projects"}
+        placeholder={"Search projects"}
       />
   
       <Button 
-          label={"Add project"}
+          label={"Create"}
           icon={<span className='plus_icon'>{plusIcon}</span>}
           backgroundColour={{backgroundColor: "#6C63FF", color: "#FFFFFF"}}
           linkto={"addproject"}

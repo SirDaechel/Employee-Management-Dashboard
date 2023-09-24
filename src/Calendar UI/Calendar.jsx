@@ -114,27 +114,27 @@ const Calendar = ({ setProjectDate, closeCalendar, showCalendar, setShowCalendar
     }, [currentDate]);
 
     // Event listener to close the calendar when clicking outside
-    useEffect(() => {
+    // useEffect(() => {
 
-      const handleClickOutside = (event) => {
-        if (calendarRef.current && !calendarRef.current.contains(event.target)) {
-          setShowCalendar(false);
-        }
-      };
+    //   const handleClickOutside = (event) => {
+    //     if (calendarRef.current && !calendarRef.current.contains(event.target)) {
+    //       setShowCalendar(false);
+    //     }
+    //   };
 
-      document.addEventListener('mousedown', handleClickOutside);
+    //   document.addEventListener('mousedown', handleClickOutside);
 
-      return () => {
-        document.removeEventListener('mousedown', handleClickOutside);
-      };
+    //   return () => {
+    //     document.removeEventListener('mousedown', handleClickOutside);
+    //   };
 
-    }, []);
+    // }, []);
 
   return (
 
     <section>
         
-        <div ref={calendarRef} className="calendar_container" style={{top: endDateCalendarMargin ? "12%" : ""}}>
+        <div className="calendar_container" style={{top: endDateCalendarMargin ? "12%" : ""}}>
 
             <div className="calendar_header">
                 <p className="calendar_txt">Select Date</p>

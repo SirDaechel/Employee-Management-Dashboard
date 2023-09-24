@@ -22,6 +22,9 @@ ChartJS.register(
 
 const BarChart = () => {
 
+  const isScreenWidth = window.innerWidth
+
+
   const data = {
 
     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -71,7 +74,7 @@ const BarChart = () => {
 
     maintainAspectRatio: true,
 
-    aspectRatio: 2,
+    aspectRatio: isScreenWidth <= 767 ? .9 : 2,
 
     // indexAxis: "y",
 
@@ -124,7 +127,7 @@ const BarChart = () => {
 
   return (
 
-    <div style={{width: "45rem", height: "33rem", background: "#FFF", borderRadius: "3px", padding: "1rem"}}>
+    <div className="barchart">
 
         <div className="chart_header">
 

@@ -36,7 +36,7 @@ const UsersUtilities = ({ users, search, setSearch, showOverlay, setShowOverlay,
             />
 
             <UsersUtililyBtn 
-                label={"Add User"}
+                label={"Create"}
                 icon={<div className="add_user_icon">{addauser}</div>}
                 backgroundColour={{backgroundColor: "#6C63FF", color: "#FFFFFF"}}
                 onClick={() => userModalOpen()}

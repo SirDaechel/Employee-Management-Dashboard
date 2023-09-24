@@ -6,7 +6,7 @@ const InputBox = ({ label, w100, addProjectInput, setAddProjectInput, type, plac
 
         <p className={"project_label_txt"}>{label}</p>
 
-        <input autoComplete="off" className={`project_input ${w100}`} value={addProjectInput} required type={type} placeholder={placeholder} onChange={(e) => setAddProjectInput(e.target.value)} />
+        <input autoComplete="off" className={`project_input`} value={addProjectInput} required type={type} placeholder={placeholder} onChange={(e) => setAddProjectInput(e.target.value)} />
 
     </div>
 

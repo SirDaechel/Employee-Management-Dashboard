@@ -34,7 +34,7 @@ const TopNav = ({ openNotificationsBar, notifications }) => {
 
   return (
 
-    <div className="top_nav" style={{marginTop: "1.1rem"}}>
+    <div className="top_nav">
 
       <div className="welcome_user">
         <p className="dashboard_greeting">{greeting}</p>

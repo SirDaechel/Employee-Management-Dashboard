@@ -107,22 +107,22 @@ main {
   background-color: #6C63FF;
 }
 
-.breadcrumb {
+/* .breadcrumb {
   color: #ABABAB;
   font-size: 0.75rem;
   font-style: normal;
   font-weight: 300;
   padding-left: 2rem;
   margin-top: 1.19rem;
-}
+} */
 
-.order_breadcrumb_text {
+/* .order_breadcrumb_text {
   color: #6C63FF;
   font-size: 0.75rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-}
+} */
 
 .utilities_body {
   display: flex;
@@ -266,7 +266,7 @@ main {
 }
 
 .active_tabNo {
-  background: var(--notify, #6C63FF);
+  background: #6C63FF;
 }
 
 .active_user_tab {
@@ -280,7 +280,7 @@ main {
   align-items: center;
   gap: 0.625rem;
   border-radius: 0.625rem;
-  border: 1px solid var(--border-chelist, #E9E9EA);
+  border: 1px solid #57575a;
   cursor: pointer;
 }
 
@@ -1033,6 +1033,7 @@ th {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 1.1rem;
 }
 
 .top_nav_utilities {
@@ -1196,9 +1197,22 @@ th {
 /****************************** SECOND LEVEL OF THE DASHBOARD/OVERVIEW CONTENT ************************/
 
 .second_lvl_overview {
+  /* display: grid;
+  grid-template-columns: 2fr 1fr; */
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+  gap: 1rem;
+  overflow: hidden;
+}
+
+.barchart {
+  width: 65%;
+  height: 32rem;
+  /* width: 45rem; */
+  background-color: #FFF;
+  border-radius: 3px;
+  padding: 1rem;
 }
 
 .chart_header {
@@ -1273,12 +1287,13 @@ th {
 
 .doughnut_chart {
   position: relative;
-  width: 25rem;
-  height: 33rem; 
+  width: 35%;
+  /* width: fit-content; */
+  height: 32rem;
   background: #FFF; 
   border-radius: 3px; 
   padding: 1rem; 
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .doughnut_chart::-webkit-scrollbar {
@@ -1294,17 +1309,17 @@ th {
   background-color: #555;
 }
 
-.total_staff {
+/* .total_staff {
   position: absolute;
-  top: 48%;
-  left: 53%;
+  top: 45%;
+  left: 35%;
   transform: translate(-50%, -50%);
   text-align: center;
   text-transform: uppercase;
   font-size: 1rem;
   font-weight: 600;
   font-family: 'Open Sans', sans-serif;
-}
+} */
 
 .roles_for_pie {
   display: flex;
@@ -1312,6 +1327,7 @@ th {
   justify-content: flex-start;
   flex-wrap: wrap;
   gap: 1rem;
+  margin-top: 2rem;
 }
 
 .role_for_pie_data {
@@ -1460,7 +1476,7 @@ th {
  background-color: #fff;
  padding: 1rem 1.2rem;
  z-index: 100;
- overflow-y: hidden;
+ overflow-y: auto;
 }
 
 .notification_data {
@@ -1481,10 +1497,12 @@ th {
 }
 
 .delete_all_notifications {
-  font-size: .8rem;
-  font-weight: 500;
-  font-family: 'Poppins', sans-serif;
-  color: #6C63FF;
+  font-size: 1.1rem;
+  color: #FFF;
+  background-color: red;
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: center;
 }
 
 .delete_all_notifications:hover {
@@ -1498,6 +1516,7 @@ th {
   flex-direction: column;
   gap: 1rem;
   margin-top: .6rem;
+  /* height: 100vh; */
 }
 
 .notification_list {
@@ -1592,14 +1611,12 @@ th {
   font-family: 'Poppins', sans-serif;
 }
 
-.close_notification_icon {
-  position: fixed;
-  z-index: 100;
-  color: #FFF;
-  font-size: 2rem;
-  top: 2%;
-  right: 32%;
-  cursor: pointer;
+.close_notification_button {
+  background: none;
+  padding: .4rem .7rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: red;
 }
 
 
@@ -1622,6 +1639,9 @@ th {
 
 .plus_icon {
   font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .project_data {
@@ -1637,7 +1657,7 @@ th {
   flex-direction: column;
   gap: 1rem;
   width: 16rem;
-  height: 19rem;
+  height: fit-content;
   background-color: #FFFFFF;
   border-radius: 8px;
   padding: .8rem;
@@ -1759,7 +1779,8 @@ th {
   border-radius: 8px;
 }
 
-.project_options_cont {
+.project_options_cont,
+.ticket_options_cont {
   display: flex;
   gap: .4rem;
   align-items: center;
@@ -1780,7 +1801,8 @@ th {
   cursor: pointer;
 }
 
-.project_options_cont:hover {
+.project_options_cont:hover,
+.ticket_options_cont:hover  {
   background-color: #E9E9EA;
   transition: .3s;
 }
@@ -1855,6 +1877,10 @@ th {
   font-size: 1rem;
 }
 
+.project_desc {
+  width: 100%;
+}
+
 .project_desc_input {
   padding: .7rem;
   margin-top: .3rem;
@@ -1863,17 +1889,30 @@ th {
   font-weight: 600;
   font-size: .8rem;
   border: 1px solid #d6d6d6;
-  width: 565.13px;
+  width: 100%;
   border-radius: 4px;
-  max-width: 565.13px;
-  min-width: 565.13px;
-  min-height: 60.38px;
-  max-height: 115px;
-  display: flex;
+  /* max-width: 565.13px; */
+  /* min-width: 565.13px; */
+  /* min-height: 60.38px; */
+  min-height: 150px;
+  /* display: flex;
   align-items: flex-start;
-  justify-content: flex-start;
-  resize: both;
-  overflow: hidden;
+  justify-content: flex-start; */
+  resize: none;
+  overflow-y: auto;
+}
+
+.project_desc_input::-webkit-scrollbar {
+  width: 10px;
+}
+
+.project_desc_input::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 8px;
+}
+
+.project_desc_input::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
 }
 
 .add_project_left,
@@ -1888,6 +1927,8 @@ th {
 
 .project_left_cont {
   position: relative;
+  width: 100%;
+
 }
 
 .input_dropdown {
@@ -2108,8 +2149,8 @@ th {
 /*********************************************** CALENDER UI *******************************************/
 
 .calendar_container {
-  width: 25rem;
-  min-height: 33rem;
+  width: fit-content;
+  min-height: max-content;
   background-color: #FFF;
   padding: 1rem;
   border-radius: 10px;
@@ -2120,8 +2161,9 @@ th {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.411);
   scale: .7;
   position: absolute;
-  top: -5%;
-  left: -9%;
+  top: 13%;
+  left: 0;
+  right: 0;
 }
 
 .calendar_header {
@@ -2261,6 +2303,7 @@ th {
 }
 
 .payroll_date_main {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2338,6 +2381,1637 @@ th {
 }
 
 
-/* font-family: 'Roboto', sans-serif; */
-/* font-family: 'Open Sans', sans-serif; */
-/* font-family: 'Poppins', sans-serif; */
+
+
+
+
+/*********************************************** HELP DESK UI *******************************************/
+.helpdesk_top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.tickets {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.ticket_cont {
+  position: relative;
+  background-color: #FFF;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.ticket_main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.ticket_main_header {
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+  border-bottom: 2px solid #EAEDF7;
+  padding-bottom: 1rem;
+}
+
+.ticket_main_header_top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ticket_options {
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.ticket_id {
+  padding: .3rem .7rem;
+  background-color: #dbd9fa;
+  color: #6C63FF;
+  width: fit-content;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: .9rem;
+}
+
+.ticket_subject {
+  font-weight: 700;
+  font-size: .9rem;
+  color: #272727;
+}
+
+.ticket_main_body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .9rem;
+}
+
+.ticket_info {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+}
+
+.ticket_info_title {
+  font-size: .8rem;
+  font-weight: 700;
+  color: #7e7e7e;
+}
+
+.ticket_info_txt {
+  font-size: .85rem;
+  color: #1d1d1d;
+  font-weight: 600;
+}
+
+.ticket_options_cont {
+  top: 20%;
+  right: -2%;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*********************************************** MEDIA QUERY *******************************************/
+
+
+@media (max-width: 767px) {
+
+
+  /***************************************** SIDE BAR ****************************************/
+
+  
+  main {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    /* gap: 1rem; */
+  }
+
+  .content {
+    width: 100%;
+    padding: .6rem;
+    margin-bottom: 6rem;
+  }
+
+  .sideBarContainer {
+    width: 100%;
+    height: 8%;
+    position: fixed;
+    bottom: 0;
+    z-index: 7;
+    background-color: #FFF;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.211);
+  }
+
+  .sidebartabs {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    /* gap: 2rem; */
+    /* padding: 0; */
+    background-color: transparent;
+    padding: .7rem .4rem;
+  }
+
+  
+  .sidetab_icon_boxixon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 17px;
+    height: 17px;
+    font-size: 1.65rem;
+  }
+
+  .tablabel {
+    display: none;
+  }
+
+  .active {
+    background-color: transparent;
+    color: #6C63FF;
+  }
+
+
+  /************************************  DASHBOARD ***************************************/
+
+
+  .top_nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0;
+  }
+
+  .notification_icon,
+  .dark_light_mode {
+    font-size: 1.3rem;
+    color: #555;
+    cursor: pointer;
+  }
+
+  .user_photo {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .user_name_role {
+    display: none;
+  }
+
+  .dashboard_greeting {
+    font-size: .83rem;
+  }
+
+  .dashboard_date {
+    font-size: .68rem;
+  }
+
+
+
+
+  .project_metrics {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .metric_cont {
+    width: 100%;
+  }
+
+
+  .second_lvl_overview {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .barchart {
+    width: 100%;
+    height: max-content;
+    background-color: #FFF;
+    border-radius: 3px;
+    padding: 1rem;
+  }
+
+  .doughnut_chart {
+    width: 100%;
+    position: relative;
+    height: max-content;
+  }
+
+  /* .total_staff {
+    top: 29%;
+    left: 34%;
+    font-size: 1rem;
+  } */
+
+  .roles_for_pie {
+    margin-top: 2rem;
+  }
+
+  .third_lvl_overview {
+    flex-direction: column;
+  }
+  
+  .project_completion_chart {
+    width: 100%;
+    height: max-content;
+  }
+  
+  .project_deadline {
+    max-width: 100%;
+    height: 32rem;
+    background-color: #FFF;
+    overflow-x: scroll;
+  }
+
+  .deadline_table_title {
+    font-size: .75rem;
+  }
+
+
+
+
+  /****************************************** NOTIFICATIONS **********************************************/
+
+  .notification_cont {
+    width: 100%;
+    overflow-y: auto;
+  }
+
+  .close_notification_button {
+    font-size: 1rem;
+    /* border: 1px solid red; */
+    color: red;
+    background: none;
+  }
+
+
+
+
+
+  /**************************************** USERS PAGE **********************************/
+
+  
+  .utilities_body {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .users_search {
+    width: 100%;
+  }
+
+  .searchbar {
+    width: 100%;
+  }
+
+  .searchbarcont {
+    flex-direction: column;
+  }
+
+  .search_close {
+    top: 19%;
+  }
+
+  .search_result {
+    margin: .5rem 0 0 0;
+  }
+
+  .utilities_btn {
+    gap: .6rem;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* .btn_main_label {
+    display: none;
+  } */
+
+  /* .btn_main {
+    display: flex;
+    padding: 0.625rem 1.5625rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 0.9375rem;
+    border: 1px solid var(--border-chelist, #E9E9EA);
+  } */
+
+  .btn_main {
+    padding: 0.6rem 1rem;
+    gap: 0.4rem;
+  }
+
+  .tabs {
+    gap: .5rem;
+    margin-bottom: 1rem;
+    padding: 1.2rem 0;
+    overflow-x: scroll;
+  }
+
+
+  .tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tabchange_txt {
+    width: max-content;
+    font-size: .95rem;
+  }
+
+  .active_tabNo {
+    background: #6C63FF;
+  }
+
+  .active_user_tab {
+    border-bottom: 3px solid #6C63FF;
+  }
+
+  .showing_results_and_filter {
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+  }
+
+  .showing_results_txt,
+  .items_per_page_txt {
+    display: none;
+  }
+
+  .actions_dropdown {
+    left: 110%;
+  }
+
+  .actions_error {
+    left: 0%;
+  }
+
+  .actions_users_per_page {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .options {
+    gap: .7rem;
+  }
+
+  .users_table_cont {
+    width: 100%;
+    overflow-x: scroll;
+  }
+
+  .addUser_cont {
+    width: 100%;
+  }
+
+  .adduser_form {
+    padding: 1.2rem;
+    scale: .85;
+  }
+  
+  .close_add_user_modal {
+    position: fixed;
+    z-index: 101;
+    color: #FFF;
+    font-size: 2rem;
+    top: 1%;
+    right: 7%;
+    cursor: pointer;
+  }
+
+
+
+  /*************************************** PROJECTS PAGE ********************************/
+
+  .project_utility_cont {
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .project_tabs {
+    gap: .5rem;
+    margin-bottom: 1rem;
+    padding: 1.2rem 0;
+    overflow-x: scroll;
+  }
+
+  .project_tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  
+  .plus_icon {
+    font-size: 1.1rem;
+  }
+  
+  .project_data {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .project_cont {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    height: fit-content;
+  }
+  
+  .project_options_cont,
+  .ticket_options_cont {
+    right: 0%;
+  }
+  
+  /****************************************** ADD PROJECT SECTION *****************************************/
+  
+  
+  .add_project_forms {
+    flex-direction: column;
+  }
+  
+  .add_project_left,
+  .add_project_right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .project_left_cont {
+    position: relative;
+  }
+  
+  .input_dropdown {
+    position: absolute;
+    background-color: #FFF;
+    padding: .6rem 0 .6rem .7rem;
+    margin-top: .6rem;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.411);
+    border-radius: 4px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    max-height: 10rem;
+    z-index: 2;
+  }
+  
+  .input_dropdown:hover {
+    overflow-y: scroll;
+  }
+  
+  .input_dropdown::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .input_dropdown::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 8px;
+  }
+  
+  .input_dropdown::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+  
+  .input_dropdown_data {
+    display: flex;
+    flex-direction: column;
+    /* gap: .5rem; */
+    align-items: flex-start;
+    justify-content: center;
+  }
+  
+  .dropdown_txt {
+    cursor: pointer;
+    font-size: .85rem;
+    width: 100%;
+    padding: .5rem 0 .5rem .8rem;
+  }
+  
+  .dropdown_txt:hover {
+    background-color: #EAEDF7;
+    transition: .3s;
+  }
+  
+  .assign_list {
+    position: absolute;
+    margin-top: 1rem;
+    z-index: 5;
+    overflow-y: scroll;
+    background-color: #FFF;
+    border-radius: 4px;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.411);
+  }
+  
+  .assign_list::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .assign_list::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 8px;
+  }
+  
+  .assign_list::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+  
+  .assign_list_data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .4rem;
+    justify-content: flex-start;
+    padding: .9rem;
+    max-height: 11rem;
+    width: 100%;
+  }
+  
+  .staffs_assigned_with_icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: .5rem;
+    cursor: pointer;
+  }
+  
+  .assign_to {
+    font-size: .93rem;
+  }
+  
+  .open_assign_to_dropdown_btn {
+    background-color: red;
+    color: #FFF;
+    padding: .4rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .assign_placeholder {
+    color: #555;
+  }
+  
+  .staffs_assigned_with_icon:hover {
+    background-color: #EAEDF7;
+    transition: .3s;
+  }
+  
+  .tick_icon {
+    font-size: 1.1rem;
+  }
+  
+  .tags_section {
+    width: 100%;
+  }
+  
+  .tags_cont,
+  .assign_cont {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .5rem;
+    margin-top: .3rem;
+    padding: .7rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: .8rem;
+    border: 1px solid #d6d6d6;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 35.4rem;
+    min-height: 3.7rem;
+    background-color: #FFF;
+  }
+  
+  .assign_cont {
+    justify-content: space-between;
+  }
+  
+  .tags_list_body,
+  .assign_list_body {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .5rem;
+  }
+  
+  /* .assign_list_body {
+    width: 460px;
+  } */
+  
+  .tag_list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .55rem;
+  }
+  
+  .delete_tag_list {
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+  
+  .tag_input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: .8rem;
+  }
+  
+  .tag_input:focus{
+    outline: none;
+  }
+  
+  .tag_list {
+    background-color: #6C63FF;
+    color: #FFF;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: .8rem;
+    border-radius: 4px;
+    padding: .3rem;
+  }
+  
+  .submit_project {
+    background-color: #6C63FF;
+    padding: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #FFF;
+    border-radius: 8px;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .submit_project:hover {
+    background-color: #817afd;
+    transition: .3s;
+  }
+
+
+  /************************************* PAYROLL PAGE **********************************/
+  
+  .payroll_top_data {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .payroll_metrics_card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .payroll_date_cont {
+    padding: 1rem;
+    width: 100%;
+  }
+  
+  .payroll_date_run {
+    font-size: 1rem;
+  }
+
+  .payroll_table_main {
+    max-width: 100%;
+    overflow-x: scroll;
+  }
+  
+  .payroll_last_data {
+    width: 100%;
+  }
+  
+  .metric_cont_top_txt {
+    font-size: 1rem;
+  }
+  
+  .percentage_txt,
+  .percentage_arrow {
+    font-size: 1rem;
+  }
+  .percentage_txt_month {
+    font-size: .9rem;
+  }
+
+
+
+
+  /******************************************* HELPDESK PAGE **********************************/
+
+  
+  .tickets {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .ticket_options {
+    font-size: 1.3rem;
+  }
+  
+  .ticket_info_title {
+    font-size: .9rem;
+  }
+  
+  .ticket_info_txt {
+    font-size: .9rem;
+  }
+  
+  .ticket_options_cont {
+    top: 22%;
+    right: 0;
+  }
+
+
+}
+
+
+
+@media (max-width: 320px) {
+
+  /*********************************************** CALENDER *******************************************/
+
+  .calendar_container {
+    left: -9%;
+  }
+
+}
+
+
+
+@media (max-width: 290px) {
+
+
+  /******************************************* SIDEBAR *********************************/
+
+  .sidetab_icon_boxixon {
+    font-size: 1.3rem;
+  }
+
+  /******************************************* USERS PAGE *********************************/
+
+
+  .utilities_btn {
+    gap: .6rem;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .btn_main_label {
+    display: none;
+  }
+
+  .paginate_cont {
+    scale: 1;
+  }
+
+
+  .addUser_cont {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    align-content: center;
+    width: 120%;
+  }
+  
+  .adduser_form {
+    scale: .789;
+  }
+
+
+  /*********************************************** CALENDER *******************************************/
+
+  .calendar_container {
+    left: -16.7%;
+  }
+
+}
+
+
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  /* .content {
+    margin-bottom: 6rem;
+  } */
+
+
+  /***************************************** SIDEBAR **************************************/
+
+
+  .sideBarContainer {
+    width: 23%;
+  }
+
+
+
+  /************************************** DASHBOARD ***************************************/
+
+  .project_metrics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .metric_cont {
+    width: 100%;
+  }
+  
+  
+  .metric_cont_top_txt {
+    font-size: .9rem;
+  }
+  
+  .percentage_txt,
+  .percentage_arrow {
+    font-size: .9rem;
+  }
+  
+  .percentage_txt_month {
+    font-size: .85rem;
+  }
+
+
+
+  .second_lvl_overview {
+    flex-direction: column;
+  }
+  
+  .barchart {
+    width: 100%;
+    height: max-content;
+  }
+
+  .doughnut_chart {
+    position: relative;
+    width: 100%;
+    height: max-content;
+    overflow-y: auto;
+  }
+
+  .roles_for_pie_txt {
+    font-size: 1rem;
+  }
+
+
+
+
+  .third_lvl_overview {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .project_completion_chart {
+    width: 100%;
+    height: max-content;
+  }
+
+  .completed_projects_label_text,
+  .inprogress_projects_label_text,
+  .pending_projects_label_text {
+    font-size: 1.1rem;
+  }
+
+  .project_deadline {
+    height: max-content;
+    background-color: #FFF;
+  }
+
+
+
+  /************************************** USERS PAGE ***************************************/
+
+
+  .utilities_body {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .users_search {
+    width: 100%;
+  }
+
+  .searchbar {
+    width: 100%;
+  }
+
+  .searchbarcont {
+    flex-direction: column;
+  }
+
+  .project_search {
+    left: 4%;
+  }
+
+  .search_close {
+    top: 19%;
+  }
+
+  .search_result {
+    margin: .5rem 0 0 0;
+  }
+
+  .utilities_btn {
+    gap: .6rem;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .btn_main {
+    padding: 0.6rem 1rem;
+    gap: 0.4rem;
+  }
+
+  .tabs {
+    gap: .5rem;
+    margin-bottom: 1rem;
+    padding: 1.2rem 0;
+    overflow-x: auto;
+  }
+
+
+  .tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tabchange_txt {
+    width: max-content;
+    font-size: .95rem;
+  }
+
+  .showing_results_and_filter {
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+  }
+
+  .showing_results_txt {
+    width: 30%;
+  }
+
+  .actions_dropdown {
+    left: 110%;
+  }
+
+  .actions_error {
+    left: 0%;
+  }
+
+  .actions_users_per_page {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .options {
+    gap: .7rem;
+  }
+
+  .users_table_cont {
+    width: 100%;
+    overflow-x: scroll;
+  }
+
+  .addUser_cont {
+    width: 70%;
+  }
+
+  .adduser_form {
+    scale: 1;
+  }
+  
+  .close_add_user_modal {
+    position: fixed;
+    z-index: 101;
+    color: #FFF;
+    font-size: 3rem;
+    top: 5%;
+    right: 7%;
+    cursor: pointer;
+  }
+
+
+
+
+  /*************************************** PROJECTS PAGE ********************************/
+
+  .project_utility_cont {
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .project_tabs {
+    gap: .5rem;
+    margin-bottom: 1rem;
+    padding: 1.2rem 0;
+    overflow-x: scroll;
+  }
+
+  .project_tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .plus_icon {
+    font-size: 1.1rem;
+  }
+  
+  .project_data {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .project_cont {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    height: fit-content;
+  }
+  
+  .project_options_cont,
+  .ticket_options_cont {
+    right: 0%;
+  }
+  
+  /****************************************** ADD PROJECT SECTION *****************************************/
+  
+  
+  .add_project_forms {
+    flex-direction: column;
+  }
+  
+  .add_project_left,
+  .add_project_right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .project_left_cont {
+    position: relative;
+  }
+  
+  .input_dropdown {
+    position: absolute;
+    background-color: #FFF;
+    padding: .6rem 0 .6rem .7rem;
+    margin-top: .6rem;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.411);
+    border-radius: 4px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    max-height: 10rem;
+    z-index: 2;
+  }
+  
+  .input_dropdown:hover {
+    overflow-y: scroll;
+  }
+  
+  .input_dropdown::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .input_dropdown::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 8px;
+  }
+  
+  .input_dropdown::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+  
+  .input_dropdown_data {
+    display: flex;
+    flex-direction: column;
+    /* gap: .5rem; */
+    align-items: flex-start;
+    justify-content: center;
+  }
+  
+  .dropdown_txt {
+    cursor: pointer;
+    font-size: .85rem;
+    width: 100%;
+    padding: .5rem 0 .5rem .8rem;
+  }
+  
+  .dropdown_txt:hover {
+    background-color: #EAEDF7;
+    transition: .3s;
+  }
+  
+  .assign_list {
+    position: absolute;
+    margin-top: 1rem;
+    z-index: 5;
+    overflow-y: scroll;
+    background-color: #FFF;
+    border-radius: 4px;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.411);
+  }
+  
+  .assign_list::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .assign_list::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 8px;
+  }
+  
+  .assign_list::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+  
+  .assign_list_data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .4rem;
+    justify-content: flex-start;
+    padding: .9rem;
+    max-height: 11rem;
+    width: 100%;
+  }
+  
+  .staffs_assigned_with_icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: .5rem;
+    cursor: pointer;
+  }
+  
+  .assign_to {
+    font-size: .93rem;
+  }
+  
+  .open_assign_to_dropdown_btn {
+    background-color: red;
+    color: #FFF;
+    padding: .4rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .assign_placeholder {
+    color: #555;
+  }
+  
+  .staffs_assigned_with_icon:hover {
+    background-color: #EAEDF7;
+    transition: .3s;
+  }
+  
+  .tick_icon {
+    font-size: 1.1rem;
+  }
+  
+  .tags_section {
+    width: 100%;
+  }
+  
+  .tags_cont,
+  .assign_cont {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .5rem;
+    margin-top: .3rem;
+    padding: .7rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: .8rem;
+    border: 1px solid #d6d6d6;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 35.4rem;
+    min-height: 3.7rem;
+    background-color: #FFF;
+  }
+  
+  .assign_cont {
+    justify-content: space-between;
+  }
+  
+  .tags_list_body,
+  .assign_list_body {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .5rem;
+  }
+  
+  /* .assign_list_body {
+    width: 460px;
+  } */
+  
+  .tag_list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .55rem;
+  }
+  
+  .delete_tag_list {
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+  
+  .tag_input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: .8rem;
+  }
+  
+  .tag_input:focus{
+    outline: none;
+  }
+  
+  .tag_list {
+    background-color: #6C63FF;
+    color: #FFF;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: .8rem;
+    border-radius: 4px;
+    padding: .3rem;
+  }
+  
+  .submit_project {
+    font-size: 1rem;
+    color: #FFF;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+  }
+
+
+
+  /************************************* PAYROLL PAGE **********************************/
+  
+  .payroll_top_data {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .payroll_metrics_card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+  
+  .payroll_date_cont {
+    padding: 1rem;
+    width: 100%;
+  }
+  
+  .payroll_date_run {
+    font-size: 1rem;
+  }
+
+  .payroll_table_main {
+    max-width: 100%;
+    overflow-x: scroll;
+  }
+  
+  .payroll_last_data {
+    width: 100%;
+  }
+  
+  .metric_cont_top_txt {
+    font-size: 1rem;
+  }
+  
+  .percentage_txt,
+  .percentage_arrow {
+    font-size: 1rem;
+  }
+  .percentage_txt_month {
+    font-size: .9rem;
+  }
+
+
+
+  /******************************************* HELPDESK PAGE **********************************/
+
+  
+  .tickets {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .ticket_options {
+    font-size: 1.3rem;
+  }
+  
+  .ticket_info_title {
+    font-size: .9rem;
+  }
+  
+  .ticket_info_txt {
+    font-size: .9rem;
+  }
+  
+  .ticket_options_cont {
+    top: 22%;
+    right: 0;
+  }
+
+
+}
+
+
+
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+
+
+    /***************************************** SIDEBAR **************************************/
+
+
+  .sideBarContainer {
+    width: 17%;
+  }
+
+
+
+  /************************************** DASHBOARD ***************************************/
+
+  .project_metrics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .metric_cont {
+    width: 100%;
+  }
+  
+  
+  .metric_cont_top_txt {
+    font-size: .9rem;
+  }
+  
+  .percentage_txt,
+  .percentage_arrow {
+    font-size: .9rem;
+  }
+  
+  .percentage_txt_month {
+    font-size: .85rem;
+  }
+
+
+
+  .second_lvl_overview {
+    flex-direction: column;
+  }
+  
+  .barchart {
+    width: 100%;
+    height: max-content;
+  }
+
+  .doughnut_chart {
+    position: relative;
+    width: 100%;
+    height: max-content;
+    overflow-y: auto;
+  }
+
+  .roles_for_pie_txt {
+    font-size: 1rem;
+  }
+
+
+
+
+  .third_lvl_overview {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .project_completion_chart {
+    width: 100%;
+    height: max-content;
+  }
+
+  .completed_projects_label_text,
+  .inprogress_projects_label_text,
+  .pending_projects_label_text {
+    font-size: 1.1rem;
+  }
+
+  .project_deadline {
+    height: max-content;
+    background-color: #FFF;
+  }
+
+
+
+  /************************************** USERS PAGE ***************************************/
+
+
+  .utilities_body {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: .5rem;
+  }
+
+  .search_close {
+    top: 19%;
+  }
+
+  .search_result {
+    margin: .5rem 0 0 0;
+  }
+
+  .utilities_btn {
+    gap: .8rem;
+  }
+
+  .btn_main {
+    padding: 0.6rem 1rem;
+    gap: 0.4rem;
+  }
+
+  .tabs {
+    gap: .5rem;
+    margin-bottom: 1rem;
+    padding: 1.2rem 0;
+    overflow-x: auto;
+  }
+
+
+  .tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .options {
+    gap: .7rem;
+  }
+
+  .users_table_cont {
+    width: 100%;
+    overflow-x: scroll;
+  }
+  
+  .close_add_user_modal {
+    font-size: 2.5rem;
+    top: 3%;
+    right: 18%;
+    cursor: pointer;
+  }
+
+
+
+
+  /*************************************** PROJECTS PAGE ********************************/
+  
+  
+  .project_data {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  .project_cont {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    height: fit-content;
+  }
+  
+  .project_options_cont,
+  .ticket_options_cont {
+    right: 0%;
+  }
+  
+  /****************************************** ADD PROJECT SECTION *****************************************/
+  
+
+
+
+  /************************************* PAYROLL PAGE **********************************/
+  
+  .payroll_top_data {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .payroll_metrics_card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+  }
+  
+  .payroll_date_cont {
+    padding: 1rem;
+    width: 100%;
+  }
+  
+  .payroll_date_run {
+    font-size: 1rem;
+  }
+
+  .payroll_table_main {
+    max-width: 100%;
+    overflow-x: scroll;
+  }
+  
+  .payroll_last_data {
+    width: 100%;
+  }
+  
+  .metric_cont_top_txt {
+    font-size: 1rem;
+  }
+  
+  .percentage_txt,
+  .percentage_arrow {
+    font-size: 1rem;
+  }
+  .percentage_txt_month {
+    font-size: .9rem;
+  }
+
+
+
+  /******************************************* HELPDESK PAGE **********************************/
+
+  
+  .tickets {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  .ticket_options {
+    font-size: 1.3rem;
+  }
+  
+  .ticket_info_title {
+    font-size: .9rem;
+  }
+  
+  .ticket_info_txt {
+    font-size: .9rem;
+  }
+  
+  .ticket_options_cont {
+    top: 22%;
+    right: 0;
+  }
+    
+
+
+}

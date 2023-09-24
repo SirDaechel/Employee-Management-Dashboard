@@ -16,9 +16,9 @@ const SearchBarGlobal = ({ searchBar, setSearchBar, placeholder }) => {
 
         <form className='search_form' onSubmit={handleOnSubmit}>
 
-          <div className="search_search">{searchIcon}</div>
+          <div className="search_search project_search">{searchIcon}</div>
 
-          <input type="text" className="searchbar" value={searchBar} placeholder={placeholder} onChange={(e) => setSearchBar(e.target.value)} />
+          <input type="text" className="searchbar projects_Searchbar" value={searchBar} placeholder={placeholder} onChange={(e) => setSearchBar(e.target.value)} />
           
           <div className="search_close" style={{display: searchBar ? "block" : "none"}} onClick={clearSearch}>{thecloseicon}</div>
 
