@@ -26,11 +26,11 @@ const TableList = ({ user, handleIndividualUser, clickedOptionsIcon, showUserOpt
             </div>
           </td>
 
-          <td>
+          {/* <td>
             <div className="usernamelist">
               <p className="usernamelist_txt">{username}</p>
             </div>
-          </td>
+          </td> */}
 
           <td>
             <div className="emaillist">
@@ -58,7 +58,7 @@ const TableList = ({ user, handleIndividualUser, clickedOptionsIcon, showUserOpt
 
           <td>
             <div className="hoursperweeklist">
-              <p className="hoursperweeklist_txt">{workinghours} hours per week</p>
+              <p className="hoursperweeklist_txt">{workinghours} / week</p>
             </div>
           </td>
 

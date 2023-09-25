@@ -107,11 +107,11 @@ const TableTitle = ({ users, setUsers, handleSelectAll, isSelectAllChecked }) =>
               </div>
             </th>
 
-            <th>
+            {/* <th>
               <div className="username">
                 <p className="username_txt">Username</p>
               </div>
-            </th>
+            </th> */}
 
             <th>
               <div className="email">

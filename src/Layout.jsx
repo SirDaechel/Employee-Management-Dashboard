@@ -13,12 +13,14 @@ const Layout = ({ notifications, setNotifications, fullPageOverlay, setFullPageO
   const openNotificationsBar = () => {
     setFullPageOverlay(!fullPageOverlay);
     setShowNotificationsBar(true);
+    document.body.classList.add('no_scroll')
   }
 
   //close notifications bar and remove overlay
   const closeNotificationBar = () => {
     setShowNotificationsBar(false);
     setFullPageOverlay(false);
+    document.body.classList.remove('no_scroll')
   }
 
   return (

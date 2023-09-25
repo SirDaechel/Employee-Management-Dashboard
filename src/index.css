@@ -49,6 +49,10 @@ main {
   gap: 1rem;
 }
 
+.no_scroll {
+  overflow: hidden;
+}
+
 .sideBarContainer {
   width: 13%;
   height: 100vh;
@@ -59,6 +63,7 @@ main {
 }
 
 .content {
+  position: relative;
   padding: 0 1rem 2.1rem 0.125rem;
   width: 87%;
   overflow-x: hidden;
@@ -464,10 +469,10 @@ table {
 
 th,
 td {
-  padding: .5rem 1rem;
+  padding: .7rem 1rem;
 }
 
-th {
+th{
   width: 190px;
 }
 
@@ -545,6 +550,7 @@ th {
 .wage,
 .workinghours,
 .age {
+  width: fit-content;
   text-align: left;
   position: relative;
 }
@@ -648,6 +654,7 @@ th {
   font-weight: 400;
   line-height: normal;
   font-family: 'Roboto', sans-serif;
+  width: max-content;
 }
 
 .phonelist_txt {
@@ -4011,7 +4018,26 @@ th {
     top: 22%;
     right: 0;
   }
-    
+
+}
+
+
+
+
+
+@media (min-width: 1280px) {
+
+  .content {
+    max-width: 1200px;
+  }
+
+  .project_metrics {
+    gap: 1rem;
+  }
+
+  .payroll_top_data {
+    gap: 1rem;
+  }
 
 
 }
