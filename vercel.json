@@ -6,7 +6,7 @@
       "use": "@vercel/static-build"
     }
   ],
-  "routes": [
+  "rewrites": [
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
