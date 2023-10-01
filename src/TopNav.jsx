@@ -1,5 +1,4 @@
 import notificationsicon from "../public/images/notificationsicon";
-import moonIcon from "../public/images/moonIcon";
 
 const TopNav = ({ openNotificationsBar, notifications }) => {
 
@@ -42,10 +41,6 @@ const TopNav = ({ openNotificationsBar, notifications }) => {
       </div>
 
       <div className="top_nav_utilities">
-
-        {/* <div className="dark_light_mode">
-          {moonIcon}
-        </div> */}
 
         <div className="notifications" onClick={() => openNotificationsBar()}>
 

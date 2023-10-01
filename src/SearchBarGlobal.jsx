@@ -27,23 +27,6 @@ const SearchBarGlobal = ({ searchBar, setSearchBar, placeholder }) => {
 
       </div>
 
-      {/* {setSearchBar && 
-      
-        <div className="search_result">
-          <div className="search_result_cont">
-            {filteredSearch.length === 0 ? (<p>No results found</p>) :
-            (
-              <ul>
-                {filteredSearch.map((user) => (
-                    <li key={user.id} className="search_list">{user.name}</li>
-                ))}
-              </ul>
-            )}
-          </div>
-        </div>
-
-      } */}
-
     </section>
     
   )

@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Outlet } from "react-router-dom"
 import TopNav from "./TopNav";
 import Sidebar from "./MainSideBar/SideBar";
-import thecloseicon from "../public/images/thecloseicon"
 import NotificationMain from "./Notifications UI/NotificationMain";
 
 const Layout = ({ notifications, setNotifications, fullPageOverlay, setFullPageOverlay }) => {
