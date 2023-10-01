@@ -1,11 +1,10 @@
-import { useState, useRef, useEffect } from "react"
 import AddUserInput from "./AddUserInput"
 import thecloseicon from "../../public/images/thecloseicon"
 import arrowdown from "../../public/images/arrowdown"
 import RoleDropdown from "./RoleDropdown"
 import errorIcon from "../../public/images/errorIcon"
 
-const AddNewUser = ({ users, setUsers, openAddUserModal, setShowOverlay, editAUser, userRole, setUserRole, firstName, lastName, userName, eMail, wage, age, phoneNo, workingHours,  setFirstName, setLastName, setUserName, seteMail, setWage, setAge, setPhoneNo, setWorkingHours, firstNameRef, errRef, errMsg, setFirstNameFocus, setLastNameFocus, setUserNameFocus, setEmailFocus, setWageFocus, setAgeFocus, setPhoneNoFocus, setWorkingHoursFocus, validFirstName, validLastName, validUserName, validEmail, validWage, validAge, validPhoneNo, validWorkingHours, validRole, closeUserModal, showRoleDropdown, setShowRoleDropdown, isSubmitDisabled, setIsSubmitDisabled }) => {
+const AddNewUser = ({ users, setUsers, openAddUserModal, editAUser, userRole, setUserRole, firstName, lastName, userName, eMail, wage, age, phoneNo, workingHours, setFirstName, setLastName, setUserName, seteMail, setWage, setAge, setPhoneNo, setWorkingHours, firstNameRef, setFirstNameFocus, setLastNameFocus, setUserNameFocus, setEmailFocus, setPhoneNoFocus, validFirstName, validLastName, validUserName, validEmail, validWage, validAge, validPhoneNo, validWorkingHours, closeUserModal, showRoleDropdown, setShowRoleDropdown, isSubmitDisabled,  submitEditedUser }) => {
 
   //toggle assign role dropdown menu
   const roleDropdown = (e) => {
@@ -15,8 +14,6 @@ const AddNewUser = ({ users, setUsers, openAddUserModal, setShowOverlay, editAUs
     setShowRoleDropdown(!showRoleDropdown);
 
   };
-
-  const addUserRef = useRef(null);
 
   //add user
   const addUser = () => {
@@ -71,8 +68,6 @@ const AddNewUser = ({ users, setUsers, openAddUserModal, setShowOverlay, editAUs
         <div className="addUser_cont">
             
             <form className="adduser_form">
-
-                <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
 
                 <div className="first_lastname">
 
@@ -159,8 +154,6 @@ const AddNewUser = ({ users, setUsers, openAddUserModal, setShowOverlay, editAUs
                         placeholder={"user wage"}
                         inputState={wage}
                         setInputState={setWage}
-                        // setFocus={() => setWageFocus(true)}
-                        // setBlur={() => setWageFocus(false)}
                         isValid={validWage}
                     />
 
@@ -171,8 +164,6 @@ const AddNewUser = ({ users, setUsers, openAddUserModal, setShowOverlay, editAUs
                         w100={"w100"}
                         inputState={age}
                         setInputState={setAge}
-                        // setFocus={() => setAgeFocus(true)}
-                        // setBlur={() => setAgeFocus(false)}
                         isValid={validAge}
                     />
                     
@@ -200,17 +191,13 @@ const AddNewUser = ({ users, setUsers, openAddUserModal, setShowOverlay, editAUs
                         w100={"w100"}
                         inputState={workingHours}
                         setInputState={setWorkingHours}
-                        // setFocus={() => setWorkingHoursFocus(true)}
-                        // setBlur={() => setWorkingHoursFocus(false)}
                         isValid={validWorkingHours}
                     />
 
                 </div>
 
-                {/* <button disabled={isSubmitDisabled} className="add_user_submit" style={{background: isSubmitDisabled ? "#ABABAB" : "#6C63FF"}} onSubmit={(e) => e.preventDefault()} onClick={() => submitUser()}>{editAUser ? "Edit user" : "Add User"}</button> */}
 
-
-                <button disabled={isSubmitDisabled} className="add_user_submit" style={{background: isSubmitDisabled ? "#ABABAB" : "#6C63FF", cursor: isSubmitDisabled ? "default" : "pointer"}} onSubmit={(e) => e.preventDefault()} onClick={() => submitUser()}>{editAUser ? "Edit user" : "Add User"}</button>
+                <button disabled={isSubmitDisabled} className="add_user_submit" style={{background: isSubmitDisabled ? "#ABABAB" : "#6C63FF", cursor: isSubmitDisabled ? "default" : "pointer"}} onSubmit={(e) => e.preventDefault()} onClick={editAUser ? (e) => submitEditedUser(e) : () => submitUser()}>{editAUser ? "Edit user" : "Add User"}</button>
 
                 <p className="requird_note">"<span className="required">*</span>" indicates the input field must be filled</p>
 

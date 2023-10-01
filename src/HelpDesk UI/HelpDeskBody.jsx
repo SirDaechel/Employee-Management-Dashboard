@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Ticket from './Ticket'
 
-const HelpDeskBody = ({ filteredSearch, activeHelpDeskTab, filteredOpenedSearch, filteredInProgressSearch, filteredClosedSearch, clickedOnDeleteTicket, openTicketOptions, setOpenTicketOptions, tickets }) => {
+const HelpDeskBody = ({ filteredSearch, activeHelpDeskTab, filteredOpenedSearch, filteredInProgressSearch, filteredClosedSearch, clickedOnDeleteTicket, openTicketOptions, setOpenTicketOptions }) => {
 
   const [theTicketID, setTheTicketID] = useState(null);
 

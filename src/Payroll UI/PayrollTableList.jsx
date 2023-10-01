@@ -1,4 +1,4 @@
-const PayrollTableList = ({ user, filteredSearch }) => {
+const PayrollTableList = ({ user }) => {
 
   const { id, name, wage, workinghours, statutorywage, paystatus } = user;
 

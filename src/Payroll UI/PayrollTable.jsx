@@ -1,4 +1,3 @@
-import { useState } from "react"
 import PayrollTableTitle from "./PayrollTableTitle"
 import PayrollTableList from "./PayrollTableList"
 
@@ -25,7 +24,6 @@ const PayrollTable = ({ currentStaffs, filteredSearch, searchPayroll }) => {
                         <PayrollTableList 
                             key={user.id}
                             user={user}
-                            filteredSearch={filteredSearch}
                         />
 
                     ))
@@ -39,7 +37,6 @@ const PayrollTable = ({ currentStaffs, filteredSearch, searchPayroll }) => {
                         <PayrollTableList 
                             key={user.id}
                             user={user}
-                            filteredSearch={filteredSearch}
                         />
 
                     ))

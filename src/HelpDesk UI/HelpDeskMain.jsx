@@ -1,9 +1,7 @@
 import { useState } from 'react'
 import SearchBarGlobal from '../SearchBarGlobal'
-import Button from '../Projects UI/Button'
 import HelpDeskTabs from './HelpDeskTabs'
 import HelpDeskBody from './HelpDeskBody'
-import plusIcon from '../../public/images/plusIcon';
 
 const HelpDeskMain = ({ tickets, setTicket, setFullPageOverlay }) => {
 
@@ -95,13 +93,6 @@ const HelpDeskMain = ({ tickets, setTicket, setFullPageOverlay }) => {
           setSearchBar={setSearchTicket}
           placeholder={"Search tickets"}
         />
-
-        {/* <Button 
-          label={"Create Ticket"}
-          icon={<span className='plus_icon'>{plusIcon}</span>}
-          backgroundColour={{backgroundColor: "#6C63FF", color: "#FFFFFF"}}
-          // linkto={"createticket"}
-        /> */}
 
       </div>
 

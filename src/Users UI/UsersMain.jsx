@@ -53,9 +53,6 @@ const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, pa
   const [workingHours, setWorkingHours] = useState("");
   const [validWorkingHours, setValidWorkingHours] = useState(false);
   const [workingHoursFocus, setWorkingHoursFocus] = useState(false);
-
-  const [errMsg, setErrMsg] = useState("");
-  const [success, setSuccess] = useState(false);
   
   const [search, setSearch] = useState("");
   const [showUsersPerPageDropdown, setShowUserPerPageDropdown] = useState(false);
@@ -72,7 +69,6 @@ const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, pa
   const [isSubmitDisabled, setIsSubmitDisabled] = useState(false);
 
   const firstNameRef = useRef();
-  const errRef = useRef();
   const dropdownRef = useRef(null);
   const actionsDropdownRef = useRef(null);
 
@@ -142,11 +138,6 @@ const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, pa
     const resultWorkingHours = AGE_WAGE__PHONE_WAGE_REGEX.test(workingHours);
     setValidWorkingHours(resultWorkingHours);
   }, [workingHours]);
-
-  //clear error message on states or input change
-  useEffect(() => {
-    setErrMsg("");
-  }, [firstName, lastName, eMail, userName, wage, age, phoneNo, workingHours]);
 
   //validate if the add user or edit user submit button should be disabled or not
   useEffect(() => {
@@ -254,10 +245,15 @@ const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, pa
   //calculate whether the "select all" checkbox should be checked or not for archived all users
   const isSelectAllCheckedForDeletedAllUsers = deletedUsers.every((user) => user.checked);
 
+  const [userToBeEdited, setUserToBeEdited] = useState([])
+
   //edit a user
   const editUser = (ID) => {
 
     const editedThisUser = activeUserTab === 0 && currentUsers.filter((user) => user.id === ID) || activeUserTab === 2 && currentArchivedUsers.filter((user) => user.id === ID) || activeUserTab === 3 && currentDeletedUsers.filter((user) => user.id === ID);
+
+    setUserToBeEdited(editedThisUser);
+
     setShowOverlay(true);
     setOpenAddUserModal(true);
     setEditAUser(true);
@@ -270,9 +266,9 @@ const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, pa
     setAge(editedThisUser.map((user) => user.age));
     setPhoneNo(editedThisUser.map((user) => user.phone));
     setWorkingHours(editedThisUser.map((user) => user.workinghours));
+    console.log(editedThisUser);
 
   };
-
   //close add user or edit user modal
   const closeUserModal = () => {
 
@@ -292,6 +288,28 @@ const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, pa
     setShowUserOptions(false);
 
   };
+
+  //submit edited user
+  const submitEditedUser = (e) => {
+
+    e.preventDefault()
+
+    userToBeEdited.map((user) => user.name = `${firstName} ${lastName}`)
+    userToBeEdited.map((user) => user.firstname = firstName)
+    userToBeEdited.map((user) => user.lastname = lastName)
+    userToBeEdited.map((user) => user.username = userName)
+    userToBeEdited.map((user) => user.email = eMail)
+    userToBeEdited.map((user) => user.role = userRole)
+    userToBeEdited.map((user) => user.phone = phoneNo)
+    userToBeEdited.map((user) => user.wage = wage)
+    userToBeEdited.map((user) => user.workinghours = workingHours)
+    userToBeEdited.map((user) => user.age = age)
+
+    console.log(userToBeEdited);
+
+    closeUserModal()
+    
+  }
 
   //if delete a user button is clicked
   const clickedOnDeleteUser = (user) => {
@@ -558,8 +576,6 @@ const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, pa
           setPhoneNo={setPhoneNo}
           setWorkingHours={setWorkingHours}
           firstNameRef={firstNameRef}
-          errRef={errRef}
-          errMsg={errMsg}
           setFirstNameFocus={setFirstNameFocus}
           setLastNameFocus={setLastNameFocus}
           setUserNameFocus={setUserNameFocus}
@@ -580,6 +596,7 @@ const UsersMain = ({ users, setUsers, currentUsers, usersPerPage, totalUsers, pa
           closeUserModal={closeUserModal}
           isSubmitDisabled={isSubmitDisabled}
           setIsSubmitDisabled={setIsSubmitDisabled}
+          submitEditedUser={submitEditedUser}
         />
 
         <UsersUtilities 

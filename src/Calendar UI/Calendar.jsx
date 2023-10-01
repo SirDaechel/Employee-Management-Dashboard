@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 import arrowLeft from '../../public/images/arrowLeft'
 import arrowRight from '../../public/images/arrowRight'
 import xIcon from '../../public/images/xIcon'
@@ -7,7 +7,6 @@ const Calendar = ({ setProjectDate, closeCalendar, showCalendar, setShowCalendar
 
     const [currentDate, setCurrentDate] = useState(new Date());
     const currentDayOfMonth = currentDate.getDate();
-    const calendarRef = useRef(null);
 
     const handleDayClick = (day) => {
 
@@ -25,10 +24,6 @@ const Calendar = ({ setProjectDate, closeCalendar, showCalendar, setShowCalendar
         (currentDate.getMonth() + 1) === 10 && "October" ||
         (currentDate.getMonth() + 1) === 11 && "November" ||
         (currentDate.getMonth() + 1) === 12 && "December" || (currentDate.getMonth() + 1))} ${(currentDate.getFullYear()).toString()}`)
-
-        // const selectedDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
-
-        // console.log((`${selectedDay.getDate()} / ${(selectedDay.getMonth() + 1)} / ${selectedDay.getFullYear()}`).toString());
 
         showCalendar && setProjectDate(theFullDate);
         showCalendar && setShowCalendar(false);
@@ -102,33 +97,11 @@ const Calendar = ({ setProjectDate, closeCalendar, showCalendar, setShowCalendar
         //Update the date every 24 hours
         const interval = setInterval(() => {
             setDate(new Date());
-        }, 86400000); // Update every 24 hours
-
-        // //Update the date every 24 hours
-        // const interval = setInterval(() => {
-        //     setDate(new Date());
-        // }, 1000); // Update every second
+        }, 86400000); 
       
         return () => clearInterval(interval);
 
     }, [currentDate]);
-
-    // Event listener to close the calendar when clicking outside
-    // useEffect(() => {
-
-    //   const handleClickOutside = (event) => {
-    //     if (calendarRef.current && !calendarRef.current.contains(event.target)) {
-    //       setShowCalendar(false);
-    //     }
-    //   };
-
-    //   document.addEventListener('mousedown', handleClickOutside);
-
-    //   return () => {
-    //     document.removeEventListener('mousedown', handleClickOutside);
-    //   };
-
-    // }, []);
 
   return (
 

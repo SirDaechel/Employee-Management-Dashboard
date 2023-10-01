@@ -1,4 +1,4 @@
-const InputBox = ({ label, w100, addProjectInput, setAddProjectInput, type, placeholder }) => {
+const InputBox = ({ label, addProjectInput, setAddProjectInput, type, placeholder }) => {
 
   return (
 

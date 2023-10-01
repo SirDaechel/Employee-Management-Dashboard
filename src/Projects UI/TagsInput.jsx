@@ -3,7 +3,6 @@ import closeIcon from '../../public/images/thecloseicon'
 
 const TagsInput = ({ projectStacks, setProjectStacks }) => {
 
-  const [tags, setTags] = useState([]);
   const [inputValue, setInputValue] = useState('');
 
   const addTag = (e) => {

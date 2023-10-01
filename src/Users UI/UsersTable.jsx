@@ -1,14 +1,10 @@
-import { useEffect, useRef, useState } from "react"
+import { useState } from "react"
 import TableTitle from "./TableTitle"
 import TableList from "./TableList"
 
 const UsersTable = ({ users, setUsers, currentUsers, handleSelectAll, handleIndividualUser, isSelectAllChecked, editUser, clickedOnDeleteUser, archiveAUser, restoreAUser, activeUserTab, currentArchivedUsers, currentDeletedUsers, showUserOptions, setShowUserOptions, handleSelectAllArchived, handleIndividualArchivedUser, isSelectAllCheckedForArchivedAllUsers, archivedUsers, setArchivedUsers, handleSelectAllDeleted, handleIndividualDeletedUser, isSelectAllCheckedForDeletedAllUsers, deletedUsers, setDeletedUsers }) => {
 
   const [theUserID, setTheUserID] = useState(null);
-
-  const deleteUser = () => {
-
-  };
 
  //toggle more user options
   const clickedOptionsIcon = (ID) => {

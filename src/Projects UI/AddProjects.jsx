@@ -112,7 +112,7 @@ const AddProjects = ({ projects, setProjects, users }) => {
 
 
   // Open Start Date Calendar
-  const openStartDateCalendar = (e) => {
+  const openStartDateCalendar = () => {
 
     setShowEndDateCalendar(false);
 
@@ -121,7 +121,7 @@ const AddProjects = ({ projects, setProjects, users }) => {
   }
 
   // Open End Date Calendar
-  const openEndDateCalendar = (e) => {
+  const openEndDateCalendar = () => {
 
     setShowStartDateCalendar(false);
 
@@ -253,8 +253,6 @@ const AddProjects = ({ projects, setProjects, users }) => {
           {showStartDateCalendar && <Calendar
             projectDate={projectStartDate}
             setProjectDate={setProjectStartDate}
-            // showStartDateCalendar={showStartDateCalendar}
-            // setShowStartDateCalendar={setShowStartDateCalendar}
             showCalendar={showStartDateCalendar}
             setShowCalendar={setShowStartDateCalendar}
             closeCalendar={closeStartDateCalendar}
@@ -263,8 +261,6 @@ const AddProjects = ({ projects, setProjects, users }) => {
           {showEndDateCalendar && <Calendar
             projectDate={projectEndDate}
             setProjectDate={setProjectEndDate}
-            // showEndDateCalendar={showEndDateCalendar}
-            // setShowEndDateCalendar={setShowEndDateCalendar}
             showCalendar={showEndDateCalendar}
             setShowCalendar={setShowEndDateCalendar}
             closeCalendar={closeEndDateCalendar}
@@ -280,15 +276,7 @@ const AddProjects = ({ projects, setProjects, users }) => {
             addProjectInput={projectPriority} 
             setAddProjectInput={setProjectPriority}
           />
-
-          {/* <InputBox 
-            label={"Project Stack"}
-            addProjectInput={projectStack} 
-            setAddProjectInput={setProjectStack} 
-            type={"text"} 
-            placeholder={"Enter Project Stack"}
-          /> */}
-
+          
           <InputBox 
             label={"Project Client/Company"}
             addProjectInput={projectClient} 

@@ -7,7 +7,7 @@ const DateInput = ({ label, projectDate, openCalendar }) => {
     <div className="date_input">
         <div className="date_input_title">{label}</div>
 
-        <div className="date_input_btn" onClick={(e) => openCalendar(e)}>
+        <div className="date_input_btn" onClick={() => openCalendar()}>
             <p className="date_input_txt">{projectDate}</p>
             <div className="calendar_icon">{calendarIcon}</div>
         </div>

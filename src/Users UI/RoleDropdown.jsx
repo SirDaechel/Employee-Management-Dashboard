@@ -24,7 +24,7 @@ const RoleDropdown = ({ users, userRole, setUserRole, setShowRoleDropdown }) => 
       <div className="role_list_cont">
         <ul className="role_list">
           {filteredUsers.map((user) => (
-            <li className="role_item" onClick={(e) => handleUserRoleOption(e.target.innerText)}>{user.role}</li>
+            <li key={user.id} className="role_item" onClick={(e) => handleUserRoleOption(e.target.innerText)}>{user.role}</li>
           ))}
         </ul>
       </div>

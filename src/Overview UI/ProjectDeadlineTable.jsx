@@ -1,5 +1,3 @@
-import { useState } from "react"
-
 const ProjectDeadlineTable = ({ projects }) => {
 
   const slicedProjects = projects.slice(0, 6)

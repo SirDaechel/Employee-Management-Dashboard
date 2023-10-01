@@ -1,7 +1,7 @@
 import horizontalDots from "../../public/images/horizontalDots"
 import deleteIcon from "../../public/images/trashIcon";
 
-const Ticket = ({ id, name, subject, status, priority, date, theTicketID, openTicketOptions, clickedTicketIcon, clickedOnDeleteTicket }) => {
+const Ticket = ({ id, subject, status, priority, date, theTicketID, openTicketOptions, clickedTicketIcon, clickedOnDeleteTicket }) => {
 
   return (
 

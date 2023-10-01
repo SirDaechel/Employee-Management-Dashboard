@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react"
+import { useState, useRef } from "react"
 import arrowDown from "../../public/images/arrowdown"
 
 const ProjectInputDropdownBtn = ({ label, addProjectInput, setAddProjectInput, uniqueCategories }) => {
@@ -14,23 +14,6 @@ const ProjectInputDropdownBtn = ({ label, addProjectInput, setAddProjectInput, u
     setAddProjectInput(e);
     setOpenDropdown(false);
   }
-
-  // // Event listener to close the dropdown when clicking outside
-  // useEffect(() => {
-
-  //   const handleClickOutside = (event) => {
-  //     if (categoryDropdown.current && !categoryDropdown.current.contains(event.target)) {
-  //       setOpenDropdown(false);
-  //     }
-  //   };
-
-  //   document.addEventListener('mousedown', handleClickOutside);
-
-  //   return () => {
-  //     document.removeEventListener('mousedown', handleClickOutside);
-  //   };
-
-  // }, []);
 
   return (
 

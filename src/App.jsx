@@ -23,7 +23,6 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [usersPerPage, setUsersPerPage] = useState(10);
   const [archivedUsers, setArchivedUsers] = useState([]);
-  const [pendingUsers, setPendingUsers] = useState([]);
   const [deletedUsers, setDeletedUsers] = useState([]);
   const [fullPageOverlay, setFullPageOverlay] = useState(false);
   const paginateNumRef = useRef(null);
@@ -41,6 +40,8 @@ function App() {
 
 
   useEffect(() => {
+
+    ///////////////////////////////////////// fetch staffs or users ////////////////////////////////
 
     const fetchUsers = async () => {
 
@@ -71,7 +72,7 @@ function App() {
     fetchUsers();
 
 
-    //fetch projects
+    ///////////////////////////////////////// fetch projects ////////////////////////////////
 
     const fetchProjects = async () => {
 
@@ -103,7 +104,7 @@ function App() {
 
 
 
-    //fetch notifications
+    ///////////////////////////////////////// fetch notifications ////////////////////////////////
 
     const fetchNotifications = async () => {
 
@@ -135,7 +136,7 @@ function App() {
 
 
 
-    //fetch helpdesk tickets
+    ///////////////////////////////////////// fetch helpdesk tickets ////////////////////////////////
 
     const fetchHelpDesk = async () => {
 

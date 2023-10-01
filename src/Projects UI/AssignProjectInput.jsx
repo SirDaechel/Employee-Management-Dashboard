@@ -95,8 +95,6 @@ const AssignProjectInput = ({ users, projectTeam, setProjectTeam }) => {
 
             <div className='open_assign_to_dropdown_btn' onClick={() => setOnFocus(!onFocus)}>{onFocus ? "Close List" : "Open List"}</div>
 
-            {/* <input type="text" className='tag_input' onFocus={() => setOnFocus(true)} value={inputValue} onChange={(e) => setInputValue(e.target.value)} onKeyDown={addStaff} placeholder='Assign Project To...'/> */}
-
         </div>
 
         {onFocus ? 

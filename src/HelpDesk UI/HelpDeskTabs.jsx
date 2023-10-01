@@ -1,5 +1,3 @@
-import React from 'react'
-
 const ProjectTabs = ({ tickets, activeHelpDeskTab, handleHelpDeskTabChange, getOpenedTickets, getInProgressTickets, getClosedTickets }) => {
 
   return (

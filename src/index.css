@@ -186,7 +186,7 @@ main {
 
 .search_result {
   position: relative;
-  margin: .5rem 0 0 2rem;
+  margin: .5rem 0 0 0;
 }
 
 .search_result_cont {
@@ -1513,7 +1513,7 @@ th{
 }
 
 .delete_all_notifications:hover {
-  color: #7091D8;
+  background-color: rgb(252, 56, 56);
   transition: .3s;
   cursor: pointer;
 }

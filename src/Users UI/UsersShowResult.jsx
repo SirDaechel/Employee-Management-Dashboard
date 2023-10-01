@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 import arrowdown from "../../public/images/arrowdown";
 import actionsIcon from "../../public/images/actionsIcon";
 import timeIcon from "../../public/images/timeIcon";
@@ -6,12 +6,10 @@ import trashIcon from "../../public/images/trashIcon";
 import mailIcon from "../../public/images/mailIcon";
 import restoreIcon from "../../public/images/restoreIcon";
 
-const UserShowResult = ({ users, setUsers, archivedUsers, setArchivedUsers, currentUsers, usersPerPage, setUsersPerPage, showUsersPerPageDropdown, setShowUserPerPageDropdown, dropdownRef, actionsDropdownRef, deletedUsers, setDeletedUsers, checkedUsers, setCheckedUsers, activeUserTab, setActiveUserTab, setUsersAfterFilteringArchived, usersAfterFilteringDeleted, setUsersAfterFilteringDeleted, currentArchivedUsers, currentDeletedUsers, currentPage, setCurrentPage, pageNumbers }) => {
+const UserShowResult = ({ users, setUsers, archivedUsers, setArchivedUsers, currentUsers, usersPerPage, setUsersPerPage, showUsersPerPageDropdown, setShowUserPerPageDropdown, dropdownRef, actionsDropdownRef, deletedUsers, setDeletedUsers, checkedUsers, activeUserTab, setUsersAfterFilteringArchived, setUsersAfterFilteringDeleted, currentArchivedUsers, currentDeletedUsers, currentPage, setCurrentPage, pageNumbers }) => {
 
     const [showActions, setShowActions] = useState(false);
     const [showActionsError, setShowActionsError] = useState(false);
-    // const [noCheckedUsers, setnoCheckedUsers] = useState(false);
-    // const [clickedDeleteUser, setClickedDeleteUser] = useState(false);
 
 
     const restoreSelectedUsers = () => {
@@ -79,8 +77,6 @@ const UserShowResult = ({ users, setUsers, archivedUsers, setArchivedUsers, curr
 
             }
     
-            // setUsers(users.filter(user => !archived.includes(user)));
-    
             setShowActions(false);
 
         } else if(activeUserTab === 3) {
@@ -101,8 +97,6 @@ const UserShowResult = ({ users, setUsers, archivedUsers, setArchivedUsers, curr
               setCurrentPage(currentPage - 1);
   
             }
-    
-            // setUsers(users.filter(user => !archived.includes(user)));
     
             setShowActions(false);
             
@@ -131,8 +125,6 @@ const UserShowResult = ({ users, setUsers, archivedUsers, setArchivedUsers, curr
     
             }
 
-            // setUsers(users.filter(user => !deleted.includes(user)));
-
             setShowActions(false);
 
 
@@ -154,8 +146,6 @@ const UserShowResult = ({ users, setUsers, archivedUsers, setArchivedUsers, curr
               setCurrentPage(currentPage - 1);
     
             }
-
-            // setUsers(users.filter(user => !deleted.includes(user)));
 
             setShowActions(false);
 
@@ -270,8 +260,6 @@ const UserShowResult = ({ users, setUsers, archivedUsers, setArchivedUsers, curr
                             <div className="actions_icon">{timeIcon}</div>
                             <p>Archive all</p>
                           </li>
-
-                          {/* <i class='bx bx-refresh'></i> */}
 
                           <li className="actions_dropdown_item" style={{display: activeUserTab === 3 ? "none" : "flex"}} onClick={deleteSelectedUsers}>
                             <div className="actions_icon">{trashIcon}</div>

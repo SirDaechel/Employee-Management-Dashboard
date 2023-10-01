@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import doubleftarrow from "../../public/images/doubleleftarrow"
 import doublerightarrow from "../../public/images/doublerightarrow"
 

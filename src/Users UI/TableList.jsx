@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react"
+import { useRef } from "react"
 import moreoptionsIcon from "../../public/images/moreoptionsIcon";
 import edituserIcon from "../../public/images/edituserIcon";
 import timeIcon from "../../public/images/timeIcon";
@@ -10,7 +10,7 @@ const TableList = ({ user, handleIndividualUser, clickedOptionsIcon, showUserOpt
 
   const moreOptionsBtnRef = useRef(null);
 
-  const { id, name, username, email, role, phone, wage, workinghours, age, checked } = user;
+  const { id, name, email, role, phone, wage, workinghours, age, checked } = user;
 
   return (
 
@@ -25,12 +25,6 @@ const TableList = ({ user, handleIndividualUser, clickedOptionsIcon, showUserOpt
               <p className="namelist_txt">{name}</p>
             </div>
           </td>
-
-          {/* <td>
-            <div className="usernamelist">
-              <p className="usernamelist_txt">{username}</p>
-            </div>
-          </td> */}
 
           <td>
             <div className="emaillist">

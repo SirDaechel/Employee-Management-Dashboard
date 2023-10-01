@@ -4,7 +4,7 @@ import exportIcon from "../../public/images/exportIcon"
 import printIcon from "../../public/images/printIcon"
 import addauser from "../../public/images/addauser"
 
-const UsersUtilities = ({ users, search, setSearch, showOverlay, setShowOverlay, openAddUserModal, setOpenAddUserModal }) => {
+const UsersUtilities = ({ users, search, setSearch, setShowOverlay, setOpenAddUserModal }) => {
 
   const userModalOpen = () => {
     setShowOverlay(true);
