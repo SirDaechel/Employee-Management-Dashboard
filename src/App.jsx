@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
-import api from './api/users'
-import projectapi from './api/projects'
-import notificationsapi from './api/notifications'
-import helpdeskapi from './api/helpdesk'
+import usersData from '../data/db.json'
+import projectData from '../data/projects.json'
+import notificationsData from '../data/notifications.json'
+import helpDeskData from '../data/helpdesk.json'
 import UsersMain from './Users UI/UsersMain';
 import OverviewMain from './Overview UI/OverviewMain'
 import ProjectsMain from './Projects UI/ProjectsMain'
@@ -47,8 +47,7 @@ function App() {
 
       try {
         setLoading(true);
-        const response = await api.get("/users");
-        setUsers(response.data);
+        setUsers(usersData);
         setLoading(false);
       } catch (err) {
 
@@ -78,8 +77,7 @@ function App() {
 
       try {
         setLoading(true);
-        const response = await projectapi.get("/projects");
-        setProjects(response.data);
+        setProjects(projectData);
         setLoading(false);
       } catch (err) {
 
@@ -110,8 +108,7 @@ function App() {
 
       try {
         setLoading(true);
-        const response = await notificationsapi.get("/notifications");
-        setNotifications(response.data);
+        setNotifications(notificationsData);
         setLoading(false);
       } catch (err) {
 
@@ -142,8 +139,7 @@ function App() {
 
       try {
         setLoading(true);
-        const response = await helpdeskapi.get("/helpdesk");
-        setHelpDesk(response.data);
+        setHelpDesk(helpDeskData);
         setLoading(false);
       } catch (err) {
 
