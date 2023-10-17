@@ -11,7 +11,7 @@ import HelpDeskMain from './HelpDesk UI/HelpDeskMain'
 import Layout from './Layout';
 import AddProjects from './Projects UI/AddProjects';
 import PageNotFound from './PageNotFound';
-import { Route, Routes } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
 
@@ -52,16 +52,12 @@ function App() {
       } catch (err) {
 
         if(err.response) {
-
           //Not in the 200 response range
           console.log(err.response.data);
           console.log(err.response.status);
           console.log(err.response.header);
-
         } else {
-
           console.log(`Error: ${err.message}`);
-
         }
 
       };
@@ -82,16 +78,12 @@ function App() {
       } catch (err) {
 
         if(err.response) {
-
           //Not in the 200 response range
           console.log(err.response.data);
           console.log(err.response.status);
           console.log(err.response.header);
-
         } else {
-
           console.log(`Error: ${err.message}`);
-
         }
 
       };
@@ -113,16 +105,12 @@ function App() {
       } catch (err) {
 
         if(err.response) {
-
           //Not in the 200 response range
           console.log(err.response.data);
           console.log(err.response.status);
           console.log(err.response.header);
-
         } else {
-
           console.log(`Error: ${err.message}`);
-
         }
 
       };
@@ -144,16 +132,12 @@ function App() {
       } catch (err) {
 
         if(err.response) {
-
           //Not in the 200 response range
           console.log(err.response.data);
           console.log(err.response.status);
           console.log(err.response.header);
-
         } else {
-
           console.log(`Error: ${err.message}`);
-
         }
 
       };
