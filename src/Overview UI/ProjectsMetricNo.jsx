@@ -4,7 +4,7 @@ const ProjectsMetricNo = ({ topText, spend, percentage, arrow, percent }) => {
 
   return (
 
-    <div className="metric_cont metric1">
+    <div className="metric_cont">
 
         <div className="metric_cont_title">
             <p className="metric_cont_top_txt">{topText}</p>
